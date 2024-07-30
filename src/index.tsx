@@ -6,7 +6,7 @@ import "./1_app/styles/index.scss";
 import "./6_shared/config/i18n/i18n";
 import App from "./1_app/App";
 import { ErrorBoundary } from "./1_app/providers/ErrorBoundary";
-import { StoreProvider } from "1_app/providers/StoreProvider";
+import { StoreProvider } from "./1_app/providers/StoreProvider";
 
 render(
   <StoreProvider>

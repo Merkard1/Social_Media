@@ -1,21 +1,21 @@
 import { useTranslation } from "react-i18next";
-import cls from "./LoginForm.module.scss";
 import { classNames } from "6_shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "6_shared/ui/Button/Button";
 import Input from "6_shared/ui/Input/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { memo, useCallback } from "react";
-import loginByUsername from "../../model/services/loginByUsername/loginByUserName";
 import Text, { TextTheme } from "6_shared/ui/Text/Text";
+import DynamicModuleLoader, {
+  ReducerList,
+} from "6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import cls from "./LoginForm.module.scss";
+import loginByUsername from "../../model/services/loginByUsername/loginByUserName";
 
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
-import DynamicModuleLoader, {
-  ReducerList,
-} from "6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 export interface LoginFormProps {
   className?: string;

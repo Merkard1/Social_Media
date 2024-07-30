@@ -5,9 +5,9 @@ import React, {
   useRef,
   useState,
 } from "react";
-import cls from "./Modal.module.scss";
 import { useTheme } from "1_app/providers/ThemeProvider";
 import { classNames } from "6_shared/lib/classNames/classNames";
+import cls from "./Modal.module.scss";
 import Portal from "../Portal/Portal";
 
 interface ModalProps {

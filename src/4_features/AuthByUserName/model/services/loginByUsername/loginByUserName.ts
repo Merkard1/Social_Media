@@ -27,8 +27,7 @@ const loginByUsername = createAsyncThunk<
 
     if (axios.isAxiosError(error)) {
       if (error.response) {
-        errorMessage =
-          error.response.data.message || "Server responded with an error";
+        errorMessage = error.response.data.message || "Server responded with an error";
       } else if (error.request) {
         errorMessage = "No response received from server";
       } else {

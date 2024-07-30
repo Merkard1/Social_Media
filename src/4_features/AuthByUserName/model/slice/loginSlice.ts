@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { LoginSchema } from "../types/loginSchema";
 import loginByUsername from "../services/loginByUsername/loginByUserName";

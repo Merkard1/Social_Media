@@ -1,12 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { CounterSchema } from '../types/CounterSchema';
+/* eslint-disable no-param-reassign */
+import { createSlice } from "@reduxjs/toolkit";
+import { CounterSchema } from "../types/CounterSchema";
 
 const initialState: CounterSchema = {
   value: 0,
 };
 
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState,
   reducers: {
     increment: (state) => {

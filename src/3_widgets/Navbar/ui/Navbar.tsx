@@ -1,12 +1,12 @@
 import { classNames } from "6_shared/lib/classNames/classNames";
 import { AppLink, AppLinkTheme } from "6_shared/ui/AppLink/AppLink";
 import { useTranslation } from "react-i18next";
-import cls from "./Navbar.module.scss";
 import { Button, ThemeButton } from "6_shared/ui/Button/Button";
 import { useCallback, useState } from "react";
 import { LoginModal } from "4_features/AuthByUserName";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "5_entities/User";
+import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
   className?: string;
@@ -29,6 +29,7 @@ export const Navbar = ({ className }: NavbarProps) => {
   const onLogout = useCallback(() => {
     setIsAuthModal(false);
     dispatch(userActions.logout());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (authData) {

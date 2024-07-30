@@ -1,5 +1,5 @@
-import cls from "./Text.module.scss";
 import { classNames } from "6_shared/lib/classNames/classNames";
+import cls from "./Text.module.scss";
 
 export enum TextTheme {
   PRIMARY = "primary",

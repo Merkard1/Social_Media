@@ -1,9 +1,9 @@
-import { DeepPartial } from '@reduxjs/toolkit';
-import { getCounter } from './getCounter';
-import { StateSchema } from '1_app/providers/StoreProvider';
+import { DeepPartial } from "@reduxjs/toolkit";
+import { StateSchema } from "1_app/providers/StoreProvider";
+import { getCounter } from "./getCounter";
 
-describe('getCounter', () => {
-  test('should return counter value', () => {
+describe("getCounter", () => {
+  test("should return counter value", () => {
     const state: DeepPartial<StateSchema> = {
       counter: { value: 10 },
     };

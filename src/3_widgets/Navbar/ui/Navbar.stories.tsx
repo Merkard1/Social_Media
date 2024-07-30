@@ -1,14 +1,14 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { ThemeDecorator } from '6_shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '1_app/providers/ThemeProvider';
-import { Navbar } from './Navbar';
+import { ThemeDecorator } from "6_shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "1_app/providers/ThemeProvider";
+import { Navbar } from "./Navbar";
 
 export default {
-  title: '3_widget/Navbar',
+  title: "3_widget/Navbar",
   component: Navbar,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
 } as ComponentMeta<typeof Navbar>;
 

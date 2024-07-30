@@ -1,14 +1,14 @@
-import { classNames } from '6_shared/lib/classNames/classNames';
-import { useState } from 'react';
-import { ThemeSwitcher } from '6_shared/ui/ThemeSwitcher';
-import { LangSwitcher } from '6_shared/ui/LangSwitcher/LangSwitcher';
-import { Button, ButtonSize, ThemeButton } from '6_shared/ui/Button/Button';
-import { useTranslation } from 'react-i18next';
-import { AppLink, AppLinkTheme } from '6_shared/ui/AppLink/AppLink';
-import { RoutePath } from '6_shared/config/routeConfig/routeConfig';
-import AboutIcon from '6_shared/assets/icons/AboutIcon.svg';
-import MainIcon from '6_shared/assets/icons/MainIcon.svg';
-import cls from './Sidebar.module.scss';
+import { classNames } from "6_shared/lib/classNames/classNames";
+import { useState } from "react";
+import { ThemeSwitcher } from "6_shared/ui/ThemeSwitcher";
+import { LangSwitcher } from "6_shared/ui/LangSwitcher/LangSwitcher";
+import { Button, ButtonSize, ThemeButton } from "6_shared/ui/Button/Button";
+import { useTranslation } from "react-i18next";
+import { AppLink, AppLinkTheme } from "6_shared/ui/AppLink/AppLink";
+import { RoutePath } from "6_shared/config/routeConfig/routeConfig";
+import AboutIcon from "6_shared/assets/icons/AboutIcon.svg";
+import MainIcon from "6_shared/assets/icons/MainIcon.svg";
+import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
   className?: string;
@@ -37,7 +37,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             className={cls.link}
           >
             <MainIcon className={cls.icon} />
-            <span>{t('Главная')}</span>
+            <span>{t("Главная")}</span>
           </AppLink>
         </div>
         <div className={cls.item}>
@@ -47,7 +47,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             className={cls.link}
           >
             <AboutIcon className={cls.icon} />
-            <span>{t('О Сайте')}</span>
+            <span>{t("О Сайте")}</span>
           </AppLink>
         </div>
       </div>
@@ -59,7 +59,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         square
         size={ButtonSize.XL}
       >
-        {collapsed ? '>' : '<'}
+        {collapsed ? ">" : "<"}
       </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />

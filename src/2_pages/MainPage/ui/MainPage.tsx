@@ -20,7 +20,7 @@ const MainPage = () => {
         value={value}
         onChange={onChange}
         type="text"
-        placeholder={"Enter"}
+        placeholder={t("Enter")}
       />
     </div>
   );
