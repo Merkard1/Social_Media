@@ -12,38 +12,40 @@ interface LoginByUserName {
 const loginByUsername = createAsyncThunk<
   User,
   LoginByUserName,
-  ThunkConfig <{message: string}>
-  >("login/loginByUsername", async (authData, thunkAPI) => {
+  ThunkConfig<{ message: string }>
+>(
+  "login/loginByUsername",
+  async (authData, thunkAPI) => {
     const { extra, dispatch, rejectWithValue } = thunkAPI;
 
     try {
-      const response = await extra.api.post("/login", authData);
+      const response = await extra.api.post<User>("/login", authData);
 
       if (!response.data) {
         throw new Error("No response data");
       }
+
       localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
       dispatch(userActions.setAuthData(response.data));
+
       if (extra.navigate) {
         extra.navigate("/about");
       }
+
       return response.data;
     } catch (error) {
       let errorMessage = "An unknown error occurred";
 
       if (axios.isAxiosError(error)) {
-        if (error.response) {
-          errorMessage = error.response.data.message || "Server responded with an error";
-        } else if (error.request) {
-          errorMessage = "No response received from server";
-        } else {
-          errorMessage = error.message;
-        }
+        errorMessage = error.response?.data.message || "Server responded with an error";
+      } else if (error instanceof Error) {
+        errorMessage = error.message;
       }
 
-      console.error(errorMessage);
+      console.error("Login failed:", errorMessage);
       return rejectWithValue({ message: errorMessage });
     }
-  });
+  },
+);
 
 export default loginByUsername;

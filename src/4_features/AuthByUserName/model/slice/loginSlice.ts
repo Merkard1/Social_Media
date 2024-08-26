@@ -20,19 +20,22 @@ const loginSlice = createSlice({
       state.password = action.payload;
     },
   },
-  extraReducers: {
-    [loginByUsername.pending.type]: (state, action) => {
-      state.error = undefined;
-      state.isLoading = true;
-    },
-    [loginByUsername.fulfilled.type]: (state, action) => {
-      state.error = undefined;
-      state.isLoading = false;
-    },
-    [loginByUsername.rejected.type]: (state, action) => {
-      state.error = action.payload.error;
-      state.isLoading = false;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loginByUsername.pending, (state) => {
+        state.error = undefined;
+        state.isLoading = true;
+      })
+      .addCase(loginByUsername.fulfilled, (state) => {
+        state.error = undefined;
+        state.isLoading = false;
+      })
+      .addCase(loginByUsername.rejected, (state, action) => {
+        state.error = typeof action.payload === "object" && action.payload?.message
+          ? action.payload.message
+          : "Unknown Error";
+        state.isLoading = false;
+      });
   },
 });
 
