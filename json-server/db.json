@@ -13,12 +13,19 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "123"
     }
   ],
   "profile": {
-    "name": "typicode"
+    "name": "vlad",
+    "lastname": "none",
+    "age": 26,
+    "currency": "USD",
+    "country": "Ukraine",
+    "city": "Odessa",
+    "username": "admin",
+    "avatar": "none.jpg"
   }
 }

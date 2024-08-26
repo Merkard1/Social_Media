@@ -67,7 +67,7 @@ SquareSizeM.args = {
   children: ">",
   theme: ThemeButton.BACKGROUND_INVERTED,
   square: true,
-  Size: ButtonSize.M,
+  size: ButtonSize.M,
 };
 
 export const SquareSizeL = Template.bind({});
@@ -75,7 +75,7 @@ SquareSizeL.args = {
   children: ">",
   theme: ThemeButton.BACKGROUND_INVERTED,
   square: true,
-  Size: ButtonSize.L,
+  size: ButtonSize.L,
 };
 
 export const SquareSizeXL = Template.bind({});
@@ -83,28 +83,28 @@ SquareSizeXL.args = {
   children: "<",
   theme: ThemeButton.BACKGROUND_INVERTED,
   square: true,
-  Size: ButtonSize.XL,
+  size: ButtonSize.XL,
 };
 
 export const OutlineSizeM = Template.bind({});
 OutlineSizeM.args = {
   children: ">",
   theme: ThemeButton.BACKGROUND_INVERTED,
-  Size: ButtonSize.M,
+  size: ButtonSize.M,
 };
 
 export const OutlineSizeL = Template.bind({});
 OutlineSizeL.args = {
   children: ">",
   theme: ThemeButton.BACKGROUND_INVERTED,
-  Size: ButtonSize.L,
+  size: ButtonSize.L,
 };
 
 export const OutlineSizeXL = Template.bind({});
 OutlineSizeXL.args = {
   children: "<",
   theme: ThemeButton.BACKGROUND_INVERTED,
-  Size: ButtonSize.XL,
+  size: ButtonSize.XL,
 };
 
 export const Disabled = Template.bind({});
@@ -112,7 +112,7 @@ Disabled.args = {
   children: "disabled",
   theme: ThemeButton.OUTLINE,
   disabled: true,
-  Size: ButtonSize.XL,
+  size: ButtonSize.XL,
 };
 
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];

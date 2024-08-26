@@ -19,13 +19,14 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "i18next"],
   rules: {
+    "no-undef": [0],
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
     "react/jsx-wrap-multilines": "off",
     "object-curly-newline": "off",
     "implicit-arrow-linebreak": "off",
     indent: [2, 2],
-    "jsx-a11y/click-events-have-key-events": "warn",
+
     camelcase: "warn",
     "react/jsx-no-useless-fragment": "off",
     "jsx-a11y/no-static-element-interactions": "warn",
@@ -36,7 +37,7 @@ module.exports = {
     ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
@@ -59,6 +60,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true
   },
   overrides: [
     {

@@ -2,12 +2,11 @@ import { useTranslation } from "react-i18next";
 import { classNames } from "6_shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "6_shared/ui/Button/Button";
 import Input from "6_shared/ui/Input/Input";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { memo, useCallback } from "react";
 import Text, { TextTheme } from "6_shared/ui/Text/Text";
-import DynamicModuleLoader, {
-  ReducerList,
-} from "6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "6_shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { DynamicModuleLoader, ReducersList } from "6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import cls from "./LoginForm.module.scss";
 import loginByUsername from "../../model/services/loginByUsername/loginByUserName";
 
@@ -19,15 +18,16 @@ import { getLoginError } from "../../model/selectors/getLoginError/getLoginError
 
 export interface LoginFormProps {
   className?: string;
+  onSuccess: () => void;
 }
 
-const initialReducers: ReducerList = {
+const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
@@ -48,9 +48,12 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     [dispatch],
   );
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, password, username]);
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === "fulfilled") {
+      onSuccess();
+    }
+  }, [onSuccess, dispatch, password, username]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>

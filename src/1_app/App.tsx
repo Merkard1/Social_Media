@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect } from "react";
 
 import { classNames } from "6_shared/lib/classNames/classNames";
 import { useTheme } from "1_app/providers/ThemeProvider";
@@ -10,7 +10,6 @@ import { userActions } from "5_entities/User";
 
 function App() {
   const { theme } = useTheme();
-  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {

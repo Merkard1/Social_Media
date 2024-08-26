@@ -22,7 +22,7 @@ const LoginModal = ({
     lazy
   >
     <Suspense fallback={<Loader />}>
-      <AcynLoginForm />
+      <AcynLoginForm onSuccess={onClose} />
     </Suspense>
   </Modal>
 );
