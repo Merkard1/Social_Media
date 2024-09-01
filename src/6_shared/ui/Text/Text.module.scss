@@ -1,4 +1,5 @@
 .Text {
+  width: 100%;
 }
 
 .title {
@@ -19,4 +20,16 @@
   .text {
     color: var(--red-dark);
   }
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
 }

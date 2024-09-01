@@ -5,7 +5,7 @@ import { Theme } from "1_app/providers/ThemeProvider";
 import AboutPage from "./AboutPage";
 
 export default {
-  title: "pages/AboutPage",
+  title: "2_pages/AboutPage",
   component: AboutPage,
   argTypes: {
     backgroundColor: { control: "color" },

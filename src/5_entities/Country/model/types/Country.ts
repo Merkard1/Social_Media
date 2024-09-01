@@ -1,17 +1,3 @@
-export enum Currency {
-  "RUB" = "RUB",
-  "EUR" = "EUR",
-  "USD" = "USD",
-  "JPY" = "JPY",
-  "GBP" = "GBP",
-  "AUD" = "AUD",
-  "CAD" = "CAD",
-  "CHF" = "CHF",
-  "CNY" = "CNY",
-  "NZD" = "NZD",
-  "INR" = "INR",
-}
-
 export enum Country {
   "AF" = "Afghanistan",
   "AL" = "Albania",
@@ -32,5 +18,5 @@ export enum Country {
   "IT" = "Italy",
   "ES" = "Spain",
   "KR" = "South Korea",
-  "SA" = "Saudi Arabia",
+  "SA" = "Saudi Arabia"
 }

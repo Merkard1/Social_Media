@@ -13,6 +13,10 @@ const fetchProfileData = createAsyncThunk<
     try {
       const response = await extra.api.get<Profile>("/profile");
 
+      if (!response.data) {
+        throw new Error();
+      }
+
       return response.data;
     } catch (error) {
       let errorMessage = "An unknown error occurred";
@@ -27,7 +31,6 @@ const fetchProfileData = createAsyncThunk<
         }
       }
 
-      console.error(errorMessage);
       return rejectWithValue({ message: errorMessage });
     }
   });

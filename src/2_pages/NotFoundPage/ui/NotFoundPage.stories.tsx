@@ -4,7 +4,7 @@ import { Theme } from "1_app/providers/ThemeProvider";
 import { NotFoundPage } from "./NotFoundPage";
 
 export default {
-  title: "pages/NotFoundPage",
+  title: "2_pages/NotFoundPage",
   component: NotFoundPage,
   argTypes: {
     backgroundColor: { control: "color" },

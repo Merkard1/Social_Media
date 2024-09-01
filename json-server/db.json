@@ -1,15 +1,47 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 },
-    { "id": "3", "title": "a title", "views": 100 },
-    { "id": "4", "title": "another title", "views": 200 },
-    { "id": "5", "title": "a title", "views": 100 },
-    { "id": "6", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "3",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "4",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "5",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "6",
+      "title": "another title",
+      "views": 200
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "users": [
     {
@@ -20,12 +52,13 @@
   ],
   "profile": {
     "name": "vlad",
-    "lastname": "none",
-    "age": 26,
-    "currency": "USD",
-    "country": "Ukraine",
+    "lastname": "non1112",
+    "age": "underaged",
+    "currency": "EUR",
+    "country": "Spain",
     "city": "Odessa",
-    "username": "admin",
-    "avatar": "none.jpg"
+    "username": "admin1",
+    "avatar": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800&h=533&crop=1",
+    "Age": "19"
   }
 }
