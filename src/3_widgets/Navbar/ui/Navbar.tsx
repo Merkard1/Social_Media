@@ -29,8 +29,7 @@ export const Navbar = ({ className }: NavbarProps) => {
   const onLogout = useCallback(() => {
     setIsAuthModal(false);
     dispatch(userActions.logout());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   if (authData) {
     return (

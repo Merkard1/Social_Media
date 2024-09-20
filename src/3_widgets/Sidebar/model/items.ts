@@ -3,12 +3,12 @@ import { SVGProps, VFC } from "react";
 
 import AboutIcon from "6_shared/assets/icons/AboutIcon.svg";
 import MainIcon from "6_shared/assets/icons/MainIcon.svg";
-import ProfileIcon from "6_shared/assets/icons/Profile.png";
 
 export interface SidebarItemType {
   path: string,
   text: string,
   Icon: VFC<SVGProps<SVGSVGElement>>
+  authOnly?: boolean
 }
 
 export const SidebarItemsList : SidebarItemType[] = [
@@ -26,5 +26,12 @@ export const SidebarItemsList : SidebarItemType[] = [
     path: RoutePath.profile,
     text: "Profile Page",
     Icon: MainIcon,
+    authOnly: true,
+  },
+  {
+    path: RoutePath.articles,
+    text: "Articles Page",
+    Icon: MainIcon,
+    authOnly: true,
   },
 ];

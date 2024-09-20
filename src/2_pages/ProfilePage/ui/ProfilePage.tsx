@@ -2,7 +2,7 @@ import { classNames } from "6_shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadOnly, getProfileValidationErrors, Profile, profileActions, ProfileCard, profileReducer } from "5_entities/Profile";
 import { useAppDispatch } from "6_shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useCallback, useEffect } from "react";
+import { memo, useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Text, { TextTheme } from "6_shared/ui/Text/Text";
 import cls from "./ProfilePage.module.scss";
@@ -57,4 +57,4 @@ const ProfilePage = ({ className } : ProfilePageProps) => {
   );
 };
 
-export default ProfilePage;
+export default memo(ProfilePage);

@@ -1,4 +1,7 @@
+import { ArticleDetailsCommentsSchema } from "2_pages/ArticleDetailsPage";
+import { AddCommentFormSchema } from "4_features/addCommentForm";
 import { LoginSchema } from "4_features/AuthByUserName";
+import { ArticleDetailsSchema } from "5_entities/Article";
 import { ProfileSchema } from "5_entities/Profile";
 import { UserSchema } from "5_entities/User";
 import {
@@ -18,6 +21,9 @@ export interface StateSchema {
   // Async Reducers
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
+  articleDetails?: ArticleDetailsSchema;
+  articleDetailsComments?: ArticleDetailsCommentsSchema;
+  addCommentForm?: AddCommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
