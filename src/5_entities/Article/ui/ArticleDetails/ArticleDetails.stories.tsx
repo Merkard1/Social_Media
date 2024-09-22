@@ -6,7 +6,7 @@ import { ArticleBlockType, ArticleType } from "5_entities/Article/model/types/ar
 import { ArticleDetails } from "./ArticleDetails";
 
 export default {
-  title: "5_entities/ArticleDetails",
+  title: "5_entities/Article/ArticleDetails",
   component: ArticleDetails,
   argTypes: {
     backgroundColor: { control: "color" },
@@ -23,6 +23,10 @@ const article: Article = {
   views: 1022,
   createdAt: "26.02.2022",
   type: [ArticleType.IT],
+  user: {
+    id: "1",
+    username: "Ulbi tv",
+  },
   blocks: [
     {
       id: "1",

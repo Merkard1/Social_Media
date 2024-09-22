@@ -42,7 +42,6 @@ const loginByUsername = createAsyncThunk<
         errorMessage = error.message;
       }
 
-      console.error("Login failed:", errorMessage);
       return rejectWithValue({ message: errorMessage });
     }
   },

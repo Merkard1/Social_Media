@@ -3,6 +3,7 @@ import { Country } from "5_entities/Country/model/types/Country";
 import { Currency } from "5_entities/Currency";
 
 export interface Profile {
+  id?: string
   name?: string;
   lastname?: string;
   age?: Age;

@@ -35,6 +35,7 @@ module.exports = {
       2,
       { extensions: [".js", ".jsx", ".tsx"] },
     ],
+    "react/no-array-index-key": "warn",
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "no-unused-vars": "off",
@@ -61,7 +62,7 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
     __API__: true,
-    __PROJECT__: true
+    __PROJECT__: true,
   },
   overrides: [
     {

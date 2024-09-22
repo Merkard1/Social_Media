@@ -5,6 +5,9 @@ import { useAppDispatch } from "6_shared/lib/hooks/useAppDispatch/useAppDispatch
 import { memo, useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Text, { TextTheme } from "6_shared/ui/Text/Text";
+import { useInitialEffect } from "6_shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
+import Page from "6_shared/ui/Page/Page";
 import cls from "./ProfilePage.module.scss";
 import ProfilePageHeader from "./ProfilePageHeader/ProfilePageHeader";
 
@@ -23,13 +26,14 @@ const ProfilePage = ({ className } : ProfilePageProps) => {
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readOnly = useSelector(getProfileReadOnly);
-  // const validateErrors = useSelector(getProfileValidationErrors);
+  const validateErrors = useSelector(getProfileValidationErrors);
+  const { id } = useParams<{ id: string }>();
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFormField = useCallback(
     (field: string, value: string | number) => {
@@ -39,21 +43,23 @@ const ProfilePage = ({ className } : ProfilePageProps) => {
   );
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ProfilePage, {}, [className])}>
-        <ProfilePageHeader />
-        {/* {validateErrors?.length && validateErrors.map((err) => (
-          <Text theme={TextTheme.ERROR} text={err} key={err} />
-        ))} */}
-        <ProfileCard
-          data={form}
-          isLoading={isLoading}
-          error={error}
-          onChangeFormField={onChangeFormField}
-          readOnly={readOnly}
-        />
-      </div>
-    </DynamicModuleLoader>
+    <Page>
+      <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <div className={classNames(cls.ProfilePage, {}, [className])}>
+          <ProfilePageHeader />
+          {validateErrors?.length && validateErrors.map((err) => (
+            <Text theme={TextTheme.ERROR} text={err} key={err} />
+          ))}
+          <ProfileCard
+            data={form}
+            isLoading={isLoading}
+            error={error}
+            onChangeFormField={onChangeFormField}
+            readOnly={readOnly}
+          />
+        </div>
+      </DynamicModuleLoader>
+    </Page>
   );
 };
 

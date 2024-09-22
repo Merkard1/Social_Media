@@ -20,7 +20,6 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Cast the entries to the correct type
     (Object.entries(reducers) as [StateSchemaKey, Reducer][]).forEach(
       ([name, reducer]) => {
         if (reducer) {
