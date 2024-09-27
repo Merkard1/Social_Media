@@ -3,7 +3,6 @@ import { memo, useState } from "react";
 import { ThemeSwitcher } from "6_shared/ui/ThemeSwitcher";
 import { LangSwitcher } from "6_shared/ui/LangSwitcher/LangSwitcher";
 import { Button, ButtonSize, ThemeButton } from "6_shared/ui/Button/Button";
-import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import cls from "./Sidebar.module.scss";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems/getSidebarItems";
@@ -13,9 +12,8 @@ interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
-  const { t } = useTranslation();
 
   const SidebarItemsList = useSelector(getSidebarItems);
 
@@ -57,4 +55,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </div>
     </div>
   );
-};
+});

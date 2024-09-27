@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import { fetchNextArticlesPage } from "2_pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import Page from "6_shared/ui/Page/Page";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
-import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
+import { getArticlesPageError, getArticlesPageInited, getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
 import { articlesPageActions, articlesPageReducer, getArticles } from "../../model/slices/ArticlesPageSlice";
 import cls from "./ArticlesPage.module.scss";
 
@@ -29,7 +29,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);
   const view = useSelector(getArticlesPageView);
-  const error = useSelector(getArticlesPageError);
+  // const error = useSelector(getArticlesPageError);
 
   const onChangeView = useCallback(
     (view: ArticleView) => {
