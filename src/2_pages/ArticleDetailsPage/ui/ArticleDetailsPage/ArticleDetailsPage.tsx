@@ -17,7 +17,7 @@ import {
 } from "2_pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle";
 import { RoutePath } from "6_shared/config/routeConfig/routeConfig";
 import { Button, ThemeButton } from "6_shared/ui/Button/Button";
-import Page from "6_shared/ui/Page/Page";
+import Page from "3_widgets/Page/Page";
 import cls from "./ArticleDetailsPage.module.scss";
 import { articleDetailsCommentsReducer, getArticleComments } from "../../model/slices/articleDetailsCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";

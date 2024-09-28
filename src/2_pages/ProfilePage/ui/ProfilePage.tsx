@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import Text, { TextTheme } from "6_shared/ui/Text/Text";
 import { useInitialEffect } from "6_shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useParams } from "react-router-dom";
-import Page from "6_shared/ui/Page/Page";
+import Page from "3_widgets/Page/Page";
 import cls from "./ProfilePage.module.scss";
 import ProfilePageHeader from "./ProfilePageHeader/ProfilePageHeader";
 

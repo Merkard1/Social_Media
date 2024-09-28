@@ -2,6 +2,7 @@ import { ArticleDetailsCommentsSchema } from "2_pages/ArticleDetailsPage";
 import { ArticlesPageSchema } from "2_pages/ArticlesPage";
 import { AddCommentFormSchema } from "4_features/addCommentForm";
 import { LoginSchema } from "4_features/AuthByUserName";
+import { ScrollRestoration } from "4_features/ScrollRestoration";
 import { ArticleDetailsSchema } from "5_entities/Article";
 import { ProfileSchema } from "5_entities/Profile";
 import { UserSchema } from "5_entities/User";
@@ -18,6 +19,7 @@ import { NavigateOptions, To } from "react-router-dom";
 
 export interface StateSchema {
   user: UserSchema;
+  scrollRestoration: ScrollRestoration;
 
   // Async Reducers
   loginForm?: LoginSchema;

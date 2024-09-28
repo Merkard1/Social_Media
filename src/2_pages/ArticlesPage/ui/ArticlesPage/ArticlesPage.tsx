@@ -8,7 +8,7 @@ import { useInitialEffect } from "6_shared/lib/hooks/useInitialEffect/useInitial
 import { useAppDispatch } from "6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { fetchNextArticlesPage } from "2_pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
-import Page from "6_shared/ui/Page/Page";
+import Page from "3_widgets/Page/Page";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { getArticlesPageError, getArticlesPageInited, getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
 import { articlesPageActions, articlesPageReducer, getArticles } from "../../model/slices/ArticlesPageSlice";
