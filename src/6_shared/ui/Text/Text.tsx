@@ -3,42 +3,64 @@ import { memo } from "react";
 import cls from "./Text.module.scss";
 
 export enum TextTheme {
-  PRIMARY = "primary",
-  ERROR = "error",
-}
-
-export enum TextSize {
-  M = "size_m",
-  L = "size_l",
+    PRIMARY = "primary",
+    INVERTED = "inverted",
+    ERROR = "error",
 }
 
 export enum TextAlign {
-  LEFT ="left",
-  CENTER ="center",
-  RIGHT ="right",
+    RIGHT = "right",
+    LEFT = "left",
+    CENTER = "center",
+}
+
+export enum TextSize {
+    S = "size_s",
+    M = "size_m",
+    L = "size_l",
 }
 
 interface TextProps {
-  className?: string;
-  title?: string;
-  text?: string;
-  theme?: TextTheme;
-  align?: TextAlign;
-  size?: TextSize;
+    className?: string;
+    title?: string;
+    text?: string;
+    theme?: TextTheme;
+    align?: TextAlign;
+    size?: TextSize;
 }
 
+type HeaderTagType = "h1" | "h2" | "h3";
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+  [TextSize.S]: "h3",
+  [TextSize.M]: "h2",
+  [TextSize.L]: "h1",
+};
+
 const Text = memo((props: TextProps) => {
-  const { className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.CENTER, size = TextSize.M } = props;
+  const {
+    className,
+    text,
+    title,
+    theme = TextTheme.PRIMARY,
+    align = TextAlign.LEFT,
+    size = TextSize.M,
+  } = props;
 
-  const mods: Mods = {};
+  const HeaderTag = mapSizeToHeaderTag[size];
 
-  const additionalClasses = [className, cls[align], cls[theme]];
+  const mods: Mods = {
+    [cls[theme]]: true,
+    [cls[align]]: true,
+    [cls[size]]: true,
+  };
 
   return (
-    <div className={classNames(cls.Text, mods, [...additionalClasses])}>
-      {title && <div className={cls.title}>{title}</div>}
-      {text && <div className={cls.text}>{text}</div>}
+    <div className={classNames(cls.Text, mods, [className])}>
+      {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
+      {text && <p className={cls.text}>{text}</p>}
     </div>
   );
 });
+
 export default Text;

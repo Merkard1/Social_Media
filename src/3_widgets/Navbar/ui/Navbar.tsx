@@ -6,6 +6,8 @@ import { useCallback, useState } from "react";
 import { LoginModal } from "4_features/AuthByUserName";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "5_entities/User";
+import Text from "6_shared/ui/Text/Text";
+import { RoutePath } from "6_shared/config/routeConfig/routeConfig";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
@@ -34,15 +36,17 @@ export const Navbar = ({ className }: NavbarProps) => {
   if (authData) {
     return (
       <div className={classNames(cls.Navbar, {}, [className])}>
-        <div className={cls.links}>
-          <Button
-            theme={ThemeButton.CLEAR_INVERTED}
-            className={cls.links}
-            onClick={onLogout}
-          >
-            {t("Exit")}
-          </Button>
-        </div>
+        <Text className={cls.appName} title={t("Social media")} />
+        <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
+          {t("Create Article ?")}
+        </AppLink>
+        <Button
+          theme={ThemeButton.CLEAR_INVERTED}
+          className={cls.links}
+          onClick={onLogout}
+        >
+          {t("Exit")}
+        </Button>
       </div>
     );
   }

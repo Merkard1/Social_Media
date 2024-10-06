@@ -1,22 +1,22 @@
-import { classNames, Mods } from "6_shared/lib/classNames/classNames";
-import { ChangeEvent, memo, useCallback, useMemo } from "react";
+import { classNames } from "6_shared/lib/classNames/classNames";
+import { ChangeEvent, useCallback, useMemo } from "react";
 import cls from "./Select.module.scss";
 
-export interface SelectOption {
-  value: string | number,
-  content: string | number
+export interface SelectOption<T extends string> {
+  value: T;
+  content: string | number;
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
  className?: string,
  label?: string | number,
- options?: SelectOption[];
- value?: string ;
- onChange?: (value: string) => void,
+ options?: SelectOption<T>[];
+ value?: T;
+ onChange?: (value: T) => void,
  readOnly?: boolean
 }
 
-const Select = memo((props : SelectProps) => {
+const Select = <T extends string> (props : SelectProps<T>) => {
   const { className, label, options, value, onChange, readOnly } = props;
 
   const optionsList = useMemo(() => options?.map((opt) => (
@@ -24,7 +24,7 @@ const Select = memo((props : SelectProps) => {
   )), [options]);
 
   const onChangeHandler = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value as T);
   }, [onChange]);
 
   return (
@@ -35,6 +35,6 @@ const Select = memo((props : SelectProps) => {
       </select>
     </div>
   );
-});
+};
 
 export default Select;

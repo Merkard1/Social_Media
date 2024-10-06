@@ -1,4 +1,5 @@
-import { ArticleDetailsCommentsSchema } from "2_pages/ArticleDetailsPage";
+import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from "2_pages/ArticleDetailsPage";
+import { ArticleDetailsPageSchema } from "2_pages/ArticleDetailsPage/model/types";
 import { ArticlesPageSchema } from "2_pages/ArticlesPage";
 import { AddCommentFormSchema } from "4_features/addCommentForm";
 import { LoginSchema } from "4_features/AuthByUserName";
@@ -25,9 +26,9 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleDetailsComments?: ArticleDetailsCommentsSchema;
   addCommentForm?: AddCommentFormSchema;
   articlesPage?: ArticlesPageSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

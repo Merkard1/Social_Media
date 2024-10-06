@@ -2,33 +2,25 @@
   "name": "production-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js", 
+  "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run start:dev\" \"npm run start:dev:server\"",
     "start:dev": "webpack serve --env port=3000",
     "start:dev:server": "node ./json-server/index.js",
-
     "build:prod": "webpack  --env mode=production",
     "build:dev": "webpack  --env mode=development",
-
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
- 
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-
     "test:unit": "jest --config ./config/jest/jest.config.ts",
-
     "test:ui": "npx loki test",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "test:ui:ok": "npx loki approve",
- 
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
-
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-    
     "test:report": "npm-run-all visual:report:*",
     "test:report:ui": "npm run test:ui:json && npm run test:ui:html"
   },
@@ -66,7 +58,7 @@
     "babel-plugin-i18next-extract": "^0.8.3",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
-    "eslint": "^8.10.0",
+    "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-i18next": "^5.1.2",
     "eslint-plugin-import": "^2.25.4",
@@ -110,7 +102,8 @@
     "react-dom": "^17.0.2",
     "react-i18next": "^11.15.5",
     "react-redux": "^7.2.6",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.2.1",
+    "react-virtuoso": "^4.1.1"
   },
   "loki": {
     "configurations": {

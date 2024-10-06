@@ -2,6 +2,7 @@ import { TestAsyncThunk } from "6_shared/lib/tests/TestAsyncThunk/TestAsyncThunk
 import { fetchNextArticlesPage } from "./fetchNextArticlesPage";
 import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
 
+// Mock the fetchArticlesList action
 jest.mock("../fetchArticlesList/fetchArticlesList");
 
 describe("fetchNextArticlesPage.test", () => {
@@ -19,10 +20,16 @@ describe("fetchNextArticlesPage.test", () => {
 
     await thunk.callThunk();
 
+    // Expect the dispatch to be called with correct actions
     expect(thunk.dispatch).toBeCalledTimes(4);
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
+    expect(thunk.dispatch).toHaveBeenCalledWith({
+      type: "articlesPageSlice/setPage",
+      payload: 3,
+    });
+    expect(fetchArticlesList).toHaveBeenCalledWith({});
   });
-  test("fetchAritcleList not called", async () => {
+
+  test("fetchArticlesList not called when hasMore is false", async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
       articlesPage: {
         page: 2,
@@ -36,6 +43,26 @@ describe("fetchNextArticlesPage.test", () => {
 
     await thunk.callThunk();
 
+    // Expect the dispatch to be called only for setting the state
+    expect(thunk.dispatch).toBeCalledTimes(2);
+    expect(fetchArticlesList).not.toHaveBeenCalled();
+  });
+
+  test("fetchArticlesList not called when isLoading is true", async () => {
+    const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
+      articlesPage: {
+        page: 2,
+        ids: [],
+        entities: {},
+        limit: 5,
+        isLoading: true,
+        hasMore: true,
+      },
+    });
+
+    await thunk.callThunk();
+
+    // Expect the dispatch to be called only for setting the state
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(fetchArticlesList).not.toHaveBeenCalled();
   });
