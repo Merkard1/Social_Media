@@ -7,6 +7,7 @@ import Avatar from "6_shared/ui/Avatar/Avatar";
 import { Currency, CurrencySelect } from "5_entities/Currency";
 import { Country, CountrySelect } from "5_entities/Country";
 import { Age, AgeSelect } from "5_entities/Age";
+import { HStack, VStack } from "6_shared/ui/Stack";
 import { Profile } from "../../model/types/profile";
 import cls from "./ProfileCard.module.scss";
 
@@ -26,73 +27,71 @@ const ProfileCard = (props : ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [cls.loading])}>
+      <HStack className={classNames(cls.ProfileCard, {}, [cls.loading])} justify="center" max>
         <Loader />
-      </div>);
+      </HStack>);
   }
 
   if (error) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [cls.error])}>
+      <HStack className={classNames(cls.ProfileCard, {}, [cls.error])} justify="center" max>
         <Text theme={TextTheme.ERROR} title={t("Some error")} text={t("Try reload page")} />
-      </div>);
+      </HStack>);
   }
 
   return (
-    <div className={classNames(cls.ProfileCard, {}, [className])}>
-      <div className={cls.data}>
-        {data?.avatar && (
-          <div className={cls.avatarWrapper}>
-            <Avatar src={data?.avatar} />
-          </div>)}
-        <Input
-          value={data?.username}
-          placeholder={t("Your username")}
-          className={cls.input}
-          onChange={(value: string) => onChangeFormField("username", value)}
-          readOnly={readOnly}
-        />
-        <Input
-          value={data?.name}
-          placeholder={t("Your Firstname")}
-          className={cls.input}
-          onChange={(value: string) => onChangeFormField("name", value)}
-          readOnly={readOnly}
-        />
-        <Input
-          value={data?.lastname}
-          placeholder={t("Your Lastname")}
-          className={cls.input}
-          onChange={(value: string) => onChangeFormField("lastname", value)}
-          readOnly={readOnly}
-        />
+    <VStack className={classNames(cls.ProfileCard, {}, [className])} gap="16" justify="center" align="center" max>
+      {data?.avatar && (
+        <div className={cls.avatarWrapper}>
+          <Avatar src={data?.avatar} />
+        </div>)}
+      <Input
+        value={data?.username}
+        placeholder={t("Your username")}
+        className={cls.input}
+        onChange={(value: string) => onChangeFormField("username", value)}
+        readOnly={readOnly}
+      />
+      <Input
+        value={data?.name}
+        placeholder={t("Your Firstname")}
+        className={cls.input}
+        onChange={(value: string) => onChangeFormField("name", value)}
+        readOnly={readOnly}
+      />
+      <Input
+        value={data?.lastname}
+        placeholder={t("Your Lastname")}
+        className={cls.input}
+        onChange={(value: string) => onChangeFormField("lastname", value)}
+        readOnly={readOnly}
+      />
 
-        <AgeSelect
-          value={data?.age !== undefined ? String(data.age) as Age : undefined}
-          onChange={(value: string) => onChangeFormField("age", value)}
-          readOnly={readOnly}
-        />
+      <AgeSelect
+        value={data?.age !== undefined ? String(data.age) as Age : undefined}
+        onChange={(value: string) => onChangeFormField("age", value)}
+        readOnly={readOnly}
+      />
 
-        <CountrySelect
-          value={data?.country as Country}
-          onChange={(value: string) => onChangeFormField("country", value)}
-          readOnly={readOnly}
-        />
-        <Input
-          value={data?.city}
-          placeholder={t("Your city")}
-          className={cls.input}
-          onChange={(value: string) => onChangeFormField("city", value)}
-          readOnly={readOnly}
-        />
-        <CurrencySelect
-          value={data?.currency as Currency}
-          onChange={(value: string) => onChangeFormField("currency", value)}
-          readOnly={readOnly}
-        />
+      <CountrySelect
+        value={data?.country as Country}
+        onChange={(value: string) => onChangeFormField("country", value)}
+        readOnly={readOnly}
+      />
+      <Input
+        value={data?.city}
+        placeholder={t("Your city")}
+        className={cls.input}
+        onChange={(value: string) => onChangeFormField("city", value)}
+        readOnly={readOnly}
+      />
+      <CurrencySelect
+        value={data?.currency as Currency}
+        onChange={(value: string) => onChangeFormField("currency", value)}
+        readOnly={readOnly}
+      />
 
-      </div>
-    </div>
+    </VStack>
   );
 };
 

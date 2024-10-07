@@ -1,13 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { classNames } from "6_shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "6_shared/ui/Button/Button";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 import { RoutePath } from "6_shared/config/routeConfig/routeConfig";
 import { useSelector } from "react-redux";
-import { getUserAuthData } from "5_entities/User";
 import { getArticleDetailsData } from "5_entities/Article";
-import cls from "./ArticleDetailsPageHeader.module.scss";
+import { HStack } from "6_shared/ui/Stack";
 import { getCanEditArticle } from "../../model/selectors/article";
 
 interface ArticleDetailsPageHeaderProps {
@@ -29,16 +28,16 @@ const ArticleDetailsPageHeader = ({ className } : ArticleDetailsPageHeaderProps)
   }, [navigate, article]);
 
   return (
-    <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+    <HStack justify="between" max>
       <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
         {t("Back")}
       </Button>
       {canEdit && (
-        <Button theme={ThemeButton.OUTLINE} onClick={onEdit} className={cls.editBtn}>
+        <Button theme={ThemeButton.OUTLINE} onClick={onEdit}>
           {t("Edit")}
         </Button>
       )}
-    </div>
+    </HStack>
   );
 };
 

@@ -8,6 +8,7 @@ import Text, { TextTheme } from "6_shared/ui/Text/Text";
 import { useInitialEffect } from "6_shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useParams } from "react-router-dom";
 import Page from "3_widgets/Page/Page";
+import { VStack } from "6_shared/ui/Stack";
 import cls from "./ProfilePage.module.scss";
 import ProfilePageHeader from "./ProfilePageHeader/ProfilePageHeader";
 
@@ -46,17 +47,19 @@ const ProfilePage = ({ className } : ProfilePageProps) => {
     <Page>
       <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
         <div className={classNames(cls.ProfilePage, {}, [className])}>
-          <ProfilePageHeader />
-          {validateErrors?.length && validateErrors.map((err) => (
-            <Text theme={TextTheme.ERROR} text={err} key={err} />
-          ))}
-          <ProfileCard
-            data={form}
-            isLoading={isLoading}
-            error={error}
-            onChangeFormField={onChangeFormField}
-            readOnly={readOnly}
-          />
+          <VStack gap="16">
+            <ProfilePageHeader />
+            {validateErrors?.length && validateErrors.map((err) => (
+              <Text theme={TextTheme.ERROR} text={err} key={err} />
+            ))}
+            <ProfileCard
+              data={form}
+              isLoading={isLoading}
+              error={error}
+              onChangeFormField={onChangeFormField}
+              readOnly={readOnly}
+            />
+          </VStack>
         </div>
       </DynamicModuleLoader>
     </Page>
