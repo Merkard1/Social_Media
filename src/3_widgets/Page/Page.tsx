@@ -6,7 +6,6 @@ import { useInfiniteScroll } from "6_shared/lib/hooks/useInfiniteScroll/useInfin
 import { useAppDispatch } from "6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getScrollByPath, getScrollPosition, scrollRestorationActions } from "4_features/ScrollRestoration";
 import { useLocation } from "react-router-dom";
-import path from "node:path/win32";
 import { StateSchema } from "1_app/providers/StoreProvider";
 import { useSelector } from "react-redux";
 import { useInitialEffect } from "6_shared/lib/hooks/useInitialEffect/useInitialEffect";
@@ -38,7 +37,6 @@ const Page = memo((props: PageProps) => {
   });
 
   const onScroll = useThrottle((e: UIEvent<HTMLElement>) => {
-    console.log("Scroll");
     dispatch(scrollRestorationActions.setScrollPosition({
       position: e.currentTarget.scrollTop,
       path: pathname,
@@ -46,14 +44,14 @@ const Page = memo((props: PageProps) => {
   }, 500);
 
   return (
-    <section
+    <main
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className])}
       onScroll={(e) => onScroll(e)}
     >
       {children}
       {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />}
-    </section>
+    </main>
   );
 });
 

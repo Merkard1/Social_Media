@@ -1,9 +1,10 @@
 import Select from "6_shared/ui/Select/Select";
 import { useTranslation } from "react-i18next";
+import { ListBox } from "6_shared/ui/ListBox/ListBox";
 import { Age } from "../model/types/Age";
 
 interface CountrySelectProps {
-  onChange?: (value: string) => void,
+  onChange: (value: string) => void,
   value?: Age,
   lavel?: string,
   readOnly?: boolean
@@ -61,12 +62,13 @@ const CountrySelect = (props : CountrySelectProps) => {
   const { t } = useTranslation();
   const { onChange, lavel, readOnly, value } = props;
   return (
-    <Select
-      onChange={onChange}
-      value={value as string}
+    <ListBox
       label={t("Age")}
-      options={options}
-      readOnly={readOnly}
+      value={value as string}
+      items={options}
+      onChange={onChange}
+      defaultValue={t("Currency")}
+      readonly={readOnly}
     />
   );
 };

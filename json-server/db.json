@@ -677,12 +677,12 @@
       "id": "1",
       "name": "user_2",
       "lastname": "lastName2",
-      "age": "underaged",
-      "currency": "EUR",
+      "age": "57",
+      "currency": "USD",
       "country": "Spain",
       "city": "Odessa",
       "username": "username1",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDwmG52pVI5JZfn04j9gdtsd8pAGbqjjLswg&s",
+      "avatar": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800&h=533&crop=1",
       "Age": "19"
     }
   ]

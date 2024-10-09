@@ -22,12 +22,14 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:report": "npm-run-all visual:report:*",
-    "test:report:ui": "npm run test:ui:json && npm run test:ui:html"
+    "test:report:ui": "npm run test:ui:json && npm run test:ui:html",
+    "create-slice": "node ./scripts/createSlice/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@headlessui/react": "^1.6.6",
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",

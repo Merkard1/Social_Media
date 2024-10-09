@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "5_entities/User";
 import Text from "6_shared/ui/Text/Text";
 import { RoutePath } from "6_shared/config/routeConfig/routeConfig";
+import { Dropdown } from "6_shared/ui/Dropdown/Dropdown";
+import Avatar from "6_shared/ui/Avatar/Avatar";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
@@ -40,13 +42,19 @@ export const Navbar = ({ className }: NavbarProps) => {
         <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
           {t("Create Article ?")}
         </AppLink>
-        <Button
-          theme={ThemeButton.CLEAR_INVERTED}
-          className={cls.links}
-          onClick={onLogout}
-        >
-          {t("Exit")}
-        </Button>
+        <Dropdown
+          className={cls.dropdown}
+          items={[{
+            content: t("Profile"),
+            href: RoutePath.profile + authData.id,
+          }, {
+            content: t("Exit"),
+            onClick: onLogout,
+          },
+          ]}
+          // TODO backend doesn't return avatar
+          trigger={<Avatar size={30} src={authData.avatar} />}
+        />
       </div>
     );
   }

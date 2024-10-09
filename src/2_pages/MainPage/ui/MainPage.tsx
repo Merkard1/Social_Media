@@ -1,4 +1,7 @@
+import Page from "3_widgets/Page/Page";
 import Input from "6_shared/ui/Input/Input";
+import { ListBox } from "6_shared/ui/ListBox/ListBox";
+import { HStack } from "6_shared/ui/Stack";
 import { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -12,15 +15,12 @@ const MainPage = () => {
   };
 
   return (
-    <div>
+    <Page>
       {t("Главная страница")}
-      <Input
-        value={value}
-        onChange={onChange}
-        type="text"
-        placeholder={t("Enter")}
-      />
-    </div>
+      <HStack>
+        <ListBox onChange={onChange} />
+      </HStack>
+    </Page>
   );
 };
 
