@@ -1,8 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { classNames } from "6_shared/lib/classNames/classNames";
 import { memo, useCallback } from "react";
-import { ArticleList, ArticleViewSelector } from "5_entities/Article";
-import { ArticleView } from "5_entities/Article/model/types/article";
 import { DynamicModuleLoader, ReducersList } from "6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useInitialEffect } from "6_shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "6_shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -12,9 +10,10 @@ import Page from "3_widgets/Page/Page";
 import { useSearchParams } from "react-router-dom";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
-import { articlesPageActions, articlesPageReducer, getArticles } from "../../model/slices/ArticlesPageSlice";
+import { articlesPageReducer, getArticles } from "../../model/slices/ArticlesPageSlice";
 import cls from "./ArticlesPage.module.scss";
 import ArticlesPageFilters from "../ArticlesPageFilters/ArticlesPageFilters";
+import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList";
 
 interface ArticlesPageProps {
   className?: string;
@@ -50,7 +49,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         className={classNames(cls.ArticlesPage, {}, [className])}
       >
         <ArticlesPageFilters />
-        <ArticleList isLoading={isLoading} view={view} articles={articles} />
+        <ArticleInfiniteList className={cls.list} />
       </Page>
     </DynamicModuleLoader>
   );

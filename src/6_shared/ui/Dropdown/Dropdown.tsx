@@ -41,28 +41,29 @@ export function Dropdown(props: DropdownProps) {
     <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
       <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
-            <button
-              type="button"
-              disabled={item.disabled}
+            <div
+              role="button"
+              tabIndex={0}
               onClick={item.onClick}
+              onKeyDown={(e) => e.key === "Enter" && item.onClick?.()}
               className={classNames(cls.item, { [cls.active]: active })}
             >
               {item.content}
-            </button>
+            </div>
           );
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled} key={item.href}>
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item as={Fragment} disabled={item.disabled} key={index}>
               {content}
             </Menu.Item>
           );

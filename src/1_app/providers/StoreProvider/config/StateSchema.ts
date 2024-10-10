@@ -1,12 +1,12 @@
-import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from "2_pages/ArticleDetailsPage";
 import { ArticleDetailsPageSchema } from "2_pages/ArticleDetailsPage/model/types";
 import { ArticlesPageSchema } from "2_pages/ArticlesPage";
-import { AddCommentFormSchema } from "4_features/addCommentForm";
 import { LoginSchema } from "4_features/AuthByUserName";
 import { ScrollRestoration } from "4_features/ScrollRestoration";
+import { AddCommentFormSchema } from "4_features/addCommentForm";
 import { ArticleDetailsSchema } from "5_entities/Article";
-import { ProfileSchema } from "5_entities/Profile";
+import { ProfileSchema } from "4_features/EditableProfileCard";
 import { UserSchema } from "5_entities/User";
+import { rtkApi } from "6_shared/api/rtkApi";
 import {
   AnyAction,
   CombinedState,
@@ -21,6 +21,7 @@ import { NavigateOptions, To } from "react-router-dom";
 export interface StateSchema {
   user: UserSchema;
   scrollRestoration: ScrollRestoration;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
   // Async Reducers
   loginForm?: LoginSchema;
@@ -29,6 +30,7 @@ export interface StateSchema {
   addCommentForm?: AddCommentFormSchema;
   articlesPage?: ArticlesPageSchema;
   articleDetailsPage?: ArticleDetailsPageSchema;
+
 }
 
 export type StateSchemaKey = keyof StateSchema;
