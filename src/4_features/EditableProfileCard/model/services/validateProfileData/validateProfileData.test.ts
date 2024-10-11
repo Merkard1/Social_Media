@@ -1,12 +1,11 @@
 import { Country } from "5_entities/Country";
 import { Currency } from "5_entities/Currency";
-import { Age } from "5_entities/Age";
 import { ValidateProfileError } from "../../consts/consts";
 import { validateProfileData } from "./validateProfileData";
 
 const data = {
   username: "admin",
-  age: Age.Age20,
+  age: 20,
   country: Country.AL,
   lastname: "lastname",
   name: "asd",
