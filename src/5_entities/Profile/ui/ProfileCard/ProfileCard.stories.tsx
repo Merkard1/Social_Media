@@ -3,7 +3,6 @@ import img from "6_shared/assets/tests/avatar.png";
 
 import { Country } from "5_entities/Country";
 import { Currency } from "5_entities/Currency";
-import { Age } from "5_entities/Age";
 import ProfileCard from "./ProfileCard";
 
 export default {
@@ -24,7 +23,7 @@ Primary.args = {
   data: {
     username: "admin",
     name: "name",
-    age: Age.Age20,
+    age: 20,
     lastname: "lastname",
     country: Country.US,
     city: "city",
@@ -38,7 +37,7 @@ Secondary.args = {
     avatar: img,
     username: "admin",
     name: "name",
-    age: Age.Age20,
+    age: 20,
     lastname: "lastname",
     country: Country.US,
     city: "city",

@@ -1,14 +1,14 @@
 import { StateSchema } from "1_app/providers/StoreProvider";
 import { Country } from "5_entities/Country";
 import { Currency } from "5_entities/Currency";
-import { Age } from "5_entities/Age";
+
 import { getProfileForm } from "./getProfileForm";
 
 describe("getProfileForm.test", () => {
   test("should return error", () => {
     const data = {
       username: "admin",
-      age: Age.Age18,
+      age: 18,
       country: Country.AF,
       lastname: "ulbi tv",
       first: "asd",

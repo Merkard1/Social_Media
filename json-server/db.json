@@ -683,7 +683,7 @@
       "id": "1",
       "name": "user_2",
       "lastname": "lastName2",
-      "age": "57",
+      "age": 2,
       "currency": "USD",
       "country": "Spain",
       "city": "Odessa",

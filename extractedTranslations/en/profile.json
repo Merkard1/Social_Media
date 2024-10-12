@@ -1,5 +1,10 @@
 {
   "Currency": "",
+  "Incorrect country": "",
+  "Incorrect user data": "",
+  "Incrorrect age": "",
+  "No Data": "",
+  "Server Error": "",
   "Some error": "",
   "Try reload page": "",
   "Your Age": "",
@@ -12,6 +17,8 @@
   "Your username": "",
   "Ваша фамилия": "",
   "Ваше имя": "",
+  "Отменить": "",
   "Профиль": "",
-  "Редактировать": ""
+  "Редактировать": "",
+  "Сохранить": ""
 }

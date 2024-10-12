@@ -1,15 +1,14 @@
 import { TestAsyncThunk } from "6_shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
 import { Country } from "5_entities/Country";
 import { Currency } from "5_entities/Currency";
-import { Age } from "5_entities/Age";
 import { ValidateProfileError } from "../../consts/consts";
 import { updateProfileData } from "./updateProfileData";
 
 const data = {
   username: "admin",
-  age: Age.Underaged,
-  country: Country.DE,
-  lastname: "ulbi tv",
+  age: 22,
+  country: Country.US,
+  lastname: "lastname",
   name: "asd",
   city: "asf",
   currency: Currency.USD,
@@ -27,6 +26,7 @@ describe("updateProfileData.test", () => {
     thunk.api.put.mockReturnValue(Promise.resolve({ data }));
 
     const result = await thunk.callThunk();
+    console.log(result);
 
     expect(thunk.api.put).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe("fulfilled");

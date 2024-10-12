@@ -1,6 +1,5 @@
 import { Country } from "5_entities/Country";
 import { Currency } from "5_entities/Currency";
-import { Age } from "5_entities/Age";
 import { ValidateProfileError } from "../../model/consts/consts";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 import { ProfileSchema } from "../types/EditableProfileCardSchema";
@@ -8,7 +7,7 @@ import { profileActions, profileReducer } from "./profileSlice";
 
 const data = {
   username: "admin",
-  age: Age.Age18,
+  age: 18,
   country: Country.AF,
   lastname: "ulbi tv",
   first: "asd",

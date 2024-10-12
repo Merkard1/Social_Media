@@ -6,7 +6,6 @@ import { Loader } from "6_shared/ui/Loader/Loader";
 import Avatar from "6_shared/ui/Avatar/Avatar";
 import { Currency, CurrencySelect } from "5_entities/Currency";
 import { Country, CountrySelect } from "5_entities/Country";
-import { Age, AgeSelect } from "5_entities/Age";
 import { HStack, VStack } from "6_shared/ui/Stack";
 import cls from "./ProfileCard.module.scss";
 import { Profile } from "../../model/types/profile";
@@ -67,9 +66,15 @@ const ProfileCard = (props : ProfileCardProps) => {
         readOnly={readOnly}
       />
 
-      <AgeSelect
-        value={data?.age !== undefined ? String(data.age) as Age : undefined}
-        onChange={(value: string) => onChangeFormField("age", value)}
+      <Input
+        value={Number(data?.age)}
+        placeholder={t("Your Age")}
+        className={cls.input}
+        onChange={(value) => {
+          if (!Number.isNaN(Number(value)) && Number(value) >= 1) {
+            onChangeFormField("age", Number(value));
+          }
+        }}
         readOnly={readOnly}
       />
 

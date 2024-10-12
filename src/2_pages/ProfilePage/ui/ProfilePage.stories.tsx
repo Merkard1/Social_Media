@@ -4,7 +4,6 @@ import { Theme } from "1_app/providers/ThemeProvider";
 import { StoreDecorator } from "6_shared/config/storybook/StoreDecorator/StoreDecorator";
 import { Country } from "5_entities/Country";
 import { Currency } from "5_entities/Currency";
-import { Age } from "5_entities/Age";
 import ProfilePage from "./ProfilePage";
 
 export default {
@@ -27,7 +26,7 @@ Normal.decorators = [StoreDecorator({
     readOnly: true,
     form: {
       username: "username",
-      age: Age.Age22,
+      age: 22,
       country: Country.US,
       lastname: "lastname",
       name: "firstname",
@@ -43,7 +42,7 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
   profile: {
     form: {
       username: "username",
-      age: Age.Age22,
+      age: 22,
       country: Country.US,
       lastname: "lastname",
       name: "firstname",

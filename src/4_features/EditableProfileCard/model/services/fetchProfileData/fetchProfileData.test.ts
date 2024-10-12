@@ -1,12 +1,11 @@
 import { TestAsyncThunk } from "6_shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
 import { Country } from "5_entities/Country";
 import { Currency } from "5_entities/Currency";
-import { Age } from "5_entities/Age";
 import { fetchProfileData } from "./fetchProfileData";
 
 const data = {
   username: "admin",
-  age: Age.Age19,
+  age: 19,
   country: Country.AF,
   lastname: "ulbi tv",
   name: "asd",
