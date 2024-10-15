@@ -681,13 +681,13 @@
     },
     {
       "id": "1",
-      "name": "user_2",
-      "lastname": "lastName2",
+      "name": "user_",
+      "lastname": "lastName",
       "age": 2,
-      "currency": "USD",
-      "country": "Spain",
-      "city": "Odessa",
-      "username": "username2",
+      "currency": "EUR",
+      "country": "United States",
+      "city": "Odess",
+      "username": "username",
       "avatar": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800&h=533&crop=1",
       "Age": "19"
     }

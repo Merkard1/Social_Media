@@ -42,7 +42,7 @@ const ProfileCard = (props : ProfileCardProps) => {
     <VStack className={classNames(cls.ProfileCard, {}, [className])} gap="16" justify="center" align="center" max>
       {data?.avatar && (
         <div className={cls.avatarWrapper}>
-          <Avatar src={data?.avatar} />
+          <Avatar src={data.avatar} />
         </div>)}
       <Input
         value={data?.username}
@@ -57,6 +57,7 @@ const ProfileCard = (props : ProfileCardProps) => {
         className={cls.input}
         onChange={(value: string) => onChangeFormField("name", value)}
         readOnly={readOnly}
+        data-testid="ProfileCard.name"
       />
       <Input
         value={data?.lastname}
@@ -64,15 +65,17 @@ const ProfileCard = (props : ProfileCardProps) => {
         className={cls.input}
         onChange={(value: string) => onChangeFormField("lastname", value)}
         readOnly={readOnly}
+        data-testid="ProfileCard.lastname"
       />
 
       <Input
-        value={Number(data?.age)}
+        value={data?.age !== undefined ? String(data.age) : ""}
         placeholder={t("Your Age")}
         className={cls.input}
         onChange={(value) => {
-          if (!Number.isNaN(Number(value)) && Number(value) >= 1) {
-            onChangeFormField("age", Number(value));
+          const numericValue = Number(value);
+          if (!Number.isNaN(numericValue) && numericValue >= 1) {
+            onChangeFormField("age", numericValue);
           }
         }}
         readOnly={readOnly}

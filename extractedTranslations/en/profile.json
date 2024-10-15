@@ -1,9 +1,12 @@
 {
+  "Cancel": "",
   "Currency": "",
+  "Edit": "",
   "Incorrect country": "",
   "Incorrect user data": "",
   "Incrorrect age": "",
   "No Data": "",
+  "Save": "",
   "Server Error": "",
   "Some error": "",
   "Try reload page": "",
