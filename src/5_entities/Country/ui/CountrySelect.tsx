@@ -25,7 +25,7 @@ const CountrySelect = (props : CountrySelectProps) => {
       items={options}
       onChange={onChange}
       defaultValue={t("Currency")}
-      readonly={readOnly}
+      readOnly={readOnly}
       direction={DropdownDirection.TR}
     />
   );

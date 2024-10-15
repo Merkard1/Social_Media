@@ -21,7 +21,7 @@ interface ListBoxProps {
     value?: string;
     defaultValue?: string;
     onChange: (value: string) => void;
-    readonly?: boolean;
+    readOnly?: boolean;
     direction?: DropdownDirection;
     label?: string;
 }
@@ -40,7 +40,7 @@ export function ListBox(props: ListBoxProps) {
     value,
     defaultValue,
     onChange,
-    readonly,
+    readOnly,
     direction = DropdownDirection.BL,
     label,
   } = props;
@@ -51,7 +51,7 @@ export function ListBox(props: ListBoxProps) {
     <HStack gap="4">
       {label && <span>{`${label}>`}</span>}
       <HListBox
-        disabled={readonly}
+        disabled={readOnly}
         as="div"
         className={classNames(cls.ListBox, {}, [className])}
         value={value}
