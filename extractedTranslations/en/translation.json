@@ -1,5 +1,7 @@
 {
   "ALL": "",
+  "Admin Panel": "Admin Panel",
+  "AdminPanelPage": "AdminPanelPage",
   "Age": "",
   "Article Create PAge": "Article Create PAge",
   "Article Create Page": "Article Create Page",
@@ -114,6 +116,7 @@
   "Статьи не найдены": "",
   "Статья не найдена": "Статья не найдена",
   "Страница не найдена": "Страница не найдена",
+  "У вас нет доступа к этой странице": "У вас нет доступа к этой странице",
   "Читать далее": {
     "": {
       "": {

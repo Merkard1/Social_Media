@@ -2,33 +2,13 @@
   "posts": [
     {
       "id": "1",
-      "title": "a title",
-      "views": 100
+      "title": "json-server",
+      "userId": "1"
     },
     {
       "id": "2",
-      "title": "another title",
-      "views": 200
-    },
-    {
-      "id": "3",
-      "title": "a title",
-      "views": 100
-    },
-    {
-      "id": "4",
-      "title": "another title",
-      "views": 200
-    },
-    {
-      "id": "5",
-      "title": "a title",
-      "views": 100
-    },
-    {
-      "id": "6",
-      "title": "another title",
-      "views": 200
+      "title": "json-server",
+      "userId": "2"
     }
   ],
   "articles": [
@@ -37,9 +17,9 @@
       "title": "Javascript news СВЕЖАЯ",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1042,
+      "views": 1022,
       "createdAt": "26.04.2022",
-      "userId": "2",
+      "userId": "1",
       "type": [
         "IT"
       ],
@@ -647,49 +627,105 @@
       "id": "wSAhqy5"
     },
     {
-      "articleId": "6",
+      "articleId": "18",
       "userId": "1",
-      "text": "gbk",
-      "id": "bpQp4XT"
+      "text": "12",
+      "id": "r6b1z-N"
+    },
+    {
+      "articleId": "18",
+      "userId": "2",
+      "text": "привет",
+      "id": "DENfTu6"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "33",
+      "id": "Ps59wrg"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "123",
+      "id": "zzYVth3"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "123",
+      "id": "WjF4c_d"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "privet",
+      "id": "fta748h"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "питон топ",
+      "id": "ZlmlUrg"
     },
     {
       "articleId": "7",
       "userId": "1",
-      "text": "sdsddsds",
-      "id": "bDfqxU6"
+      "text": "123",
+      "id": "KmtWJR_"
     }
   ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "roles": [
+        "USER"
+      ],
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profile": [
     {
-      "id": "0",
-      "name": "vlad",
-      "lastname": "non1112",
-      "age": "underaged",
-      "currency": "EUR",
-      "country": "Spain",
-      "city": "Odessa",
-      "username": "admin1",
-      "avatar": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800&h=533&crop=1",
-      "Age": "19"
+      "id": "1",
+      "first": "timur",
+      "lastname": "lastname",
+      "age": 45,
+      "currency": "RUB",
+      "country": "US",
+      "city": "Kiew",
+      "username": "admin213",
+      "avatar": "https://yt3.ggpht.com/ytc/AKedOLTYUJxG8Hu036PQ_TXpMLq2fG8Kj8NZI4h0lbn_3g=s900-c-k-c0x00ffffff-no-rj"
     },
     {
-      "id": "1",
-      "name": "user_",
-      "lastname": "lastName",
-      "age": 2,
+      "id": "2",
+      "first": "ulbi tv",
+      "lastname": "asf",
+      "age": 65,
       "currency": "EUR",
-      "country": "United States",
-      "city": "Odess",
-      "username": "username",
-      "avatar": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800&h=533&crop=1",
-      "Age": "19"
+      "country": "US",
+      "city": "Kiew",
+      "username": "ulbi tv",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ]
 }
