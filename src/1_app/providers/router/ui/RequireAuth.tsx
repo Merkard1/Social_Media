@@ -15,9 +15,6 @@ function RequireAuth(props: RequireAuthProps) {
   const location = useLocation();
   const userRoles = useSelector(getUserRoles);
 
-  console.log("User Roles:", userRoles); // Debug log
-  console.log("Required Roles:", roles); // Debug log
-
   const hasRequiredRoles = useMemo(() => {
     if (!roles) {
       return true;
