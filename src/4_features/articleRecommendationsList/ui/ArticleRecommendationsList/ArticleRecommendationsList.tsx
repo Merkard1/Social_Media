@@ -24,4 +24,4 @@ export const ArticleRecommendationsList = memo(() => {
   );
 });
 
-// TODO stupid story
+// TODO story

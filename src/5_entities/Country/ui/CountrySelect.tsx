@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { ListBox } from "6_shared/ui/ListBox/ListBox";
 import { DropdownDirection } from "6_shared/ui/Dropdown/Dropdown";
-import { Country } from "../model/types/Country";
+import { Country } from "../model/consts/countryConsts";
 
 interface CountrySelectProps {
   onChange: (value: string) => void,

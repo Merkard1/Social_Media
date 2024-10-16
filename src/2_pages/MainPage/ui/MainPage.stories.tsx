@@ -13,8 +13,7 @@ export default {
   },
 } as ComponentMeta<typeof MainPage>;
 
-const Template: ComponentStory<typeof MainPage> = (args) => (
-  // @ts-ignore
+const Template: ComponentStory<typeof MainPage> = (args: any) => (
   <MainPage {...args} />
 );
 
