@@ -8,8 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "5_entities/User";
 import Text from "6_shared/ui/Text/Text";
 import { RoutePath } from "6_shared/config/routeConfig/routeConfig";
-import { Dropdown } from "6_shared/ui/Dropdown/Dropdown";
+
 import Avatar from "6_shared/ui/Avatar/Avatar";
+import { HStack } from "6_shared/ui/Stack";
+import { Icon } from "6_shared/ui/Icon/Icon";
+import icon from "6_shared/assets/icons/eye-20-20.svg";
+import { Dropdown } from "6_shared/ui/Popups";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
@@ -46,24 +50,31 @@ export const Navbar = ({ className }: NavbarProps) => {
         <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
           {t("Create Article ?")}
         </AppLink>
-        <Dropdown
-          className={cls.dropdown}
-          items={[
-            ...(isAdminPanelAvailable ? [{
-              content: t("Admin Panel"),
-              href: RoutePath.admin_panel,
-            }] : []),
-            {
-              content: t("Profile"),
-              href: RoutePath.profile + authData.id,
-            }, {
-              content: t("Exit"),
-              onClick: onLogout,
-            },
-          ]}
-          // TODO backend doesn't return avatar
-          trigger={<Avatar size={30} src={authData.avatar} />}
-        />
+        <HStack gap="16" className={cls.actions}>
+          <Button theme={ThemeButton.CLEAR}>
+            {/* TODO icon */}
+            <Icon Svg={icon} />
+          </Button>
+          <Dropdown
+            className={cls.dropdown}
+            items={[
+              ...(isAdminPanelAvailable ? [{
+                content: t("Admin Panel"),
+                href: RoutePath.admin_panel,
+              }] : []),
+              {
+                content: t("Profile"),
+                href: RoutePath.profile + authData.id,
+              }, {
+                content: t("Exit"),
+                onClick: onLogout,
+              },
+            ]}
+            // TODO backend doesn't return avatar
+            trigger={<Avatar size={30} src={authData.avatar} />}
+          />
+        </HStack>
+
       </div>
     );
   }

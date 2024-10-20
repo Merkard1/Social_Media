@@ -6,7 +6,7 @@ export enum ArticleSortField {
 
 export enum ArticleOrder {
   ASC = "asc",
-  DESC= "desc"
+  DESC = "desc"
 }
 
 export enum ArticleBlockType {

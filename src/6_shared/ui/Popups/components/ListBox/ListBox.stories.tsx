@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { ListBox } from "./ListBox";
-import { DropdownDirection } from "../Popups";
+import { DropdownDirection } from "../Dropdown/Dropdown";
 
 export default {
   title: "6_shared/ListBox",
@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />
 
 export const Normal = Template.bind({});
 Normal.args = {
-  value: "Normal",
+  value: "123",
   items: [
     { content: "1asfasfasf23", value: "123" },
     { content: "1asfasfasf21233", value: "1232" },
