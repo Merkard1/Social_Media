@@ -1,6 +1,5 @@
 import Page from "3_widgets/Page/Page";
-import Input from "6_shared/ui/Input/Input";
-import { ListBox } from "6_shared/ui/ListBox/ListBox";
+import { ListBox } from "6_shared/ui/Popups";
 import { HStack } from "6_shared/ui/Stack";
 import { memo, useState } from "react";
 import { useTranslation } from "react-i18next";

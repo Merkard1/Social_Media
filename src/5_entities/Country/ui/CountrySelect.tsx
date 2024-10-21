@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { ListBox } from "6_shared/ui/ListBox/ListBox";
-import { DropdownDirection } from "6_shared/ui/Dropdown/Dropdown";
+import { DropdownDirection, ListBox } from "6_shared/ui/Popups";
+
 import { Country } from "../model/types/Country";
 
 interface CountrySelectProps {
@@ -25,7 +25,7 @@ const CountrySelect = (props : CountrySelectProps) => {
       items={options}
       onChange={onChange}
       defaultValue={t("Currency")}
-      readOnly={readOnly}
+      readonly={readOnly}
       direction={DropdownDirection.TR}
     />
   );

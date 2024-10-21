@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
-import { ListBox } from "6_shared/ui/ListBox/ListBox";
+
+import { ListBox } from "6_shared/ui/Popups";
 import { Currency } from "../../model/types/currency";
 
 interface CurrencySelectProps {
@@ -28,7 +29,7 @@ const CurrencySelect = memo(({ value, onChange, readOnly } : CurrencySelectProps
       items={options}
       onChange={onChangeHandler}
       defaultValue={t("Currency")}
-      readOnly={readOnly}
+      readonly={readOnly}
     />
   );
 });

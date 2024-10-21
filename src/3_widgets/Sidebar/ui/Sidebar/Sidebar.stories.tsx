@@ -1,4 +1,3 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { ThemeDecorator } from "6_shared/config/storybook/ThemeDecorator/ThemeDecorator";
