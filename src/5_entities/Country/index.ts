@@ -1,2 +1,2 @@
-export { Country } from "./model/types/Country";
+export { Country } from "./model/consts/countryConsts";
 export { default as CountrySelect } from "./ui/CountrySelect";

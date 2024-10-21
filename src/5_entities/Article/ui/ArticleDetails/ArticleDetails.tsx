@@ -1,10 +1,11 @@
-import { classNames } from "6_shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { DynamicModuleLoader, ReducersList } from "6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { memo, useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
+
+import { DynamicModuleLoader, ReducersList } from "6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import Text, { TextAlign, TextSize } from "6_shared/ui/Text/Text";
+import { classNames } from "6_shared/lib/classNames/classNames";
 import { Skeleton } from "6_shared/ui/Skeleton/Skeleton";
 import Avatar from "6_shared/ui/Avatar/Avatar";
 import EyeIcon from "6_shared/assets/icons/eye-20-20.svg";
