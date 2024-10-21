@@ -1,9 +1,15 @@
-import { DropdownDirection } from "../components/Dropdown/Dropdown";
 import cls from "./popup.module.scss";
 
+export enum DropdownDirection {
+  TL = "top left",
+  TR = "top right",
+  BL = "bottom left",
+  BR = "bottom right",
+}
+
 export const mapDirectionClass: Record<DropdownDirection, string> = {
-  "bottom left": cls.optionsBottomLeft,
-  "bottom right": cls.optionsBottomRight,
-  "top right": cls.optionsTopRight,
-  "top left": cls.optionsTopLeft,
+  [DropdownDirection.BL]: cls.optionsBottomLeft,
+  [DropdownDirection.BR]: cls.optionsBottomRight,
+  [DropdownDirection.TR]: cls.optionsTopRight,
+  [DropdownDirection.TL]: cls.optionsTopLeft,
 };

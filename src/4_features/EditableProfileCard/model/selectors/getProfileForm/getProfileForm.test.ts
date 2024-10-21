@@ -1,6 +1,6 @@
-import { StateSchema } from "1_app/providers/StoreProvider";
-import { Country } from "5_entities/Country";
-import { Currency } from "5_entities/Currency";
+import { StateSchema } from "@/1_app/providers/StoreProvider";
+import { Country } from "@/5_entities/Country";
+import { Currency } from "@/5_entities/Currency";
 
 import { getProfileForm } from "./getProfileForm";
 
@@ -10,7 +10,7 @@ describe("getProfileForm.test", () => {
       username: "admin",
       age: 18,
       country: Country.AF,
-      lastname: "ulbi tv",
+      lastname: "lastname",
       first: "asd",
       city: "asf",
       currency: Currency.USD,

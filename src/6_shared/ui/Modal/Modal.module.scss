@@ -1,23 +1,22 @@
 .Modal {
   position: fixed;
-  z-index: -1;
-  opacity: 0;
-  inset: 0;
-  pointer-events: none;
-}
-
-.overlay {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
   display: flex;
-  width: 100%;
-  height: 100%;
-  background: var(--overlay-color);
+  color: var(--primary-color);
+  opacity: 0;
+  pointer-events: none;
   justify-content: center;
   align-items: center;
 }
 
 .content {
+  z-index: var(--modal-z-index);
   padding: 20px;
-  background-color: var(--bg-color);
+  background: var(--bg-color);
   transition: 0.3s transform;
   border-radius: 12px;
   transform: scale(0.5);
@@ -27,7 +26,7 @@
 .opened {
   z-index: var(--modal-z-index);
   opacity: 1;
-  pointer-events: all;
+  pointer-events: auto;
 
   .content {
     transform: scale(1);

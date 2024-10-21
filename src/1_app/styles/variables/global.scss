@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 :root {
+  --font-family-main: inconsolata, serif;
   // s
   --font-size-s: 12px;
   --font-line-s: 20px;
@@ -27,7 +28,8 @@
   --sidebar-width-collapsed: 80px;
 
   // z - index
-  --modal-z-index: 10;
+  --modal-z-index: 1000;
+  --overlay-z-index: 100;
 
   // Colors
   --overlay-color: rgba(0 0 0 / 60%);

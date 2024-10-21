@@ -1,7 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
 import { ListBox } from "./ListBox";
-import { DropdownDirection } from "../Dropdown/Dropdown";
+import { DropdownDirection } from "../../styles/consts";
 
 export default {
   title: "6_shared/ListBox",
@@ -27,7 +26,7 @@ Normal.args = {
 
 export const topLeft = Template.bind({});
 topLeft.args = {
-  direction: DropdownDirection.TL,
+  direction: DropdownDirection.BL,
   value: "123",
   items: [
     { content: "1asfasfasf23", value: "123" },
@@ -37,7 +36,7 @@ topLeft.args = {
 
 export const topRight = Template.bind({});
 topRight.args = {
-  direction: DropdownDirection.TR,
+  direction: DropdownDirection.BR,
   value: "123",
   items: [
     { content: "1asfasfasf23", value: "123" },
@@ -47,7 +46,7 @@ topRight.args = {
 
 export const bottomLeft = Template.bind({});
 bottomLeft.args = {
-  direction: DropdownDirection.BL,
+  direction: DropdownDirection.TL,
   value: "123",
   items: [
     { content: "1asfasfasf23", value: "123" },
@@ -57,7 +56,7 @@ bottomLeft.args = {
 
 export const bottomRight = Template.bind({});
 bottomRight.args = {
-  direction: DropdownDirection.BR,
+  direction: DropdownDirection.TR,
   value: "123",
   items: [
     { content: "1asfasfasf23", value: "123" },

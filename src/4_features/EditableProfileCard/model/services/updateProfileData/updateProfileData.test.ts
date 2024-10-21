@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from "6_shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { Country } from "5_entities/Country";
-import { Currency } from "5_entities/Currency";
+import { TestAsyncThunk } from "@/6_shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+import { Country } from "@/5_entities/Country";
+import { Currency } from "@/5_entities/Currency";
 import { ValidateProfileError } from "../../consts/consts";
 import { updateProfileData } from "./updateProfileData";
 

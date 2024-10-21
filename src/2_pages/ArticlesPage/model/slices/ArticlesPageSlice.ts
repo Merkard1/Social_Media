@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { createEntityAdapter, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { StateSchema } from "1_app/providers/StoreProvider";
-import { Article, ArticleView, ArticleOrder, ArticleSortField, ArticleType } from "5_entities/Article";
-import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "6_shared/const/localstorage";
+import { StateSchema } from "@/1_app/providers/StoreProvider";
+import { Article, ArticleView, ArticleOrder, ArticleSortField, ArticleType } from "@/5_entities/Article";
+import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "@/6_shared/const/localstorage";
 import { ArticlesPageSchema } from "../types/ArticlesPageSchema";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 

@@ -1,6 +1,6 @@
-import { classNames } from "6_shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
+import { classNames } from "@/6_shared/lib/classNames/classNames";
 import cls from "./Avatar.module.scss";
 
 interface AvatarProps {

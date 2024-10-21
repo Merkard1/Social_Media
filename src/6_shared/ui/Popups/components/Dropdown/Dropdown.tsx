@@ -1,9 +1,9 @@
 import { Menu } from "@headlessui/react";
 import { Fragment, ReactNode } from "react";
-import { classNames } from "6_shared/lib/classNames/classNames";
+import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { AppLink } from "../../../AppLink/AppLink";
 import cls from "./Dropdown.module.scss";
-import { mapDirectionClass } from "../../styles/consts";
+import { DropdownDirection, mapDirectionClass } from "../../styles/consts";
 import popupCls from "../../styles/popup.module.scss";
 
 export interface DropdownItem {
@@ -11,13 +11,6 @@ export interface DropdownItem {
     content?: ReactNode;
     onClick?: () => void;
     href?: string;
-}
-
-export enum DropdownDirection {
-  BL = "bottom left",
-  BR = "bottom right",
-  TL = "top left",
-  TR = "top right",
 }
 
 interface DropdownProps {
@@ -29,7 +22,7 @@ interface DropdownProps {
 
 export function Dropdown(props: DropdownProps) {
   const {
-    className, trigger, items, direction = DropdownDirection.BR,
+    className, trigger, items, direction = "bottom right",
   } = props;
 
   const menuClasses = [mapDirectionClass[direction]];
