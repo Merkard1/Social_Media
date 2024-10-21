@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { classNames, Mods } from "6_shared/lib/classNames/classNames";
+import { classNames, Mods } from "@/6_shared/lib/classNames/classNames";
 import cls from "./Input.module.scss";
 
 type HTMLInputProps = Omit<

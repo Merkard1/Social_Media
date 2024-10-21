@@ -1,13 +1,13 @@
-import { TestAsyncThunk } from "6_shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { Country } from "5_entities/Country";
-import { Currency } from "5_entities/Currency";
+import { TestAsyncThunk } from "@/6_shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+import { Country } from "@/5_entities/Country";
+import { Currency } from "@/5_entities/Currency";
 import { fetchProfileData } from "./fetchProfileData";
 
 const data = {
   username: "admin",
   age: 19,
   country: Country.AF,
-  lastname: "ulbi tv",
+  lastname: "lastname",
   name: "asd",
   city: "asf",
   currency: Currency.USD,

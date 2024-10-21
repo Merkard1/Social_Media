@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import withMock from "storybook-addon-mock";
-import { StoreDecorator } from "6_shared/config/storybook/StoreDecorator/StoreDecorator";
+import { StoreDecorator } from "@/6_shared/config/storybook/StoreDecorator/StoreDecorator";
 import { NotificationList } from "./NotificationList";
 
 export default {
@@ -28,17 +28,17 @@ Normal.parameters = {
         {
           id: "1",
           title: "Уведомление",
-          description: "Поставь лайк и оставь комментарий под Ulbi TV",
+          description: "Desc",
         },
         {
           id: "2",
           title: "Уведомление 2",
-          description: "Поставь лайк и оставь комментарий под Ulbi TV",
+          description: "Desc",
         },
         {
           id: "3",
           title: "Уведомление 3",
-          description: "Поставь лайк и оставь комментарий под Ulbi TV",
+          description: "Desc",
         },
       ],
     },

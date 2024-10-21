@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { createEntityAdapter, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { Comment } from "5_entities/Comment";
-import { StateSchema } from "1_app/providers/StoreProvider";
+import { Comment } from "@/5_entities/Comment";
+import { StateSchema } from "@/1_app/providers/StoreProvider";
 import {
   fetchCommentsByArticleId,
 } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId";

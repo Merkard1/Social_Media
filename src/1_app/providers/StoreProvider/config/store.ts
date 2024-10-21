@@ -2,10 +2,10 @@ import {
   configureStore,
   ReducersMapObject,
 } from "@reduxjs/toolkit";
-import { userReducer } from "5_entities/User";
-import { $api } from "6_shared/api/api";
-import { scrollRestorationReducer } from "4_features/ScrollRestoration";
-import { rtkApi } from "6_shared/api/rtkApi";
+import { userReducer } from "@/5_entities/User";
+import { $api } from "@/6_shared/api/api";
+import { scrollRestorationReducer } from "@/4_features/ScrollRestoration";
+import { rtkApi } from "@/6_shared/api/rtkApi";
 import { StateSchema, ThunkExtraArg } from "./StateSchema";
 import { createReducerManager } from "./reducerManager";
 

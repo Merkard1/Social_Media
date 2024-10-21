@@ -1,7 +1,7 @@
-import { classNames } from "6_shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback, useMemo } from "react";
-import Tabs, { TabItem } from "6_shared/ui/Tabs/Tabs";
+import { classNames } from "@/6_shared/lib/classNames/classNames";
+import Tabs, { TabItem } from "@/6_shared/ui/Tabs/Tabs";
 import { ArticleType } from "../../model/consts/articleConsts";
 
 interface ArticleTypeTabsProps{

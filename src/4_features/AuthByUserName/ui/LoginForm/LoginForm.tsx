@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { classNames } from "6_shared/lib/classNames/classNames";
-import { Button, ThemeButton } from "6_shared/ui/Button/Button";
-import Input from "6_shared/ui/Input/Input";
 import { useSelector } from "react-redux";
 import { memo, useCallback } from "react";
-import Text, { TextTheme } from "6_shared/ui/Text/Text";
-import { useAppDispatch } from "6_shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { DynamicModuleLoader, ReducersList } from "6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { classNames } from "@/6_shared/lib/classNames/classNames";
+import { Button, ThemeButton } from "@/6_shared/ui/Button/Button";
+import Input from "@/6_shared/ui/Input/Input";
+import Text, { TextTheme } from "@/6_shared/ui/Text/Text";
+import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import cls from "./LoginForm.module.scss";
 import loginByUsername from "../../model/services/loginByUsername/loginByUserName";
 

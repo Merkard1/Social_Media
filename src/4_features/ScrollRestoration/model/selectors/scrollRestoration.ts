@@ -1,5 +1,5 @@
-import { StateSchema } from "1_app/providers/StoreProvider";
 import { createSelector } from "@reduxjs/toolkit";
+import { StateSchema } from "@/1_app/providers/StoreProvider";
 
 export const getScrollPosition = (state: StateSchema) => state.scrollRestoration.scroll;
 export const getScrollByPath = createSelector(

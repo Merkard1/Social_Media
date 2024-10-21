@@ -1,5 +1,5 @@
-import { classNames } from "6_shared/lib/classNames/classNames";
 import { ChangeEvent, useCallback, useMemo } from "react";
+import { classNames } from "@/6_shared/lib/classNames/classNames";
 import cls from "./Select.module.scss";
 
 export interface SelectOption<T extends string> {

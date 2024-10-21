@@ -25,7 +25,8 @@
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:report": "npm-run-all visual:report:*",
     "test:report:ui": "npm run test:ui:json && npm run test:ui:html",
-    "create-slice": "node ./scripts/createSlice/index.js"
+    "create-slice": "node ./scripts/createSlice/index.js",
+    "alias-change": "node ./scripts/updateImports.js" 
   },
   "keywords": [],
   "author": "",
@@ -96,6 +97,7 @@
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-order": "^6.0.4",
     "ts-loader": "^9.2.6",
+    "ts-morph": "^16.0.0",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5",
     "webpack": "^5.69.1",

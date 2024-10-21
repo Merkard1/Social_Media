@@ -1,9 +1,9 @@
 import { Fragment, ReactNode } from "react";
 import { Listbox as HListBox } from "@headlessui/react";
-import { classNames } from "6_shared/lib/classNames/classNames";
-import { HStack } from "6_shared/ui/Stack";
+import { classNames } from "@/6_shared/lib/classNames/classNames";
+import { HStack } from "@/6_shared/ui/Stack";
 import cls from "./ListBox.module.scss";
-import { DropdownDirection } from "../Popups";
+import { DropdownDirection } from "../../styles/consts";
 
 // TODO MB add floating UI
 

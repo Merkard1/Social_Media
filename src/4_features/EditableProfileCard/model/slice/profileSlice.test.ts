@@ -1,5 +1,5 @@
-import { Country } from "5_entities/Country";
-import { Currency } from "5_entities/Currency";
+import { Country } from "@/5_entities/Country";
+import { Currency } from "@/5_entities/Currency";
 import { ValidateProfileError } from "../../model/consts/consts";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 import { ProfileSchema } from "../types/EditableProfileCardSchema";
@@ -9,7 +9,7 @@ const data = {
   username: "admin",
   age: 18,
   country: Country.AF,
-  lastname: "ulbi tv",
+  lastname: "lastname",
   first: "asd",
   city: "asf",
   currency: Currency.USD,
