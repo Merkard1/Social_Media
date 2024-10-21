@@ -755,11 +755,12 @@
       "first": "ulbi tv",
       "lastname": "asf",
       "age": 65,
-      "currency": "EUR",
-      "country": "US",
+      "currency": "USD",
+      "country": "United States",
       "city": "Kiew",
       "username": "ulbi tv",
-      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg",
+      "name": "sdsdd"
     }
   ]
 }

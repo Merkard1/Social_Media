@@ -9,12 +9,11 @@ import Avatar from "6_shared/ui/Avatar/Avatar";
 import { Button, ThemeButton } from "6_shared/ui/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "6_shared/config/routeConfig/routeConfig";
+import { ArticleBlockType, ArticleView } from "5_entities/Article/model/consts/articleConsts";
 import cls from "./ArticleListItem.module.scss";
 import {
   Article,
-  ArticleBlockType,
   ArticleTextBlock,
-  ArticleView,
 } from "../../model/types/article";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
