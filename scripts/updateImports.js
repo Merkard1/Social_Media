@@ -1,4 +1,4 @@
-import { Project } from "ts-morph";
+const { Project } = require("ts-morph");
 
 const project = new Project({});
 

@@ -51,9 +51,9 @@ export const StarRating = memo((props: StarRatingProps) => {
           )}
           Svg={StarIcon}
           key={starNumber}
-          // @ts-ignore
           width={size}
           height={size}
+          inverted
           onMouseLeave={onLeave}
           onMouseEnter={onHover(starNumber)}
           onClick={onClick(starNumber)}

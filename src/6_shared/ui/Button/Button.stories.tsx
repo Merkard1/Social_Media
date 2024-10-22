@@ -115,4 +115,11 @@ Disabled.args = {
   size: ButtonSize.XL,
 };
 
+export const RED = Template.bind({});
+RED.args = {
+  children: "red btn",
+  theme: ThemeButton.OUTLINE_RED,
+  size: ButtonSize.XL,
+};
+
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
