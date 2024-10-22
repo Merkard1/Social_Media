@@ -6,6 +6,11 @@ interface IconProps {
     className?: string;
     Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
     inverted?: boolean;
+    width?:number;
+    height?:number;
+    onMouseLeave?:() => void;
+    onMouseEnter?:() => void;
+    onClick?: () => void
 }
 
 export const Icon = memo((props: IconProps) => {
