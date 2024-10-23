@@ -1,8 +1,8 @@
 import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { Button, ThemeButton } from "@/6_shared/ui/Button/Button";
-import { Icon } from "@/6_shared/ui/Icon/Icon";
+import { Button, ThemeButton } from "@/6_shared/ui/Button";
+import { Icon } from "@/6_shared/ui/Icon";
 import NotificationIcon from "@/6_shared/assets/icons/notification-20-20.svg";
 import { DropdownDirection, Popover } from "@/6_shared/ui/Popups";
 

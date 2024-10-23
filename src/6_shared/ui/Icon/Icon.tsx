@@ -13,7 +13,7 @@ interface IconProps {
     onClick?: () => void
 }
 
-export const Icon = memo((props: IconProps) => {
+const Icon = memo((props: IconProps) => {
   const { className, Svg, inverted, ...otherProps } = props;
 
   return (
@@ -23,3 +23,5 @@ export const Icon = memo((props: IconProps) => {
     />
   );
 });
+
+export default Icon;

@@ -9,7 +9,7 @@ interface SkeletonProps {
     border?: string;
 }
 
-export const Skeleton = memo((props: SkeletonProps) => {
+const Skeleton = memo((props: SkeletonProps) => {
   const {
     className,
     height,
@@ -30,3 +30,5 @@ export const Skeleton = memo((props: SkeletonProps) => {
     />
   );
 });
+
+export default Skeleton;

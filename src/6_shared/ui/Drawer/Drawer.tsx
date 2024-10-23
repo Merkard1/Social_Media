@@ -1,5 +1,5 @@
 import { memo, ReactNode, useCallback, useEffect } from "react";
-import { Overlay } from "@/6_shared/ui/Overlay/Overlay";
+import Overlay from "@/6_shared/ui/Overlay/Overlay";
 import { useTheme } from "@/1_app/providers/ThemeProvider";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { AnimationProvider, useAnimationLibs } from "@/6_shared/lib/components/AnimationProvider/AnimationProvider";

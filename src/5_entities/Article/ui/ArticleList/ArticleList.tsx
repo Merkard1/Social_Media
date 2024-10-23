@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import { Virtuoso, VirtuosoGrid } from "react-virtuoso";
-import Text, { TextSize } from "@/6_shared/ui/Text/Text";
+import { Text, TextSize } from "@/6_shared/ui/Text";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 // TODO virtuoso for articles list, not forget to impliment in messages!!!
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
