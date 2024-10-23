@@ -1,5 +1,7 @@
 import { TestAsyncThunk } from "@/6_shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+
 import { userActions } from "@/5_entities/User";
+
 import loginByUsername from "./loginByUserName";
 
 describe("loginByUsername.test", () => {

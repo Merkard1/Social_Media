@@ -1,21 +1,25 @@
-import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { Text } from "@/6_shared/ui/Text";
-import { Icon } from "@/6_shared/ui/Icon";
+
 import EyeIcon from "@/6_shared/assets/icons/eye-20-20.svg";
-import Card from "@/6_shared/ui/Card/Card";
+import { classNames } from "@/6_shared/lib/classNames/classNames";
 import Avatar from "@/6_shared/ui/Avatar/Avatar";
 import { Button, ThemeButton } from "@/6_shared/ui/Button";
+import Card from "@/6_shared/ui/Card/Card";
+import { Icon } from "@/6_shared/ui/Icon";
+import { Text } from "@/6_shared/ui/Text";
 
 import { ArticleBlockType, ArticleView } from "@/5_entities/Article/model/consts/articleConsts";
-import cls from "./ArticleListItem.module.scss";
+
 import {
   Article,
   ArticleTextBlock,
 } from "../../model/types/article";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+
+import cls from "./ArticleListItem.module.scss";
+
 import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
 
 interface ArticleListItemProps {

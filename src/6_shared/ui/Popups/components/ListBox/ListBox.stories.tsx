@@ -1,6 +1,8 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { ListBox } from "./ListBox";
+
 import { DropdownDirection } from "../../styles/consts";
+
+import { ListBox } from "./ListBox";
 
 export default {
   title: "6_shared/ListBox",

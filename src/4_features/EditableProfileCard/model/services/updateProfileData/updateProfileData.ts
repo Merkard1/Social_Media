@@ -1,9 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig } from "@/1_app/providers/StoreProvider";
+
 import { Profile } from "@/5_entities/Profile";
+
 import { ValidateProfileError } from "../../consts/consts";
 import { getProfileForm } from "../../selectors/getProfileForm/getProfileForm";
 import { validateProfileData } from "../validateProfileData/validateProfileData";
+
+import { ThunkConfig } from "@/1_app/providers/StoreProvider";
 
 export const updateProfileData = createAsyncThunk<
     Profile,

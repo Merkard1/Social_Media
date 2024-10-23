@@ -1,6 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { Profile } from "@/5_entities/Profile";
+
 import { fetchProfileData } from "../services/fetchProfileData/fetchProfileData";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 import { ProfileSchema } from "../types/EditableProfileCardSchema";

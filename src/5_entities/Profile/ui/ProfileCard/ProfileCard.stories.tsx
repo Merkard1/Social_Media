@@ -1,8 +1,10 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+
 import img from "@/6_shared/assets/tests/avatar.png";
 
 import { Country } from "@/5_entities/Country";
 import { Currency } from "@/5_entities/Currency";
+
 import ProfileCard from "./ProfileCard";
 
 export default {

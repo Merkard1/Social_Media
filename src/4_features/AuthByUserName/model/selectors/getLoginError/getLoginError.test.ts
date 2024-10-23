@@ -1,6 +1,6 @@
-import { error } from "console";
-import { StateSchema } from "@/1_app/providers/StoreProvider";
 import { getLoginError } from "./getLoginError";
+
+import { StateSchema } from "@/1_app/providers/StoreProvider";
 
 describe("getLoginError.test", () => {
   test("should return error", () => {

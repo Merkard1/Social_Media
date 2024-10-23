@@ -2,7 +2,9 @@ import { Suspense, useCallback } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { PageLoader } from "@/4_features/PageLoader/PageLoader";
+
 import RequireAuth from "./RequireAuth";
+
 import { routeConfig } from "@/1_app/config/routeConfig/routeConfig";
 import { AppRoutesProps } from "@/1_app/config/routeConfig/routeType";
 

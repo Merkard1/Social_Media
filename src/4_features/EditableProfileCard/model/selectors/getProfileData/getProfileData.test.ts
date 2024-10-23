@@ -1,8 +1,9 @@
-import { StateSchema } from "@/1_app/providers/StoreProvider";
 import { Country } from "@/5_entities/Country";
 import { Currency } from "@/5_entities/Currency";
 
 import { getProfileData } from "./getProfileData";
+
+import { StateSchema } from "@/1_app/providers/StoreProvider";
 
 describe("getProfileData.test", () => {
   test("should return error", () => {
