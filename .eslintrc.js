@@ -51,6 +51,16 @@ module.exports = {
             group: "internal",
             position: "after",
           },
+          {
+            pattern: "@/2_pages/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/1_app/**",
+            group: "internal",
+            position: "after",
+          },
         ],
       },
     ],

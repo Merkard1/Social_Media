@@ -6,9 +6,9 @@ import { ThemeDecorator } from "@/6_shared/config/storybook/ThemeDecorator/Theme
 import { Country } from "@/5_entities/Country";
 import { Currency } from "@/5_entities/Currency";
 
-import ProfilePage from "./ProfilePage";
-
 import { Theme } from "@/1_app/providers/ThemeProvider";
+
+import ProfilePage from "./ProfilePage";
 
 export default {
   title: "2_pages/ProfilePage",

@@ -10,6 +10,8 @@ import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useIniti
 
 import { Page } from "@/3_widgets/Page";
 
+import { fetchNextArticlesPage } from "@/2_pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+
 import { getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { articlesPageReducer, getArticles } from "../../model/slices/ArticlesPageSlice";
@@ -17,8 +19,6 @@ import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList"
 import ArticlesPageFilters from "../ArticlesPageFilters/ArticlesPageFilters";
 
 import cls from "./ArticlesPage.module.scss";
-
-import { fetchNextArticlesPage } from "@/2_pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 
 interface ArticlesPageProps {
   className?: string;

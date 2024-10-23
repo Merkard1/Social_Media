@@ -12,9 +12,9 @@ import { useThrottle } from "@/6_shared/lib/hooks/useThrottle/useThrottle";
 
 import { getScrollByPath, scrollRestorationActions } from "@/4_features/ScrollRestoration";
 
-import cls from "./Page.module.scss";
-
 import { StateSchema } from "@/1_app/providers/StoreProvider";
+
+import cls from "./Page.module.scss";
 
 interface PageProps {
     className?: string;

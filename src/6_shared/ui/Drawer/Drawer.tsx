@@ -4,11 +4,11 @@ import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { AnimationProvider, useAnimationLibs } from "@/6_shared/lib/components/AnimationProvider/AnimationProvider";
 import Overlay from "@/6_shared/ui/Overlay/Overlay";
 
+import { useTheme } from "@/1_app/providers/ThemeProvider";
+
 import Portal from "../Portal/Portal";
 
 import cls from "./Drawer.module.scss";
-
-import { useTheme } from "@/1_app/providers/ThemeProvider";
 
 interface DrawerProps {
     className?: string;

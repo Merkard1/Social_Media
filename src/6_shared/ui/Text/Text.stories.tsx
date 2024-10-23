@@ -2,9 +2,9 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { ThemeDecorator } from "@/6_shared/config/storybook/ThemeDecorator/ThemeDecorator";
 
-import Text, { TextTheme } from "./Text";
-
 import { Theme } from "@/1_app/providers/ThemeProvider";
+
+import Text, { TextTheme } from "./Text";
 
 export default {
   title: "6_shared/Text",

@@ -3,9 +3,9 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoreDecorator } from "@/6_shared/config/storybook/StoreDecorator/StoreDecorator";
 import { ThemeDecorator } from "@/6_shared/config/storybook/ThemeDecorator/ThemeDecorator";
 
-import MainPage from "./MainPage";
-
 import { Theme } from "@/1_app/providers/ThemeProvider";
+
+import MainPage from "./MainPage";
 
 export default {
   title: "2_pages/MainPage",

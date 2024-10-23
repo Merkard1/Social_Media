@@ -8,9 +8,9 @@ import { HStack } from "@/6_shared/ui/Stack";
 
 import { getArticleDetailsData } from "@/5_entities/Article";
 
-import { getCanEditArticle } from "../../model/selectors/article";
-
 import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
+
+import { getCanEditArticle } from "../../model/selectors/article";
 
 interface ArticleDetailsPageHeaderProps {
  className?: string

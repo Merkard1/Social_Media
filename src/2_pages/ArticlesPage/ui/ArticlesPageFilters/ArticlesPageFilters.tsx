@@ -10,12 +10,12 @@ import { Input } from "@/6_shared/ui/Input";
 
 import { ArticleOrder, ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleView, ArticleViewSelector } from "@/5_entities/Article";
 
+import { fetchArticlesList } from "@/2_pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList";
+
 import { getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
 import { articlesPageActions } from "../../model/slices/ArticlesPageSlice";
 
 import cls from "./ArticlesPageFilters.module.scss";
-
-import { fetchArticlesList } from "@/2_pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList";
 
 interface ArticlesPageFiltersProps {
  className?: string

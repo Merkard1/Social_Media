@@ -12,6 +12,8 @@ import { Text } from "@/6_shared/ui/Text";
 
 import { ArticleBlockType, ArticleView } from "@/5_entities/Article/model/consts/articleConsts";
 
+import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
+
 import {
   Article,
   ArticleTextBlock,
@@ -19,8 +21,6 @@ import {
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
 import cls from "./ArticleListItem.module.scss";
-
-import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
 
 interface ArticleListItemProps {
   className?: string;

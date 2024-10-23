@@ -4,6 +4,8 @@ import { addQueryParams } from "@/6_shared/lib/url/addQueryParams/addQueryParams
 
 import { Article, ArticleType } from "@/5_entities/Article";
 
+import { ThunkConfig } from "@/1_app/providers/StoreProvider";
+
 import {
   getArticlesPageLimit,
   getArticlesPageNum,
@@ -11,8 +13,6 @@ import {
   getArticlesPageSearch,
   getArticlesPageSort,
   getArticlesPageType } from "../../selectors/articlesPageSelectors";
-
-import { ThunkConfig } from "@/1_app/providers/StoreProvider";
 
 interface FetchArticlesListProps {
   replace?: boolean

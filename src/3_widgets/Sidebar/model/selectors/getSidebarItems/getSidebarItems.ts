@@ -7,9 +7,9 @@ import ProfileIcon from "@/6_shared/assets/icons/profile-20-20.svg";
 
 import { getUserAuthData } from "@/5_entities/User";
 
-import { SidebarItemType } from "../../types/sidebar";
-
 import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
+
+import { SidebarItemType } from "../../types/sidebar";
 
 export const getSidebarItems = createSelector(
   getUserAuthData,

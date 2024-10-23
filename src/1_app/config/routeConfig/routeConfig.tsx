@@ -1,7 +1,5 @@
 import { UserRole } from "@/5_entities/User";
 
-import { AppRoutes, AppRoutesProps } from "./routeType";
-
 import { AboutPage } from "@/2_pages/AboutPage";
 import { AdminPanelPage } from "@/2_pages/AdminPanelPage";
 import { ArticleCreatePage } from "@/2_pages/ArticleCreatePage";
@@ -12,6 +10,8 @@ import { ForbiddenPage } from "@/2_pages/ForbiddenPage";
 import { MainPage } from "@/2_pages/MainPage";
 import { NotFoundPage } from "@/2_pages/NotFoundPage";
 import { ProfilePage } from "@/2_pages/ProfilePage";
+
+import { AppRoutes, AppRoutesProps } from "./routeType";
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: "/",

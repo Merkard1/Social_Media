@@ -7,11 +7,11 @@ import { Skeleton } from "@/6_shared/ui/Skeleton";
 import { VStack } from "@/6_shared/ui/Stack";
 import { Text } from "@/6_shared/ui/Text";
 
+import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
+
 import { Comment } from "../../model/types/comment";
 
 import cls from "./CommentCard.module.scss";
-
-import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
 
 interface CommentCardProps {
     className?: string;
