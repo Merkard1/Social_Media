@@ -102,13 +102,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <HStack justify="center" max className={cls.avatarWrapper} gap="4">
-          <Avatar
-            size={200}
-            src={article?.img}
-            className={cls.avatar}
-          />
-        </HStack>
+        {Avatar && (
+          <HStack justify="center" max className={cls.avatarWrapper} gap="4">
+            <Avatar size={200} src={article?.img} className={cls.avatar} />
+          </HStack>
+        )}
         <VStack gap="4" max>
           <Text
             className={cls.title}

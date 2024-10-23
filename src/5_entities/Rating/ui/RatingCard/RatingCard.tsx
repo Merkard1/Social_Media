@@ -82,7 +82,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 {t("Close")}
               </Button>
               <Button onClick={acceptHandle}>
-                {t("Open")}
+                {t("Done")}
               </Button>
             </HStack>
           </VStack>

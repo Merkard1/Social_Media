@@ -45,5 +45,3 @@ Normal.parameters = {
     },
   ],
 };
-
-console.log("API", __API__, "API");

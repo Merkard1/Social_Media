@@ -1,4 +1,3 @@
-import { RouteProps } from "react-router-dom";
 import { MainPage } from "@/2_pages/MainPage";
 import { AboutPage } from "@/2_pages/AboutPage";
 import { NotFoundPage } from "@/2_pages/NotFoundPage";
@@ -11,25 +10,7 @@ import { AdminPanelPage } from "@/2_pages/AdminPanelPage";
 
 import { ForbiddenPage } from "@/2_pages/ForbiddenPage";
 import { UserRole } from "@/5_entities/User";
-
-export type AppRoutesProps = RouteProps & {
-    authOnly?: boolean;
-    roles?: UserRole[]
-}
-
-export enum AppRoutes {
-    MAIN = "main",
-    ABOUT = "about",
-    PROFILE = "profile",
-    ARTICLES = "articles",
-    ARTICLE_DETAILS = "article_details",
-    ARTICLE_CREATE = "article_create",
-    ARTICLE_EDIT = "article_edit",
-    ADMIN_PANEL = "admin_panel",
-    FORBIDDEN = "forbidden",
-    // last
-    NOT_FOUND = "not_found",
-}
+import { AppRoutes, AppRoutesProps } from "./routeType";
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: "/",

@@ -7,11 +7,11 @@ import { Button, ThemeButton } from "@/6_shared/ui/Button/Button";
 import { LoginModal } from "@/4_features/AuthByUserName";
 import { getUserAuthData } from "@/5_entities/User";
 import Text, { TextTheme } from "@/6_shared/ui/Text/Text";
-import { RoutePath } from "@/6_shared/config/routeConfig/routeConfig";
 import { NotificationButton } from "@/4_features/notificationButton";
 import { HStack } from "@/6_shared/ui/Stack";
 import { AvatarDropdown } from "@/4_features/avatarDropdown";
 import cls from "./Navbar.module.scss";
+import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
 
 interface NavbarProps {
   className?: string;
