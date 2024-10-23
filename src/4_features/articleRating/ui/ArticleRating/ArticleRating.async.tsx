@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Skeleton } from "@/6_shared/ui/Skeleton/Skeleton";
+import { Skeleton } from "@/6_shared/ui/Skeleton";
 import { ArticleRatingProps } from "./ArticleRating";
 
 const ArticleRatingLazy = lazy(

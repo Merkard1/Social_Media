@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { Icon } from "@/6_shared/ui/Icon/Icon";
+import { Icon } from "@/6_shared/ui/Icon";
 import StarIcon from "@/6_shared/assets/icons/star.svg";
 import cls from "./StarRating.module.scss";
 
@@ -13,7 +13,7 @@ interface StarRatingProps {
 
 const stars = [1, 2, 3, 4, 5];
 
-export const StarRating = memo((props: StarRatingProps) => {
+const StarRating = memo((props: StarRatingProps) => {
   const {
     className, size = 30, selectedStars = 0, onSelect,
   } = props;
@@ -62,3 +62,5 @@ export const StarRating = memo((props: StarRatingProps) => {
     </div>
   );
 });
+
+export default StarRating;

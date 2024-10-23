@@ -551,6 +551,15 @@
       ]
     }
   ],
+  "article-ratings": [
+    {
+      "userId": "2",
+      "articleId": "15",
+      "rate": 2,
+      "feedback": "",
+      "id": "Bm6a9aK"
+    }
+  ],
   "comments": [
     {
       "id": "1",
@@ -754,7 +763,7 @@
       "id": "2",
       "first": "ulbi tv",
       "lastname": "mrkd",
-      "age": 61,
+      "age": 1,
       "currency": "EUR",
       "country": "Spain",
       "city": "Kiew",

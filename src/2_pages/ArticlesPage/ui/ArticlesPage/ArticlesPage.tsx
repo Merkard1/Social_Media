@@ -7,13 +7,13 @@ import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/Dyn
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchNextArticlesPage } from "@/2_pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
-import Page from "@/3_widgets/Page/Page";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
 import { articlesPageReducer, getArticles } from "../../model/slices/ArticlesPageSlice";
 import cls from "./ArticlesPage.module.scss";
 import ArticlesPageFilters from "../ArticlesPageFilters/ArticlesPageFilters";
 import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList";
+import { Page } from "@/3_widgets/Page";
 
 interface ArticlesPageProps {
   className?: string;

@@ -3,11 +3,11 @@ import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 import Card from "@/6_shared/ui/Card/Card";
 import { HStack, VStack } from "@/6_shared/ui/Stack";
-import Text from "@/6_shared/ui/Text/Text";
-import { StarRating } from "@/6_shared/ui/StarRating/StarRating";
-import Modal from "@/6_shared/ui/Modal/Modal";
-import Input from "@/6_shared/ui/Input/Input";
-import { Button, ButtonSize, ThemeButton } from "@/6_shared/ui/Button/Button";
+import { Text } from "@/6_shared/ui/Text";
+import { StarRating } from "@/6_shared/ui/StarRating";
+import { Modal } from "@/6_shared/ui/Modal";
+import { Input } from "@/6_shared/ui/Input";
+import { Button, ButtonSize, ThemeButton } from "@/6_shared/ui/Button";
 import { Drawer } from "@/6_shared/ui/Drawer/Drawer";
 
 interface RatingCardProps {
@@ -82,7 +82,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 {t("Close")}
               </Button>
               <Button onClick={acceptHandle}>
-                {t("Open")}
+                {t("Done")}
               </Button>
             </HStack>
           </VStack>

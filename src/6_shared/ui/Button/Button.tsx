@@ -27,7 +27,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
 }
 
-export const Button = memo((props: ButtonProps) => {
+const Button = memo((props: ButtonProps) => {
   const {
     className,
     children,
@@ -58,3 +58,5 @@ export const Button = memo((props: ButtonProps) => {
     </button>
   );
 });
+
+export default Button;

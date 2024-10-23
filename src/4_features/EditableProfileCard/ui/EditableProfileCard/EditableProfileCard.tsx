@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
-import Text, { TextTheme } from "@/6_shared/ui/Text/Text";
+import { Text, TextTheme } from "@/6_shared/ui/Text";
 import { ProfileCard } from "@/5_entities/Profile";
 import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { VStack } from "@/6_shared/ui/Stack";
