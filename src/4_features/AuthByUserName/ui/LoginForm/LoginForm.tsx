@@ -1,20 +1,22 @@
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { memo, useCallback } from "react";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
+import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Button, ThemeButton } from "@/6_shared/ui/Button";
 import { Input } from "@/6_shared/ui/Input";
 import { Text, TextTheme } from "@/6_shared/ui/Text";
-import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import cls from "./LoginForm.module.scss";
-import loginByUsername from "../../model/services/loginByUsername/loginByUserName";
 
-import { loginActions, loginReducer } from "../../model/slice/loginSlice";
-import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
-import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
-import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
+import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
+import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
+import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
+import loginByUsername from "../../model/services/loginByUsername/loginByUserName";
+import { loginActions, loginReducer } from "../../model/slice/loginSlice";
+
+import cls from "./LoginForm.module.scss";
 
 export interface LoginFormProps {
   className?: string;

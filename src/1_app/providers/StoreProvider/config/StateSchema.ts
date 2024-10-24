@@ -8,14 +8,18 @@ import {
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 import { NavigateOptions, To } from "react-router-dom";
+
 import { ArticleDetailsPageSchema } from "@/2_pages/ArticleDetailsPage/model/types";
 import { ArticlesPageSchema } from "@/2_pages/ArticlesPage";
-import { LoginSchema } from "@/4_features/AuthByUserName";
-import { ScrollRestoration } from "@/4_features/ScrollRestoration";
+
 import { AddCommentFormSchema } from "@/4_features/addCommentForm";
-import { ArticleDetailsSchema } from "@/5_entities/Article";
+import { LoginSchema } from "@/4_features/AuthByUserName";
 import { ProfileSchema } from "@/4_features/EditableProfileCard";
+import { ScrollRestoration } from "@/4_features/ScrollRestoration";
+
+import { ArticleDetailsSchema } from "@/5_entities/Article";
 import { UserSchema } from "@/5_entities/User";
+
 import { rtkApi } from "@/6_shared/api/rtkApi";
 
 export interface StateSchema {

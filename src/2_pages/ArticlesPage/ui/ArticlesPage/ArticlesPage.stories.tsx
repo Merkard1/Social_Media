@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { StoreDecorator } from "@/6_shared/config/storybook/StoreDecorator/StoreDecorator";
+
 import ArticlesPage from "./ArticlesPage";
 
 export default {
@@ -18,6 +19,5 @@ export const Normal = Template.bind({});
 Normal.decorators = [
   StoreDecorator({}),
 ];
-
 Normal.args = {
 };

@@ -1,6 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { USER_LOCALSTORAGE_KEY } from "@/6_shared/const/localstorage";
+
 import { User, UserSchema } from "../types/user";
 
 const initialState: UserSchema = {

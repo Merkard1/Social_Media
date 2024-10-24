@@ -1,4 +1,5 @@
 import { StateSchema } from "@/1_app/providers/StoreProvider";
+
 import { getLoginPassword } from "./getLoginPassword";
 
 describe("getLoginPassword.test", () => {

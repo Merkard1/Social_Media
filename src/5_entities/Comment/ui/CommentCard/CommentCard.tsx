@@ -1,14 +1,17 @@
 import { memo } from "react";
 
+import { getRouteProfile } from "@/1_app/config/routeConfig/routeConfig";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import Avatar from "@/6_shared/ui/Avatar/Avatar";
-import { Text } from "@/6_shared/ui/Text";
-import { Skeleton } from "@/6_shared/ui/Skeleton";
 import { AppLink } from "@/6_shared/ui/AppLink";
+import Avatar from "@/6_shared/ui/Avatar/Avatar";
+import { Skeleton } from "@/6_shared/ui/Skeleton";
 import { VStack } from "@/6_shared/ui/Stack";
-import cls from "./CommentCard.module.scss";
+import { Text } from "@/6_shared/ui/Text";
+
 import { Comment } from "../../model/types/comment";
-import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
+
+import cls from "./CommentCard.module.scss";
 
 interface CommentCardProps {
     className?: string;
@@ -37,7 +40,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   return (
     <VStack max gap="8" className={classNames(cls.CommentCard, {}, [className])}>
-      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
+      <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
         {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} /> }
         <Text className={cls.username} title={comment.user.username} />
       </AppLink>

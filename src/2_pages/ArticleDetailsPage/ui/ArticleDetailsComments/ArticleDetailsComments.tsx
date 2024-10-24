@@ -1,18 +1,22 @@
-import { useTranslation } from "react-i18next";
 import { memo, useCallback, Suspense } from "react";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { Text, TextSize } from "@/6_shared/ui/Text";
+
 import { AddCommentForm } from "@/4_features/addCommentForm";
+
 import { CommentList } from "@/5_entities/Comment";
+
+import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { VStack } from "@/6_shared/ui/Stack";
 import { Loader } from "@/6_shared/ui/Loader";
+import { VStack } from "@/6_shared/ui/Stack";
+import { Text, TextSize } from "@/6_shared/ui/Text";
+
+import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
+import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import {
   fetchCommentsByArticleId,
 } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
-import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import { getArticleComments } from "../../model/slices/articleDetailsCommentsSlice";
 
 interface ArticleDetailsCommentsProps {

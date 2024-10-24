@@ -1,6 +1,9 @@
-import { memo, ReactNode, useCallback } from "react";
+import { ReactNode, useCallback } from "react";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
+
 import Card, { CardTheme } from "../Card/Card";
+
 import cls from "./Tabs.module.scss";
 
 export interface TabItem<T extends string> {

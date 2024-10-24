@@ -1,4 +1,5 @@
 import { StateSchema } from "@/1_app/providers/StoreProvider";
+
 import { getProfileIsLoading } from "./getProfileIsLoading";
 
 describe("getProfileIsLoading.test", () => {

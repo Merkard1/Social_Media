@@ -1,18 +1,19 @@
-import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { classNames } from "@/6_shared/lib/classNames/classNames";
 
+import { getUserAuthData } from "@/5_entities/User";
+
+import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Button, ThemeButton } from "@/6_shared/ui/Button";
 import { HStack } from "@/6_shared/ui/Stack";
 import { Text } from "@/6_shared/ui/Text";
-import { Button, ThemeButton } from "@/6_shared/ui/Button";
-import { getUserAuthData } from "@/5_entities/User";
-import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
-import { profileActions } from "../../model/slice/profileSlice";
-import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
 
+import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
+import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
+import { profileActions } from "../../model/slice/profileSlice";
 
 interface EditableProfileCardHeaderProps {
     className?: string;

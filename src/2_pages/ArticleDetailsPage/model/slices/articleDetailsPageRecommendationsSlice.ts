@@ -1,7 +1,10 @@
 /* eslint-disable no-param-reassign */
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+
 import { StateSchema } from "@/1_app/providers/StoreProvider";
+
 import { Article } from "@/5_entities/Article";
+
 import { fetchArticleRecommendations } from "../services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { ArticleDetailsRecommendationsSchema } from "../types/ArticleDetailsRecommendationsSchema";
 

@@ -1,14 +1,16 @@
-import { useTranslation } from "react-i18next";
 import { memo } from "react";
-import { Virtuoso, VirtuosoGrid } from "react-virtuoso";
-import { Text, TextSize } from "@/6_shared/ui/Text";
+import { useTranslation } from "react-i18next";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
+import { Text, TextSize } from "@/6_shared/ui/Text";
+
 // TODO virtuoso for articles list, not forget to impliment in messages!!!
-import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
-import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
-import cls from "./ArticleList.module.scss";
-import { Article } from "../../model/types/article";
 import { ArticleView } from "../../model/consts/articleConsts";
+import { Article } from "../../model/types/article";
+import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
+import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
+
+import cls from "./ArticleList.module.scss";
 
 interface ArticleListProps {
   className?: string;

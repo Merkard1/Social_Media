@@ -1,17 +1,20 @@
-import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Text, TextTheme } from "@/6_shared/ui/Text";
+
 import { ProfileCard } from "@/5_entities/Profile";
+
+import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { VStack } from "@/6_shared/ui/Stack";
+import { Text, TextTheme } from "@/6_shared/ui/Text";
+
 import { ValidateProfileError } from "../../model/consts/consts";
+import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
-import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
 import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
 import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";

@@ -1,30 +1,33 @@
-import { useTranslation } from "react-i18next";
 import { memo, useCallback, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
+import { ArticleBlockType } from "@/5_entities/Article/model/consts/articleConsts";
+
+import CalendarIcon from "@/6_shared/assets/icons/calendar-20-20.svg";
+import EyeIcon from "@/6_shared/assets/icons/eye-20-20.svg";
+import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Text, TextAlign, TextSize } from "@/6_shared/ui/Text";
-import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { Skeleton } from "@/6_shared/ui/Skeleton";
 import Avatar from "@/6_shared/ui/Avatar/Avatar";
-import EyeIcon from "@/6_shared/assets/icons/eye-20-20.svg";
-import CalendarIcon from "@/6_shared/assets/icons/calendar-20-20.svg";
 import { Icon } from "@/6_shared/ui/Icon";
+import { Skeleton } from "@/6_shared/ui/Skeleton";
 import { HStack, VStack } from "@/6_shared/ui/Stack";
-import { ArticleBlockType } from "@/5_entities/Article/model/consts/articleConsts";
-import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
-import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
-import cls from "./ArticleDetails.module.scss";
+import { Text, TextAlign, TextSize } from "@/6_shared/ui/Text";
+
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from "../../model/selectors/articleDetails";
+import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
+import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import { ArticleBlock } from "../../model/types/article";
-import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
+import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+
+import cls from "./ArticleDetails.module.scss";
 
 interface ArticleDetailsProps {
     className?: string;

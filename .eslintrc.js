@@ -8,6 +8,7 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "airbnb",
     "plugin:i18next/recommended",
+    "plugin:import/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -17,8 +18,54 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next"],
+  plugins: ["react", "@typescript-eslint", "i18next", "unused-imports"],
   rules: {
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
+    "import/order": [
+      "error",
+      {
+        groups: ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+        "newlines-between": "always",
+        alphabetize: { order: "asc", caseInsensitive: true },
+        pathGroups: [
+          {
+            pattern: "@/1_app/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/2_pages/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/3_widgets/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/4_features/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/5_entities/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/6_shared/**",
+            group: "internal",
+            position: "after",
+          },
+
+        ],
+      },
+    ],
+    "unused-imports/no-unused-imports": "error",
     "no-undef": [0],
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
