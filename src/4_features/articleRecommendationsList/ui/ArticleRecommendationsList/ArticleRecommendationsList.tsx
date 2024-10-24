@@ -1,10 +1,10 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
+import { ArticleList } from "@/5_entities/Article";
+
 import { VStack } from "@/6_shared/ui/Stack";
 import { Text, TextSize } from "@/6_shared/ui/Text";
-
-import { ArticleList } from "@/5_entities/Article";
 
 import { useArticlesRecommendationList } from "../../api/articleRecommendationsApi";
 

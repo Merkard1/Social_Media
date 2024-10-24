@@ -2,6 +2,8 @@ import { memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
+import { ArticleBlockType } from "@/5_entities/Article/model/consts/articleConsts";
+
 import CalendarIcon from "@/6_shared/assets/icons/calendar-20-20.svg";
 import EyeIcon from "@/6_shared/assets/icons/eye-20-20.svg";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
@@ -12,8 +14,6 @@ import { Icon } from "@/6_shared/ui/Icon";
 import { Skeleton } from "@/6_shared/ui/Skeleton";
 import { HStack, VStack } from "@/6_shared/ui/Stack";
 import { Text, TextAlign, TextSize } from "@/6_shared/ui/Text";
-
-import { ArticleBlockType } from "@/5_entities/Article/model/consts/articleConsts";
 
 import {
   getArticleDetailsData,

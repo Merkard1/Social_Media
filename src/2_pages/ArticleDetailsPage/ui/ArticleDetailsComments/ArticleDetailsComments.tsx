@@ -2,15 +2,15 @@ import { memo, useCallback, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
+import { AddCommentForm } from "@/4_features/addCommentForm";
+
+import { CommentList } from "@/5_entities/Comment";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Loader } from "@/6_shared/ui/Loader";
 import { VStack } from "@/6_shared/ui/Stack";
 import { Text, TextSize } from "@/6_shared/ui/Text";
-
-import { CommentList } from "@/5_entities/Comment";
-
-import { AddCommentForm } from "@/4_features/addCommentForm";
 
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";

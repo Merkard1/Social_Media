@@ -1,10 +1,10 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
+import { SidebarItemType } from "@/3_widgets/Sidebar/model/types/sidebar";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { AppLink, AppLinkTheme } from "@/6_shared/ui/AppLink";
-
-import { SidebarItemType } from "@/3_widgets/Sidebar/model/types/sidebar";
 
 import cls from "./SidebarItem.module.scss";
 

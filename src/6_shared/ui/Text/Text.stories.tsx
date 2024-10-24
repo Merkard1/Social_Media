@@ -1,10 +1,10 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ThemeDecorator } from "@/6_shared/config/storybook/ThemeDecorator/ThemeDecorator";
-
 import { Theme } from "@/1_app/providers/ThemeProvider";
 
-import Text, { TextTheme } from "./Text";
+import { ThemeDecorator } from "@/6_shared/config/storybook/ThemeDecorator/ThemeDecorator";
+
+import Text, { TextSize, TextTheme } from "./Text";
 
 export default {
   title: "6_shared/Text",
@@ -21,50 +21,63 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  title: "Title",
-  text: "Some random text",
+  title: "Title lorem ipsun",
+  text: "Description Description Description Description",
 };
 
-export const OnlyTitle = Template.bind({});
-OnlyTitle.args = {
-  title: "Title",
+export const Error = Template.bind({});
+Error.args = {
+  title: "Title lorem ipsun",
+  text: "Description Description Description Description",
+  theme: TextTheme.ERROR,
 };
 
-export const OnlyText = Template.bind({});
-OnlyText.args = {
-  text: "Some random text",
+export const onlyTitle = Template.bind({});
+onlyTitle.args = {
+  title: "Title lorem ipsun",
+};
+
+export const onlyText = Template.bind({});
+onlyText.args = {
+  text: "Description Description Description Description",
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-  title: "Title",
-  text: "Some random text",
+  title: "Title lorem ipsun",
+  text: "Description Description Description Description",
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const OnlyTitleDark = Template.bind({});
-OnlyTitleDark.args = {
-  title: "Title",
+export const onlyTitleDark = Template.bind({});
+onlyTitleDark.args = {
+  title: "Title lorem ipsun",
 };
-OnlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
+onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const OnlyTextDark = Template.bind({});
-OnlyTextDark.args = {
-  text: "Some random text",
+export const onlyTextDark = Template.bind({});
+onlyTextDark.args = {
+  text: "Description Description Description Description",
 };
-OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const ErrorLight = Template.bind({});
-ErrorLight.args = {
-  title: "Title",
-  text: "Some random text",
-  theme: TextTheme.ERROR,
+export const SizeL = Template.bind({});
+SizeL.args = {
+  title: "Title lorem ipsun",
+  text: "Description Description Description Description",
+  size: TextSize.L,
 };
 
-export const ErrorDark = Template.bind({});
-ErrorDark.args = {
-  title: "Title",
-  text: "Some random text",
-  theme: TextTheme.ERROR,
+export const SizeM = Template.bind({});
+SizeM.args = {
+  title: "Title lorem ipsun",
+  text: "Description Description Description Description",
+  size: TextSize.M,
 };
-ErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SizeS = Template.bind({});
+SizeS.args = {
+  title: "Title lorem ipsun",
+  text: "Description Description Description Description",
+  size: TextSize.S,
+};

@@ -3,14 +3,14 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
+import { fetchNextArticlesPage } from "@/2_pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+
+import { Page } from "@/3_widgets/Page";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
-
-import { Page } from "@/3_widgets/Page";
-
-import { fetchNextArticlesPage } from "@/2_pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 
 import { getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";

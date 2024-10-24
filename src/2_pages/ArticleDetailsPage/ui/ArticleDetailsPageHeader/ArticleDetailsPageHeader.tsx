@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { Button, ThemeButton } from "@/6_shared/ui/Button";
-import { HStack } from "@/6_shared/ui/Stack";
+import { getRouteArticleEdit, getRouteArticles } from "@/1_app/config/routeConfig/routeConfig";
 
 import { getArticleDetailsData } from "@/5_entities/Article";
 
-import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
+import { Button, ThemeButton } from "@/6_shared/ui/Button";
+import { HStack } from "@/6_shared/ui/Stack";
 
 import { getCanEditArticle } from "../../model/selectors/article";
 
@@ -23,11 +23,13 @@ const ArticleDetailsPageHeader = ({ className } : ArticleDetailsPageHeaderProps)
   const article = useSelector(getArticleDetailsData);
 
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
+    navigate(getRouteArticles());
   }, [navigate]);
 
   const onEdit = useCallback(() => {
-    navigate(`${RoutePath.article_edit.replace(":id", String(article?.id))}`);
+    if (article) {
+      navigate(getRouteArticleEdit(article.id));
+    }
   }, [navigate, article]);
 
   return (

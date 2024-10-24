@@ -1,6 +1,6 @@
 ## Description
 
-This is a scalable web application built with React and TypeScript following the Feature Sliced Design (FSD) methodology. It leverages Webpack and Vite for fast builds, and Redux Toolkit for state management. The project includes robust internationalization with i18next, component-driven development using Storybook, and comprehensive testing with Jest and Loki for unit and visual tests. Continuous integration is supported through GitHub Actions, ensuring a streamlined development and deployment process.
+This is a web application built with React and TypeScript using the Feature Sliced Design (FSD) approach for better structure and scalability. It uses Webpack for building the project and Redux Toolkit for managing state. The app supports multiple languages with i18next and includes a component-driven development environment with Storybook. It also has thorough testing with Jest for unit tests and Loki for visual tests. Continuous integration is set up with GitHub Actions to streamline development and deployment.
 
 ## Project Start
 
@@ -94,8 +94,6 @@ You can run Storybook with the command:
 
 - `npm run storybook`
 
-More about [/docs/storybook.md]
-
 ---
 
 ## Project Configuration
@@ -128,39 +126,36 @@ Pre-commit hooks check the project with linters, the config is in /.github.
 Data interaction is done using redux toolkit.
 Whenever possible, reusable entities should be normalized using EntityAdapter.
 
-Server requests are made using [RTK query](/src/shared/api/rtkApi.ts)
+Server requests are made using [RTK query](/Frontend/src/shared/api/rtkApi.ts)
 
 For asynchronous reducer connection (to avoid pulling them into a common bundle), the
-[DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
+[DynamicModuleLoader](/Frontend/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
 is used.
 
 ---
 
 ## Entities
 
-- [Article](/src/5_entities/Article)
-- [Comment](/src/5_entities/Comment)
-- [Counter](/src/5_entities/Counter)
-- [Country](/src/5_entities/Country)
-- [Currency](/src/5_entities/Currency)
-- [Notification](/src/5_entities/Notification)
-- [Profile](/src/5_entities/Profile)
-- [Rating](/src/5_entities/Rating)
-- [User](/src/5_entities/User)
+- [Article](/Frontend/src/5_entities/Article)
+- [Comment](/Frontend/src/5_entities/Comment)
+- [Country](/Frontend/src/5_entities/Country)
+- [Currency](/Frontend/src/5_entities/Currency)
+- [Notification](/Frontend/src/5_entities/Notification)
+- [Profile](/Frontend/src/5_entities/Profile)
+- [Rating](/Frontend/src/5_entities/Rating)
+- [User](/Frontend/src/5_entities/User)
 
 ## Features
 
-- [addCommentForm](/src/4_features/addCommentForm)
-- [articleEditForm](/src/4_features/articleEditForm)
-- [articleRating](/src/4_features/articleRating)
-- [articleRecommendationsList](/src/4_features/articleRecommendationsList)
-- [AuthByUsername](/src/4_features/AuthByUsername)
-- [avatarDropdown](/src/4_features/avatarDropdown)
-- [editableProfileCard](/src/4_features/editableProfileCard)
-- [LangSwitcher](/src/4_features/LangSwitcher)
-- [notificationButton](/src/4_features/notificationButton)
-- [profileRating](/src/4_features/profileRating)
-- [ThemeSwitcher](/src/4_features/ThemeSwitcher)
-- [UI](/src/4_features/UI)
+- [addCommentForm](/Frontend/src/4_features/addCommentForm)
+- [articleRating](/Frontend/src/4_features/articleRating)
+- [articleRecommendationsList](/Frontend/src/4_features/articleRecommendationsList)
+- [AuthByUsername](/Frontend/src/4_features/AuthByUsername)
+- [avatarDropdown](/Frontend/src//4_features/avatarDropdown/)
+- [editableProfileCard](/Frontend/src/4_features/editableProfileCard)
+- [LangSwitcher](/Frontend/src/4_features/LangSwitcher)
+- [notificationButton](/Frontend/src/4_features/notificationButton)
+- [ThemeSwitcher](/Frontend/src/4_features/ThemeSwitcher)
+- [ScrollRestoration](/Frontend/src/4_features/ScrollRestoration)
 
 

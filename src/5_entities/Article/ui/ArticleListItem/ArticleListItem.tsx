@@ -2,6 +2,10 @@ import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
+import { getRouteArticleDetails } from "@/1_app/config/routeConfig/routeConfig";
+
+import { ArticleBlockType, ArticleView } from "@/5_entities/Article/model/consts/articleConsts";
+
 import EyeIcon from "@/6_shared/assets/icons/eye-20-20.svg";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import Avatar from "@/6_shared/ui/Avatar/Avatar";
@@ -9,10 +13,6 @@ import { Button, ThemeButton } from "@/6_shared/ui/Button";
 import Card from "@/6_shared/ui/Card/Card";
 import { Icon } from "@/6_shared/ui/Icon";
 import { Text } from "@/6_shared/ui/Text";
-
-import { ArticleBlockType, ArticleView } from "@/5_entities/Article/model/consts/articleConsts";
-
-import { RoutePath } from "@/1_app/config/routeConfig/routeConfig";
 
 import {
   Article,
@@ -34,7 +34,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const navigate = useNavigate();
 
   const onOpenArticle = useCallback(() => {
-    navigate(RoutePath.article_details + article.id);
+    navigate(getRouteArticleDetails(article.id));
   }, [article.id, navigate]);
 
   const types = <Text text={article.type.join(", ")} className={cls.types} />;

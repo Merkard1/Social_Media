@@ -4,15 +4,15 @@ import {
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
+import { StateSchema } from "@/1_app/providers/StoreProvider";
+
+import { getScrollByPath, scrollRestorationActions } from "@/4_features/ScrollRestoration";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInfiniteScroll } from "@/6_shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useThrottle } from "@/6_shared/lib/hooks/useThrottle/useThrottle";
-
-import { getScrollByPath, scrollRestorationActions } from "@/4_features/ScrollRestoration";
-
-import { StateSchema } from "@/1_app/providers/StoreProvider";
 
 import cls from "./Page.module.scss";
 

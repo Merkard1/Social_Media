@@ -1,14 +1,14 @@
 import { useTranslation } from "react-i18next";
 
+import { Country, CountrySelect } from "@/5_entities/Country";
+import { Currency, CurrencySelect } from "@/5_entities/Currency";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import Avatar from "@/6_shared/ui/Avatar/Avatar";
 import { Input } from "@/6_shared/ui/Input";
 import { Loader } from "@/6_shared/ui/Loader";
 import { HStack, VStack } from "@/6_shared/ui/Stack";
 import { Text, TextTheme } from "@/6_shared/ui/Text";
-
-import { Country, CountrySelect } from "@/5_entities/Country";
-import { Currency, CurrencySelect } from "@/5_entities/Currency";
 
 import { Profile } from "../../model/types/profile";
 

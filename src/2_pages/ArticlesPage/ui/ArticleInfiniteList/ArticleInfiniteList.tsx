@@ -2,9 +2,9 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import { Text } from "@/6_shared/ui/Text";
-
 import { ArticleList } from "@/5_entities/Article";
+
+import { Text } from "@/6_shared/ui/Text";
 
 import {
   getArticlesPageError,

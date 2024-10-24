@@ -32,22 +32,7 @@ module.exports = {
         alphabetize: { order: "asc", caseInsensitive: true },
         pathGroups: [
           {
-            pattern: "@/6_shared/**",
-            group: "internal",
-            position: "after",
-          },
-          {
-            pattern: "@/5_entities/**",
-            group: "internal",
-            position: "after",
-          },
-          {
-            pattern: "@/4_features/**",
-            group: "internal",
-            position: "after",
-          },
-          {
-            pattern: "@/3_widgets/**",
+            pattern: "@/1_app/**",
             group: "internal",
             position: "after",
           },
@@ -57,10 +42,26 @@ module.exports = {
             position: "after",
           },
           {
-            pattern: "@/1_app/**",
+            pattern: "@/3_widgets/**",
             group: "internal",
             position: "after",
           },
+          {
+            pattern: "@/4_features/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/5_entities/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/6_shared/**",
+            group: "internal",
+            position: "after",
+          },
+
         ],
       },
     ],
