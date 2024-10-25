@@ -1,3 +1,5 @@
 import { StateSchema } from "@/1_app/providers/StoreProvider";
 
-export const getLoginPassword = (state: StateSchema) => state?.loginForm?.password || "";
+import { buildSelector } from "@/6_shared/lib/store/buildSelector";
+
+export const [useLoginPassword, getLoginPassword] = buildSelector((state: StateSchema) => state?.loginForm?.password || "");

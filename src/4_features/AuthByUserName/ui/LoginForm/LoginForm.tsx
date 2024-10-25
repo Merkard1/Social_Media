@@ -1,6 +1,5 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
@@ -9,12 +8,12 @@ import { Button, ThemeButton } from "@/6_shared/ui/Button";
 import { Input } from "@/6_shared/ui/Input";
 import { Text, TextTheme } from "@/6_shared/ui/Text";
 
-import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
-import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
-import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
-import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
+import { useLoginError } from "../../model/selectors/getLoginError/getLoginError";
+import { useLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
+import { useLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
+import { useLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import loginByUsername from "../../model/services/loginByUsername/loginByUserName";
-import { loginActions, loginReducer } from "../../model/slice/loginSlice";
+import { loginReducer, useLogin } from "../../model/slice/loginSlice";
 
 import cls from "./LoginForm.module.scss";
 
@@ -31,23 +30,24 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
-  const username = useSelector(getLoginUsername);
-  const password = useSelector(getLoginPassword);
-  const isLoading = useSelector(getLoginIsLoading);
-  const error = useSelector(getLoginError);
+  const username = useLoginUsername();
+  const password = useLoginPassword();
+  const isLoading = useLoginIsLoading();
+  const error = useLoginError();
+  const { setUsername, setPassword } = useLogin();
 
   const onChangeUsername = useCallback(
     (value: string) => {
-      dispatch(loginActions.setUsername(value));
+      setUsername(value);
     },
-    [dispatch],
+    [setUsername],
   );
 
   const onChangePassword = useCallback(
     (value: string) => {
-      dispatch(loginActions.setPassword(value));
+      setPassword(value);
     },
-    [dispatch],
+    [setPassword],
   );
 
   const onLoginClick = useCallback(async () => {
@@ -83,7 +83,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
           theme={ThemeButton.OUTLINE}
           disabled={isLoading}
         >
-          {t("Войти")}
+          {t("Enter")}
         </Button>
       </div>
     </DynamicModuleLoader>

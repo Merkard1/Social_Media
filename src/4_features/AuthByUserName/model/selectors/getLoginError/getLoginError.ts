@@ -1,3 +1,5 @@
 import { StateSchema } from "@/1_app/providers/StoreProvider";
 
-export const getLoginError = (state: StateSchema) => state?.loginForm?.error;
+import { buildSelector } from "@/6_shared/lib/store/buildSelector";
+
+export const [useLoginError, getLoginError] = buildSelector((state: StateSchema) => state?.loginForm?.error);

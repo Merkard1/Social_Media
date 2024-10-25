@@ -558,6 +558,12 @@
       "rate": 2,
       "feedback": "",
       "id": "Bm6a9aK"
+    },
+    {
+      "userId": "2",
+      "articleId": "7",
+      "rate": 3,
+      "id": "mZ042KD"
     }
   ],
   "comments": [
@@ -765,7 +771,7 @@
       "lastname": "mrkd",
       "age": 1,
       "currency": "EUR",
-      "country": "Spain",
+      "country": "United States",
       "city": "Kiew",
       "username": "mrkd",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg",

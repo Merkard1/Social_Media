@@ -1,11 +1,12 @@
 /* eslint-disable no-param-reassign */
-import { createEntityAdapter, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createEntityAdapter, PayloadAction } from "@reduxjs/toolkit";
 
 import { StateSchema } from "@/1_app/providers/StoreProvider";
 
 import { Article, ArticleView, ArticleOrder, ArticleSortField, ArticleType } from "@/5_entities/Article";
 
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "@/6_shared/const/localstorage";
+import { buildSlice } from "@/6_shared/lib/store/buildSlice";
 
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import { ArticlesPageSchema } from "../types/ArticlesPageSchema";
@@ -18,7 +19,7 @@ export const getArticles = articlesAdapter.getSelectors<StateSchema>(
   (state) => state.articlesPage || articlesAdapter.getInitialState(),
 );
 
-const articlesPageSlice = createSlice({
+const articlesPageSlice = buildSlice({
   name: "articlesPageSlice",
   initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
     isLoading: false,
@@ -96,4 +97,5 @@ const articlesPageSlice = createSlice({
 export const {
   reducer: articlesPageReducer,
   actions: articlesPageActions,
+  useActions: useArticlesPage,
 } = articlesPageSlice;

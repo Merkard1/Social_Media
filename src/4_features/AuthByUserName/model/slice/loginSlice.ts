@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign */
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { PayloadAction } from "@reduxjs/toolkit";
+
+import { buildSlice } from "@/6_shared/lib/store/buildSlice";
 
 import loginByUsername from "../services/loginByUsername/loginByUserName";
 import { LoginSchema } from "../types/loginSchema";
@@ -10,7 +12,7 @@ const initialState: LoginSchema = {
   password: "",
 };
 
-const loginSlice = createSlice({
+const loginSlice = buildSlice({
   name: "login",
   initialState,
   reducers: {
@@ -40,5 +42,7 @@ const loginSlice = createSlice({
   },
 });
 
-export const { actions: loginActions } = loginSlice;
-export const { reducer: loginReducer } = loginSlice;
+export const {
+  actions: loginActions,
+  reducer: loginReducer,
+  useActions: useLogin } = loginSlice;

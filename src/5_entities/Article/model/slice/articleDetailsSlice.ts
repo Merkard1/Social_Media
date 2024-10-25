@@ -40,4 +40,4 @@ export const articleDetailsSlice = buildSlice({
 export const {
   actions: articleDetailsActions,
   reducer: articleDetailsReducer,
-  useActions } = articleDetailsSlice;
+  useActions: useArticleDetails } = articleDetailsSlice;

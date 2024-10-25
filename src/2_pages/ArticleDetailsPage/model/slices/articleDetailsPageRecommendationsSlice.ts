@@ -1,9 +1,11 @@
 /* eslint-disable no-param-reassign */
-import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+import { createEntityAdapter } from "@reduxjs/toolkit";
 
 import { StateSchema } from "@/1_app/providers/StoreProvider";
 
 import { Article } from "@/5_entities/Article";
+
+import { buildSlice } from "@/6_shared/lib/store/buildSlice";
 
 import { fetchArticleRecommendations } from "../services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { ArticleDetailsRecommendationsSchema } from "../types/ArticleDetailsRecommendationsSchema";
@@ -16,7 +18,7 @@ export const getArticleRecommendations = recommendationsAdapter.getSelectors<Sta
   (state) => state.articleDetailsPage?.recommendations || recommendationsAdapter.getInitialState(),
 );
 
-const articleDetailsPageRecommendationsSlice = createSlice({
+const articleDetailsPageRecommendationsSlice = buildSlice({
   name: "articleDetailsPageRecommendationsSlice",
   initialState: recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>({
     isLoading: false,

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { getRouteArticleEdit, getRouteArticles } from "@/1_app/config/routeConfig/routeConfig";
 
-import { getArticleDetailsData } from "@/5_entities/Article";
+import { useArticleDetailsData } from "@/5_entities/Article/model/selectors/articleDetails";
 
 import { Button, ThemeButton } from "@/6_shared/ui/Button";
 import { HStack } from "@/6_shared/ui/Stack";
@@ -20,7 +20,7 @@ const ArticleDetailsPageHeader = ({ className } : ArticleDetailsPageHeaderProps)
   const { t } = useTranslation();
   const navigate = useNavigate();
   const canEdit = useSelector(getCanEditArticle);
-  const article = useSelector(getArticleDetailsData);
+  const article = useArticleDetailsData();
 
   const onBackToList = useCallback(() => {
     navigate(getRouteArticles());

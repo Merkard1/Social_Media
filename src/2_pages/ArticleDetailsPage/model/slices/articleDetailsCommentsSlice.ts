@@ -1,9 +1,11 @@
 /* eslint-disable no-param-reassign */
-import { createEntityAdapter, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createEntityAdapter, PayloadAction } from "@reduxjs/toolkit";
 
 import { StateSchema } from "@/1_app/providers/StoreProvider";
 
 import { Comment } from "@/5_entities/Comment";
+
+import { buildSlice } from "@/6_shared/lib/store/buildSlice";
 
 import {
   fetchCommentsByArticleId,
@@ -18,7 +20,7 @@ export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
   (state) => state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
 );
 
-const articleDetailsCommentsSlice = createSlice({
+const articleDetailsCommentsSlice = buildSlice({
   name: "articleDetailsCommentsSlice",
   initialState: commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
     isLoading: false,
