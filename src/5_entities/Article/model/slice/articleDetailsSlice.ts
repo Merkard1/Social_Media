@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign */
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { PayloadAction } from "@reduxjs/toolkit";
+
+import { buildSlice } from "@/6_shared/lib/store/buildSlice";
 
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";
 import { Article } from "../types/article";
@@ -11,7 +13,7 @@ const initialState: ArticleDetailsSchema = {
   data: undefined,
 };
 
-export const articleDetailsSlice = createSlice({
+export const articleDetailsSlice = buildSlice({
   name: "articleDetails",
   initialState,
   reducers: {},
@@ -35,5 +37,7 @@ export const articleDetailsSlice = createSlice({
   },
 });
 
-export const { actions: articleDetailsActions } = articleDetailsSlice;
-export const { reducer: articleDetailsReducer } = articleDetailsSlice;
+export const {
+  actions: articleDetailsActions,
+  reducer: articleDetailsReducer,
+  useActions } = articleDetailsSlice;
