@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign */
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { PayloadAction } from "@reduxjs/toolkit";
+
+import { buildSlice } from "@/6_shared/lib/store/buildSlice";
 
 import { ScrollRestoration } from "../types/ScrollRestoration";
 
@@ -7,7 +9,7 @@ const initialState: ScrollRestoration = {
   scroll: {},
 };
 
-const scrollRestorationSlice = createSlice({
+const scrollRestorationSlice = buildSlice({
   name: "scrollRestoration",
   initialState,
   reducers: {
@@ -34,5 +36,7 @@ const scrollRestorationSlice = createSlice({
   // },
 });
 
-export const { actions: scrollRestorationActions } = scrollRestorationSlice;
-export const { reducer: scrollRestorationReducer } = scrollRestorationSlice;
+export const {
+  actions: scrollRestorationActions,
+  reducer: scrollRestorationReducer,
+  useActions: useScrollRestoration } = scrollRestorationSlice;

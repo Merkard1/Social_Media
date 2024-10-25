@@ -12,7 +12,7 @@ import { Loader } from "@/6_shared/ui/Loader";
 import { VStack } from "@/6_shared/ui/Stack";
 import { Text, TextSize } from "@/6_shared/ui/Text";
 
-import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
+import { useArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import {
   fetchCommentsByArticleId,
@@ -28,7 +28,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
   const { className, id } = props;
   const { t } = useTranslation();
   const comments = useSelector(getArticleComments.selectAll);
-  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+  const commentsIsLoading = useArticleCommentsIsLoading();
   const dispatch = useDispatch();
 
   const onSendComment = useCallback((text: string) => {

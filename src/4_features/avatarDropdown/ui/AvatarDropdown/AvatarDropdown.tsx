@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRouteAdminPanel, getRouteProfile } from "@/1_app/config/routeConfig/routeConfig";
 
 import {
-  getUserAuthData, isUserAdmin, isUserManager, userActions,
+  useUserAuthData, isUserAdmin, isUserManager, userActions,
 } from "@/5_entities/User";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
@@ -22,7 +22,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   const dispatch = useDispatch();
   const isAdmin = useSelector(isUserAdmin);
   const isManager = useSelector(isUserManager);
-  const authData = useSelector(getUserAuthData);
+  const authData = useUserAuthData();
 
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());

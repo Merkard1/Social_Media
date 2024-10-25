@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 
 import { getRouteArticleCreate } from "@/1_app/config/routeConfig/routeConfig";
 
@@ -8,7 +7,7 @@ import { LoginModal } from "@/4_features/AuthByUserName";
 import { AvatarDropdown } from "@/4_features/avatarDropdown";
 import { NotificationButton } from "@/4_features/notificationButton";
 
-import { getUserAuthData } from "@/5_entities/User";
+import { useUserAuthData } from "@/5_entities/User";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { AppLink, AppLinkTheme } from "@/6_shared/ui/AppLink";
@@ -25,7 +24,7 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
-  const authData = useSelector(getUserAuthData);
+  const authData = useUserAuthData();
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);

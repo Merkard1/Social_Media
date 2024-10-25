@@ -1,3 +1,5 @@
 import { StateSchema } from "@/1_app/providers/StoreProvider";
 
-export const getProfileError = (state: StateSchema) => state.profile?.error;
+import { buildSelector } from "@/6_shared/lib/store/buildSelector";
+
+export const [useProfileError, getProfileError] = buildSelector((state: StateSchema) => state.profile?.error);

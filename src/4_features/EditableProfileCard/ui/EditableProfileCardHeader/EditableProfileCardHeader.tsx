@@ -1,8 +1,7 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 
-import { getUserAuthData } from "@/5_entities/User";
+import { useUserAuthData } from "@/5_entities/User";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -10,10 +9,10 @@ import { Button, ThemeButton } from "@/6_shared/ui/Button";
 import { HStack } from "@/6_shared/ui/Stack";
 import { Text } from "@/6_shared/ui/Text";
 
-import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
-import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
+import { useProfileData } from "../../model/selectors/getProfileData/getProfileData";
+import { useProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
-import { profileActions } from "../../model/slice/profileSlice";
+import { useProfile } from "../../model/slice/profileSlice";
 
 interface EditableProfileCardHeaderProps {
     className?: string;
@@ -25,19 +24,20 @@ export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderP
   } = props;
 
   const { t } = useTranslation("profile");
-  const authData = useSelector(getUserAuthData);
-  const profileData = useSelector(getProfileData);
+  const authData = useUserAuthData();
+  const profileData = useProfileData();
   const canEdit = authData?.id === profileData?.id;
-  const readOnly = useSelector(getProfileReadOnly);
+  const readOnly = useProfileReadOnly();
   const dispatch = useAppDispatch();
+  const { setReadonly, cancelEdit } = useProfile();
 
   const onEdit = useCallback(() => {
-    dispatch(profileActions.setReadonly(false));
-  }, [dispatch]);
+    setReadonly(false);
+  }, [setReadonly]);
 
   const onCancelEdit = useCallback(() => {
-    dispatch(profileActions.cancelEdit());
-  }, [dispatch]);
+    cancelEdit();
+  }, [cancelEdit]);
 
   const onSave = useCallback(() => {
     dispatch(updateProfileData());

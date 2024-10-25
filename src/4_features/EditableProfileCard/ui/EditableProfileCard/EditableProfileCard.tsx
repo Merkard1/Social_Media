@@ -1,6 +1,5 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 
 import { ProfileCard } from "@/5_entities/Profile";
 
@@ -12,11 +11,11 @@ import { VStack } from "@/6_shared/ui/Stack";
 import { Text, TextTheme } from "@/6_shared/ui/Text";
 
 import { ValidateProfileError } from "../../model/consts/consts";
-import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
-import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
-import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
-import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
-import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
+import { useProfileError } from "../../model/selectors/getProfileError/getProfileError";
+import { useProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
+import { useProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
+import { useProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
+import { useProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
 import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
 import { profileActions, profileReducer } from "../../model/slice/profileSlice";
 import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
@@ -35,11 +34,11 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   const { t } = useTranslation("profile");
 
   const dispatch = useAppDispatch();
-  const formData = useSelector(getProfileForm);
-  const isLoading = useSelector(getProfileIsLoading);
-  const error = useSelector(getProfileError);
-  const readOnly = useSelector(getProfileReadOnly);
-  const validateErrors = useSelector(getProfileValidateErrors);
+  const formData = useProfileForm();
+  const isLoading = useProfileIsLoading();
+  const error = useProfileError();
+  const readOnly = useProfileReadOnly();
+  const validateErrors = useProfileValidateErrors();
 
   const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t("Server Error"),

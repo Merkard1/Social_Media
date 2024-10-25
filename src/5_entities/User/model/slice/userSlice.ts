@@ -1,7 +1,8 @@
 /* eslint-disable no-param-reassign */
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { PayloadAction } from "@reduxjs/toolkit";
 
 import { USER_LOCALSTORAGE_KEY } from "@/6_shared/const/localstorage";
+import { buildSlice } from "@/6_shared/lib/store/buildSlice";
 
 import { User, UserSchema } from "../types/user";
 
@@ -9,7 +10,7 @@ const initialState: UserSchema = {
   _inited: false,
 };
 
-export const userSlice = createSlice({
+export const userSlice = buildSlice({
   name: "user",
   initialState,
   reducers: {
@@ -31,5 +32,7 @@ export const userSlice = createSlice({
   },
 });
 
-export const { actions: userActions } = userSlice;
-export const { reducer: userReducer } = userSlice;
+export const {
+  actions: userActions,
+  reducer: userReducer,
+  useActions: useUser } = userSlice;
