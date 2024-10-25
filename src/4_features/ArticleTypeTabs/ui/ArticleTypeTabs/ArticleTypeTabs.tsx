@@ -1,14 +1,15 @@
 import { memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
+import { ArticleType } from "@/5_entities/Article";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import Tabs, { TabItem } from "@/6_shared/ui/Tabs/Tabs";
+import { TabItem, Tabs } from "@/6_shared/ui/Tabs";
 
-import { ArticleType } from "../../model/consts/articleConsts";
-
-interface ArticleTypeTabsProps{
+interface ArticleTypeTabsProps {
     className?: string;
     value: ArticleType;
+
     onChangeType: (type: ArticleType) => void;
 }
 
@@ -22,12 +23,12 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
       content: t(ArticleType.ALL),
     },
     {
-      value: ArticleType.ECONOMICS,
-      content: t(ArticleType.ECONOMICS),
-    },
-    {
       value: ArticleType.IT,
       content: t(ArticleType.IT),
+    },
+    {
+      value: ArticleType.ECONOMICS,
+      content: t(ArticleType.ECONOMICS),
     },
     {
       value: ArticleType.SCIENCE,

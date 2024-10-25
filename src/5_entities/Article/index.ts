@@ -5,6 +5,3 @@ export { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoadi
 export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";
 export { fetchArticleById } from "./model/services/fetchArticleById/fetchArticleById";
 export { ArticleList } from "./ui/ArticleList/ArticleList";
-export { ArticleViewSelector } from "./ui/ArticleViewSelector/ArticleViewSelector";
-export { ArticleSortSelector } from "./ui/ArticleSortSelector/ArticleSortSelector";
-export { ArticleTypeTabs } from "./ui/ArticleTypeTabs/ArticleTypeTabs";
