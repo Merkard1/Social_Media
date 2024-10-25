@@ -26,7 +26,8 @@
     "test:report": "npm-run-all visual:report:*",
     "test:report:ui": "npm run test:ui:json && npm run test:ui:html",
     "create-slice": "node ./scripts/createSlice/index.js",
-    "alias-change": "node ./scripts/updateImports.js"
+    "alias-change": "node ./scripts/updateImports.js",
+    "postinstall": "node ./scripts/clear-cache.js"
   },
   "keywords": [],
   "author": "",

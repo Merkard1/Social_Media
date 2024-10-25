@@ -1,6 +1,5 @@
 import { memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 
 import { ArticleBlockType } from "@/5_entities/Article/model/consts/articleConsts";
 
@@ -16,9 +15,9 @@ import { HStack, VStack } from "@/6_shared/ui/Stack";
 import { Text, TextAlign, TextSize } from "@/6_shared/ui/Text";
 
 import {
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsIsLoading,
+  useArticleDetailesError,
+  useArticleDetailsData,
+  useArticleDetailsIsLoading,
 } from "../../model/selectors/articleDetails";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
@@ -42,9 +41,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const { className, id } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const isLoading = useSelector(getArticleDetailsIsLoading);
-  const article = useSelector(getArticleDetailsData);
-  const error = useSelector(getArticleDetailsError);
+  const isLoading = useArticleDetailsIsLoading();
+  const article = useArticleDetailsData();
+  const error = useArticleDetailesError();
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
