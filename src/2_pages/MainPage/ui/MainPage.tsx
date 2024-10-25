@@ -16,8 +16,8 @@ const MainPage = () => {
   };
 
   return (
-    <Page>
-      {t("Главная страница")}
+    <Page data-testid="MainPage">
+      {t("Main")}
       <HStack>
         <ListBox onChange={onChange} />
       </HStack>

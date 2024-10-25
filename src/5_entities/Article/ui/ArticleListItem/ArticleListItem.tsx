@@ -9,7 +9,7 @@ import { ArticleBlockType, ArticleView } from "@/5_entities/Article/model/consts
 import EyeIcon from "@/6_shared/assets/icons/eye-20-20.svg";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { AppImage } from "@/6_shared/ui/AppImage";
-import Avatar from "@/6_shared/ui/Avatar/Avatar";
+import { Avatar } from "@/6_shared/ui/Avatar";
 import { Button, ThemeButton } from "@/6_shared/ui/Button";
 import Card from "@/6_shared/ui/Card/Card";
 import { Icon } from "@/6_shared/ui/Icon";
