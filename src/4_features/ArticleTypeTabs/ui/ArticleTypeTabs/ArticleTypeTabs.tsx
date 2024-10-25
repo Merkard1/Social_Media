@@ -9,6 +9,7 @@ import { TabItem, Tabs } from "@/6_shared/ui/Tabs";
 interface ArticleTypeTabsProps {
     className?: string;
     value: ArticleType;
+
     onChangeType: (type: ArticleType) => void;
 }
 
