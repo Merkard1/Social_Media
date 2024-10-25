@@ -43,7 +43,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     <VStack gap="16" max className={classNames("", {}, [className])}>
       <Text
         size={TextSize.L}
-        title={t("Комментарии")}
+        title={t("Comments")}
       />
       <Suspense fallback={<Loader />}>
         <AddCommentForm onSendComment={onSendComment} />

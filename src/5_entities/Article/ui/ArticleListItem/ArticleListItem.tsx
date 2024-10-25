@@ -8,10 +8,12 @@ import { ArticleBlockType, ArticleView } from "@/5_entities/Article/model/consts
 
 import EyeIcon from "@/6_shared/assets/icons/eye-20-20.svg";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
+import { AppImage } from "@/6_shared/ui/AppImage";
 import Avatar from "@/6_shared/ui/Avatar/Avatar";
 import { Button, ThemeButton } from "@/6_shared/ui/Button";
 import Card from "@/6_shared/ui/Card/Card";
 import { Icon } from "@/6_shared/ui/Icon";
+import { Skeleton } from "@/6_shared/ui/Skeleton";
 import { Text } from "@/6_shared/ui/Text";
 
 import {
@@ -62,7 +64,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           </div>
           <Text title={article.title} className={cls.title} />
           {types}
-          <img src={article.img} className={cls.img} alt={article.title} />
+          <AppImage
+            fallback={<Skeleton width="100%" height={250} />}
+            src={article.img}
+            className={cls.img}
+            alt={article.title}
+          />
           {textBlock && (
             <ArticleTextBlockComponent
               block={textBlock}
@@ -86,7 +93,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     >
       <Card className={cls.card} onClick={onOpenArticle}>
         <div className={cls.imageWrapper}>
-          <img alt={article.title} src={article.img} className={cls.img} />
+          <AppImage
+            fallback={<Skeleton width={200} height={200} />}
+            alt={article.title}
+            src={article.img}
+            className={cls.img}
+          />
           <Text text={article.createdAt} className={cls.date} />
         </div>
         <div className={cls.infoWrapper}>
