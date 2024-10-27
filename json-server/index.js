@@ -1,9 +1,10 @@
 const fs = require("fs");
+const path = require("path");
+
 const cors = require("cors");
+const express = require("express"); // Ensure express is installed
 const jsonServer = require("json-server");
 const jwt = require("jsonwebtoken");
-const path = require("path");
-const express = require("express"); // Ensure express is installed
 
 const server = jsonServer.create();
 const router = jsonServer.router(path.resolve(__dirname, "db.json"));
