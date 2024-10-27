@@ -19,5 +19,4 @@ export const Normal = Template.bind({});
 Normal.decorators = [
   StoreDecorator({}),
 ];
-Normal.args = {
-};
+Normal.args = {};
