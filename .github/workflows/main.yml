@@ -1,4 +1,50 @@
-name: linting, testing, building
+# name: linting, testing, building
+# on:
+#   push:
+#     branches: 
+#       - main
+#   pull_request:
+#     branches: 
+#       - main
+# jobs:
+#   pipeline:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: 
+#           - '17.x'
+
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Set up Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - name: Cache npm dependencies
+#         uses: actions/cache@v2
+#         with:
+#           path: ~/.npm
+#           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-npm-
+#       - name: Install modules
+#         run: npm install
+#       - name: Linting
+#         run: npm run lint:ts && npm run lint:scss
+#       - name: Build production project
+#         run: npm run build:prod
+#       - name: Run unit tests
+#         run: npm run test:unit
+#       - name: Build Storybook
+#         run: npm run storybook:build
+#       - name: Screenshot testing
+#         run: npm run test:ui:ci
+
+
+
+
+
+name: Linting, Testing, Building
 on:
   push:
     branches: [ master ]
@@ -20,62 +66,66 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     strategy:
       matrix:
-        node-version: [ 17.x ]
+        node-version: [ 18.x ]
     steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
+
+      - name: Install modules
         run: npm ci --force
-      - name: build production project
+
+      - name: Build production project
         run: npm run build:prod
-        if: always()
-      - name: build storybook
+
+      - name: Build Storybook
         run: npm run storybook:build
-        if: always()
-      - name: screenshot testing
+
+      - name: Screenshot testing
         run: npm run test:ui:ci
-        if: always()
-      - name: unit testing
-        if: always()
+
+      - name: Unit testing
         run: npm run test:unit
+
       - name: Generate HTML report
-        run: npm run test:ui:report
-        if: always()
-      - name: move loki
-        run: mv .loki reports/
-        if: always()
+        run: npm run test:report:ui
+
+      - name: Move Loki reports
+        run: mkdir -p reports && mv .loki reports/
+
       - name: Setup Pages
         uses: actions/configure-pages@v2
-        if: always()
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
-        if: always()
         with:
           path: 'reports'
+
       - name: Deploy to GitHub Pages
         id: deployment
-        if: always()
         uses: actions/deploy-pages@v1
 
   checks:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 17.x ]
+        node-version: [ 18.x ]
     steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: npm ci --force
-      - name: linting typescript
-        run: npm run lint:ts
-        if: always()
-      - name: linting css
-        run: npm run lint:scss
 
+      - name: Install modules
+        run: npm ci --force
+
+      - name: Linting TypeScript
+        run: npm run lint:ts
+
+      - name: Linting SCSS
+        run: npm run lint:scss
