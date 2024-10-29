@@ -1,22 +1,27 @@
 name: Linting, Testing, Building
+
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
+
 permissions:
   contents: write
   pages: write
   id-token: write
+
 concurrency:
   group: "pages"
   cancel-in-progress: true
+
 jobs:
   build-and-ui-testing:
     runs-on: ubuntu-latest
     concurrency: ci-${{ github.ref }}
+    needs: checks
     outputs:
-      page_url: ${{ steps.upload_artifact.outputs.page_url }}
+      page_url: ${{ steps.deployment.outputs.page_url }}
     strategy:
       matrix:
         node-version: [ 18.x ]
@@ -27,6 +32,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       - name: Install modules
         run: npm ci --force
@@ -81,6 +87,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       - name: Install modules
         run: npm ci --force
