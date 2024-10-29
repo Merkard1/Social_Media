@@ -1,6 +1,5 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
 import { fetchNextArticlesPage } from "@/2_pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
@@ -12,9 +11,8 @@ import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/Dyn
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
 
-import { getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
-import { articlesPageReducer, getArticles } from "../../model/slices/ArticlesPageSlice";
+import { articlesPageReducer } from "../../model/slices/ArticlesPageSlice";
 import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList";
 import ArticlesPageFilters from "../ArticlesPageFilters/ArticlesPageFilters";
 
@@ -32,9 +30,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const articles = useSelector(getArticles.selectAll);
-  const isLoading = useSelector(getArticlesPageIsLoading);
-  const view = useSelector(getArticlesPageView);
   const [searchParams] = useSearchParams();
 
   // const error = useSelector(getArticlesPageError);
