@@ -19,6 +19,7 @@ import cls from "./Page.module.scss";
 interface PageProps {
     className?: string;
     children: ReactNode;
+    "data-testid"?: string;
     onScrollEnd?: () => void;
 }
 
@@ -52,6 +53,7 @@ const Page = memo((props: PageProps) => {
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className])}
       onScroll={(e) => onScroll(e)}
+      data-testid={props["data-testid"] ?? "Page"}
     >
       {children}
       {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />}

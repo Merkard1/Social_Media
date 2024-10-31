@@ -54,6 +54,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     return (
       <div
+        data-testid="ArticleListItem"
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       >
         <Card className={cls.card}>
@@ -89,6 +90,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   return (
     <div
+      data-testid="ArticleListItem"
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
       <Card className={cls.card} onClick={onOpenArticle}>
