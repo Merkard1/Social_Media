@@ -43,7 +43,10 @@ const ProfileCard = (props : ProfileCardProps) => {
   }
 
   return (
-    <VStack className={classNames(cls.ProfileCard, {}, [className])} gap="16" justify="center" align="center" max>
+    <VStack
+      className={classNames(cls.ProfileCard, {}, [className])} gap="16" justify="center" align="center"
+      max
+    >
       {data?.avatar && (
         <div className={cls.avatarWrapper}>
           <Avatar src={data.avatar} />
