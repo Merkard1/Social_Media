@@ -101,7 +101,7 @@ module.exports = {
       {
         markupOnly: true,
         ignoreAttribute: ["data-testid", "to", "justify", "direction", "align",
-          "role", "as", "gap", "target", "border", "data-testid"],
+          "role", "as", "gap", "target", "border", "data-testid", "feature"],
       },
     ],
     "max-len": "off",
