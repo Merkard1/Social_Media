@@ -14,6 +14,8 @@ if (!container) {
   throw new Error("root not found");
 }
 
+// TODO перевести все приложение
+
 const root = createRoot(container);
 
 root.render(

@@ -11,6 +11,7 @@ import { ArticleDetails } from "@/5_entities/Article";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { getFeatureFlag } from "@/6_shared/lib/features";
 import { VStack } from "@/6_shared/ui/Stack";
 
 import { articleDetailsPageReducer } from "../../model/slices";
@@ -32,6 +33,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { t } = useTranslation("article-details");
   const { id } = useParams<{ id: string }>();
 
+  const isArticleRatingEnabled = getFeatureFlag("isArticleRatingEnabled");
+
   if (!id) {
     return (
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -46,7 +49,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <ArticleRating articleId={id} />
+          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

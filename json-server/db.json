@@ -774,6 +774,9 @@
       "id": "1",
       "username": "admin",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "roles": [
         "ADMIN"
       ],
@@ -783,6 +786,9 @@
       "id": "2",
       "username": "user",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "roles": [
         "USER"
       ],
@@ -792,6 +798,9 @@
       "id": "3",
       "username": "manager",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "roles": [
         "MANAGER"
       ],
@@ -801,6 +810,9 @@
       "id": "4",
       "username": "testuser",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "roles": [
         "MANAGER"
       ],
