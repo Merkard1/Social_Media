@@ -5,8 +5,6 @@ import { ThunkConfig } from "@/1_app/providers/StoreProvider";
 
 import { User, userActions } from "@/5_entities/User";
 
-import { USER_LOCALSTORAGE_KEY } from "@/6_shared/const/localstorage";
-
 interface LoginByUserName {
   username: string;
   password: string;
@@ -28,7 +26,6 @@ const loginByUsername = createAsyncThunk<
         throw new Error("No response data");
       }
 
-      localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
       dispatch(userActions.setAuthData(response.data));
 
       if (extra.navigate) {

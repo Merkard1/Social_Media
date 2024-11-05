@@ -6,6 +6,8 @@ import { fetchNextArticlesPage } from "@/2_pages/ArticlesPage/model/services/fet
 
 import { Page } from "@/3_widgets/Page";
 
+import { ArticlePageGreeting } from "@/4_features/articlePageGreeting";
+
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -51,6 +53,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
       >
         <ArticlesPageFilters />
         <ArticleInfiniteList className={cls.list} />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   );

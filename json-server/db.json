@@ -777,6 +777,12 @@
       "features": {
         "isArticleRatingEnabled": true
       },
+      "jsonSettings": {
+        "theme": "app_light_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
+      },
       "roles": [
         "ADMIN"
       ],
@@ -788,6 +794,12 @@
       "password": "123",
       "features": {
         "isArticleRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_light_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
       },
       "roles": [
         "USER"
@@ -801,6 +813,12 @@
       "features": {
         "isArticleRatingEnabled": false
       },
+      "jsonSettings": {
+        "theme": "app_light_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
+      },
       "roles": [
         "MANAGER"
       ],
@@ -813,6 +831,12 @@
       "features": {
         "isArticleRatingEnabled": true
       },
+      "jsonSettings": {
+        "theme": "app_light_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
+      },
       "roles": [
         "MANAGER"
       ],
@@ -823,13 +847,14 @@
     {
       "id": "1",
       "first": "test",
-      "lastname": "user",
+      "lastname": "lastname",
       "age": 465,
       "currency": "EUR",
       "country": "Ukraine",
       "city": "Moscow",
-      "username": "testuser",
-      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+      "username": "admin",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg",
+      "name": "arara"
     },
     {
       "id": "2",

@@ -5,6 +5,9 @@ import { USER_LOCALSTORAGE_KEY } from "@/6_shared/const/localstorage";
 import { setFeatureFlags } from "@/6_shared/lib/features";
 import { buildSlice } from "@/6_shared/lib/store/buildSlice";
 
+import { initAuthData } from "../services/initAuthData";
+import { saveJsonSettings } from "../services/saveJsonSettings";
+import { JsonSettings } from "../types/jsonSettings";
 import { User, UserSchema } from "../types/user";
 
 const initialState: UserSchema = {
@@ -18,21 +21,33 @@ export const userSlice = buildSlice({
     setAuthData: (state, action: PayloadAction<User>) => {
       state.authData = action.payload;
       setFeatureFlags(action.payload.features);
-    },
-    initAuthData: (state) => {
-      const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
-      if (user) {
-        const json = JSON.parse(user) as User;
-        state.authData = json;
-        setFeatureFlags(json.features);
-      }
-      state._inited = true;
+      localStorage.setItem(USER_LOCALSTORAGE_KEY, action.payload.id);
     },
     logout: (state) => {
       state.authData = undefined;
       localStorage.removeItem(USER_LOCALSTORAGE_KEY);
-      state._inited = false;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(
+      saveJsonSettings.fulfilled,
+      (state, { payload }: PayloadAction<JsonSettings>) => {
+        if (state.authData) {
+          state.authData.jsonSettings = payload;
+        }
+      },
+    );
+    builder.addCase(
+      initAuthData.fulfilled,
+      (state, { payload }: PayloadAction<User>) => {
+        state.authData = payload;
+        setFeatureFlags(payload.features);
+        state._inited = true;
+      },
+    );
+    builder.addCase(initAuthData.rejected, (state) => {
+      state._inited = true;
+    });
   },
 });
 
