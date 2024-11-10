@@ -1,17 +1,22 @@
-import { memo, useCallback } from "react";
+import React, { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { getRouteAdminPanel, getRouteProfile } from "@/1_app/config/routeConfig/routeConfig";
+import { getRouteAdminPanel, getRouteProfile, getRouteSettings } from "@/1_app/config/routeConfig/routeConfig";
 
 import {
-  useUserAuthData, isUserAdmin, isUserManager, userActions,
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
 } from "@/5_entities/User";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
-import Avatar from "@/6_shared/ui/Avatar/Avatar";
-import { Dropdown, DropdownDirection } from "@/6_shared/ui/Popups";
+import { ToggleFeatures } from "@/6_shared/lib/features";
+import { Avatar as AvatarDeprecated } from "@/6_shared/ui/deprecated/Avatar";
+import { Dropdown as DropdownDeprecated } from "@/6_shared/ui/deprecated/Popups";
+import { Avatar } from "@/6_shared/ui/redesigned/Avatar/Avatar";
+import { Dropdown } from "@/6_shared/ui/redesigned/Popups";
 
 interface AvatarDropdownProps {
     className?: string;
@@ -20,10 +25,10 @@ interface AvatarDropdownProps {
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   const { className } = props;
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   const isAdmin = useSelector(isUserAdmin);
   const isManager = useSelector(isUserManager);
-  const authData = useUserAuthData();
+  const authData = useSelector(getUserAuthData);
 
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());
@@ -35,25 +40,54 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     return null;
   }
 
-  return (
-    <Dropdown
-      direction={DropdownDirection.BL}
-      className={classNames("", {}, [className])}
-      items={[
-        ...(isAdminPanelAvailable ? [{
-          content: t("Admin Panel"),
+  const items = [
+    ...(isAdminPanelAvailable
+      ? [
+        {
+          content: t("Admin"),
           href: getRouteAdminPanel(),
-        }] : []),
-        {
-          content: t("Profile"),
-          href: getRouteProfile(authData.id),
         },
-        {
-          content: t("Exit"),
-          onClick: onLogout,
-        },
-      ]}
-      trigger={<Avatar size={30} src={authData.avatar} />}
+      ]
+      : []),
+    {
+      content: t("Profile"),
+      href: getRouteProfile(authData.id),
+    },
+    {
+      content: t("Settings"),
+      href: getRouteSettings(),
+    },
+    {
+      content: t("Exit"),
+      onClick: onLogout,
+    },
+  ];
+
+  return (
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <Dropdown
+          direction="bottom left"
+          className={classNames("", {}, [className])}
+          items={items}
+          trigger={<Avatar size={40} src={authData.avatar} />}
+        />
+      }
+      off={
+        <DropdownDeprecated
+          direction="bottom left"
+          className={classNames("", {}, [className])}
+          items={items}
+          trigger={
+            <AvatarDeprecated
+              fallbackInverted
+              size={30}
+              src={authData.avatar}
+            />
+          }
+        />
+      }
     />
   );
 });

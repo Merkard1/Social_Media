@@ -3,15 +3,17 @@
 @import "themes/normal";
 @import "themes/dark";
 
-.app,
-.app_modal,
-.app_drawer {
+.app {
   font: var(--font-m);
   color: var(--primary-color);
+  background: var(--bg-color);
+  min-height: 100vh;
 }
 
-.app {
-  background: var(--bg-color);
+.app_redesigned {
+  font: var(--font-m-redesigned);
+  color: var(--text-redesigned);
+  background: var(--bg-redesigned);
   min-height: 100vh;
 }
 
@@ -19,26 +21,34 @@
   display: flex;
 }
 
-/* Scrollbar styles for WebKit (Safari and Chrome) */
+/* Global scrollbar styles */
 *::-webkit-scrollbar {
   width: 12px;
   height: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg);
+  background: var(--scrollbar-redesigned); /* Set the scrollbar track to black */
 }
 
 *::-webkit-scrollbar-thumb {
+  border: 1px solid var(--accent-redesigned);
+  background-color: var(--icon-redesigned);
+  border-radius: 20px;
+}
+
+/* Specific scrollbar styles for .app */
+.app *::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+.app *::-webkit-scrollbar-track {
+  background: var(--scrollbar-redesigned); /* Set the scrollbar track to black */
+}
+
+.app *::-webkit-scrollbar-thumb {
   border: 2px solid var(--primary-color);
   background-color: var(--inverted-primary-color);
   border-radius: 20px;
 }
-
-/* Scrollbar styles for Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--inverted-primary-color) var(--card-bg);
-}
-
-// TODO check tree for undef in classes

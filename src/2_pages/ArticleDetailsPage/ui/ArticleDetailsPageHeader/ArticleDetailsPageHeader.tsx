@@ -7,8 +7,8 @@ import { getRouteArticleEdit, getRouteArticles } from "@/1_app/config/routeConfi
 
 import { useArticleDetailsData } from "@/5_entities/Article/model/selectors/articleDetails";
 
-import { Button, ThemeButton } from "@/6_shared/ui/Button";
-import { HStack } from "@/6_shared/ui/Stack";
+import { Button, ThemeButton } from "@/6_shared/ui/deprecated/Button";
+import { HStack } from "@/6_shared/ui/redesigned/Stack";
 
 import { getCanEditArticle } from "../../model/selectors/article";
 

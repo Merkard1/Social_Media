@@ -1,8 +1,12 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { VStack } from "@/6_shared/ui/Stack";
-import { Text } from "@/6_shared/ui/Text";
+import { classNames } from "@/6_shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/6_shared/lib/features";
+import TextDeprecated from "@/6_shared/ui/deprecated/Text/Text";
+import { Card } from "@/6_shared/ui/redesigned/Card/Card";
+import { VStack } from "@/6_shared/ui/redesigned/Stack";
+import { Text } from "@/6_shared/ui/redesigned/Text/Text";
 
 import { Comment } from "../../model/types/comment";
 import { CommentCard } from "../CommentCard/CommentCard";
@@ -15,11 +19,11 @@ interface CommentListProps {
 
 export const CommentList = memo((props: CommentListProps) => {
   const { className, isLoading, comments } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation("article-details");
 
   if (isLoading) {
     return (
-      <VStack gap="16">
+      <VStack gap="16" max className={classNames("", {}, [className])}>
         <CommentCard isLoading />
         <CommentCard isLoading />
         <CommentCard isLoading />
@@ -28,16 +32,28 @@ export const CommentList = memo((props: CommentListProps) => {
   }
 
   return (
-    <VStack gap="16" max>
-      {comments?.length
-        ? comments.map((comment) => (
+    <VStack gap="16" max className={classNames("", {}, [className])}>
+      {comments?.length ? (
+        comments.map((comment) => (
           <CommentCard
-            key={comment.id}
             isLoading={isLoading}
             comment={comment}
+            key={comment.id}
           />
         ))
-        : <Text text={t("Комментарии отсутствуют")} />}
+      ) : (
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={
+            <Card max>
+              <VStack align="center">
+                <Text text={t("No comments")} />
+              </VStack>
+            </Card>
+          }
+          off={<TextDeprecated text={t("No comments")} />}
+        />
+      )}
     </VStack>
   );
 });

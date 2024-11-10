@@ -1,9 +1,12 @@
-.link {
-  opacity: 1;
-  margin-left: 20px;
+.item {
+  display: flex;
+  align-items: center;
 }
 
-.item {
+.link {
+  opacity: 1;
+  min-width: 100px;
+  margin-left: 10px;
 }
 
 .icon {
@@ -14,6 +17,43 @@
   .link {
     width: 0;
     opacity: 0;
-    transition: 0.2 opacity;
+    transition: 0.2s opacity;
+  }
+}
+
+.itemRedesigned {
+  display: flex;
+  width: 100%;
+  padding: 0 16px;
+  align-items: center;
+}
+
+.collapsedRedesigned {
+  padding: 0 8px;
+
+  .link {
+    width: 0;
+    margin: 0;
+    opacity: 0;
+    min-width: 0;
+  }
+}
+
+.active {
+  position: relative;
+  background:
+    linear-gradient(
+      89.97deg,
+      rgb(94 211 243 / 30%) 1.15%,
+      rgb(94 211 243 / 0%) 99.97%
+    );
+
+  &::before {
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--accent-redesigned);
+    content: "";
   }
 }

@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import { ArticleList } from "@/5_entities/Article";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { VStack } from "@/6_shared/ui/Stack";
-import { Text, TextSize } from "@/6_shared/ui/Text";
+import { VStack } from "@/6_shared/ui/redesigned/Stack";
+import { Text } from "@/6_shared/ui/redesigned/Text/Text";
 
 import { useArticlesRecommendationList } from "../../api/articleRecommendationsApi";
 
@@ -24,7 +24,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
 
   return (
     <VStack gap="8" data-testid="ArticleRecommendationsList" className={classNames("", {}, [className])}>
-      <Text title={t("Recomendations")} size={TextSize.L} />
+      <Text title={t("Recomendations")} size="l" />
       <ArticleList
         articles={data}
         isLoading={isLoading}

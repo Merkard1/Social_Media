@@ -1,29 +1,27 @@
 import { JsxAttribute, Node, Project, SyntaxKind } from "ts-morph";
 
-// @ts-ignore
 const removedFeatureName = process.argv[2]; // example isArticleEnabled
-// @ts-ignore
 const featureState = process.argv[3]; // example off\on
 
 const toggleFunctionName = "toggleFeatures";
 const toggleComponentName = "ToggleFeatures";
 
 if (!removedFeatureName) {
-  throw new Error("Specify the name of the feature flag");
+  throw new Error("Укажите название фича-флага");
 }
 
 if (!featureState) {
-  throw new Error("Indicate the status of the feature: (on or off)");
+  throw new Error("Укажите состояние фичи (on или off)");
 }
 
 if (featureState !== "on" && featureState !== "off") {
-  throw new Error("Incorrect feature state value: (on or off)");
+  throw new Error("Некорректное значение состояния фичи (on или off)");
 }
 
 const project = new Project({});
 
-project.addSourceFilesAtPaths("src/**/ArticleDetailsPage.ts");
-project.addSourceFilesAtPaths("src/**/ArticleDetailsPage.tsx");
+project.addSourceFilesAtPaths("src/**/*.ts");
+project.addSourceFilesAtPaths("src/**/*.tsx");
 
 const files = project.getSourceFiles();
 
@@ -129,14 +127,14 @@ const replaceComponent = (node: Node) => {
 files.forEach((sourceFile) => {
   sourceFile.forEachDescendant((node) => {
     if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-      replaceToggleFunction(node);
+      return replaceToggleFunction(node);
     }
 
     if (
       node.isKind(SyntaxKind.JsxSelfClosingElement)
             && isToggleComponent(node)
     ) {
-      replaceComponent(node);
+      return replaceComponent(node);
     }
   });
 });

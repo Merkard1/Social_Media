@@ -603,6 +603,18 @@
       "articleId": "7",
       "rate": 3,
       "id": "mZ042KD"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 5,
+      "id": "p5BfAzX"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "rate": 2,
+      "id": "CFsUU6N"
     }
   ],
   "comments": [
@@ -767,6 +779,12 @@
       "userId": "4",
       "text": "text",
       "id": "ax3-7Xz"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "sddsds",
+      "id": "IQw9Wwe"
     }
   ],
   "users": [
@@ -775,7 +793,8 @@
       "username": "admin",
       "password": "123",
       "features": {
-        "isArticleRatingEnabled": true
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_light_theme",
@@ -793,7 +812,8 @@
       "username": "user",
       "password": "123",
       "features": {
-        "isArticleRatingEnabled": false
+        "isArticleRatingEnabled": false,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_light_theme",
@@ -811,7 +831,8 @@
       "username": "manager",
       "password": "123",
       "features": {
-        "isArticleRatingEnabled": false
+        "isArticleRatingEnabled": false,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_light_theme",
@@ -829,7 +850,8 @@
       "username": "testuser",
       "password": "123",
       "features": {
-        "isArticleRatingEnabled": true
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_light_theme",
@@ -859,14 +881,14 @@
     {
       "id": "2",
       "first": "first",
-      "lastname": "mrkd",
-      "age": 1,
-      "currency": "EUR",
-      "country": "United States",
+      "lastname": "mrkdLast",
+      "age": 112,
+      "currency": "USD",
+      "country": "Germany",
       "city": "Kiew",
-      "username": "mrkd",
+      "username": "MrksUSER",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg",
-      "name": "mrkd"
+      "name": "mrkdNAME"
     },
     {
       "id": "4",

@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import { Page } from "@/3_widgets/Page";
 
-import { ListBox } from "@/6_shared/ui/Popups";
-import { HStack } from "@/6_shared/ui/Stack";
+import { ListBox } from "@/6_shared/ui/deprecated/Popups";
+import { HStack } from "@/6_shared/ui/redesigned/Stack";
 
 const MainPage = () => {
   const { t } = useTranslation();

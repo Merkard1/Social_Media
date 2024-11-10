@@ -8,6 +8,7 @@ import { ForbiddenPage } from "@/2_pages/ForbiddenPage";
 import { MainPage } from "@/2_pages/MainPage";
 import { NotFoundPage } from "@/2_pages/NotFoundPage";
 import { ProfilePage } from "@/2_pages/ProfilePage";
+import { SettingsPage } from "@/2_pages/SettingsPage";
 
 import { UserRole } from "@/5_entities/User";
 
@@ -17,6 +18,7 @@ import { AppRoutes, AppRoutesProps } from "./routeType";
 export const getRouteMain = () => "/";
 export const getRouteAbout = () => "/about";
 export const getRouteProfile = (id: string) => `/profile/${id}`;
+export const getRouteSettings = () => "/settings";
 // Articles
 export const getRouteArticles = () => "/articles";
 export const getRouteArticleDetails = (id: string) => `/articles/${id}`;
@@ -38,6 +40,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.PROFILE]: {
     path: getRouteProfile(":id"),
     element: <ProfilePage />,
+    authOnly: true,
+  },
+  [AppRoutes.SETTINGS]: {
+    path: getRouteSettings(),
+    element: <SettingsPage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLES]: {

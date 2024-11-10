@@ -10,7 +10,9 @@ import { PageLoader } from "@/4_features/PageLoader/PageLoader";
 
 import { initAuthData, useUserInited } from "@/5_entities/User";
 
+import { MainLayout } from "@/6_shared/layouts";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
+import { ToggleFeatures } from "@/6_shared/lib/features";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 function App() {
@@ -27,15 +29,31 @@ function App() {
   }
 
   return (
-    <div className={classNames("app", {}, [theme])}>
-      <Suspense fallback="">
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-          {inited && <AppRouter />}
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      off={
+        <div className={classNames("app", {}, [theme])}>
+          <Suspense fallback="">
+            <Navbar />
+            <div className="content-page">
+              <Sidebar />
+              {inited && <AppRouter />}
+            </div>
+          </Suspense>
         </div>
-      </Suspense>
-    </div>
+      }
+      on={
+        <div className={classNames("app_redesigned", {}, [theme])}>
+          <Suspense fallback="">
+            <MainLayout
+              header={<Navbar />}
+              content={<AppRouter />}
+              sidebar={<Sidebar />}
+            />
+          </Suspense>
+        </div>
+      }
+    />
   );
 }
 

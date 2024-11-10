@@ -17,7 +17,8 @@
       "vw",
       "deg",
       "grad",
-      "rad"
+      "rad",
+      "fr"
     ],
     "order/properties-order": [
       [

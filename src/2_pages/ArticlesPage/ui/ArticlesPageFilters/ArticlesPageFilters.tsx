@@ -7,13 +7,14 @@ import { ArticleSortSelector } from "@/4_features/ArticleSortSelector";
 import { ArticleTypeTabs } from "@/4_features/ArticleTypeTabs";
 import { ArticleViewSelector } from "@/4_features/ArticleViewSelector";
 
-import { ArticleOrder, ArticleSortField, ArticleView } from "@/5_entities/Article";
+import { ArticleSortField, ArticleView } from "@/5_entities/Article";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useDebounce } from "@/6_shared/lib/hooks/useDebounce/useDebounce";
-import { Card } from "@/6_shared/ui/Card";
-import { Input } from "@/6_shared/ui/Input";
+import { SortOrder } from "@/6_shared/types/sort";
+import { Card } from "@/6_shared/ui/deprecated/Card";
+import { Input } from "@/6_shared/ui/deprecated/Input";
 
 import {
   useArticlesPageOrder,
@@ -63,7 +64,7 @@ const ArticlesPageFilters = ({ className } : ArticlesPageFiltersProps) => {
   );
 
   const onChangeOrder = useCallback(
-    (order: ArticleOrder) => {
+    (order: SortOrder) => {
       setOrder(order);
       setToFirstPage();
       fetchData();

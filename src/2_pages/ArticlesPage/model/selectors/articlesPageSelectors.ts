@@ -1,6 +1,6 @@
 import { StateSchema } from "@/1_app/providers/StoreProvider";
 
-import { ArticleOrder, ArticleSortField, ArticleType, ArticleView } from "@/5_entities/Article";
+import { ArticleSortField, ArticleType, ArticleView } from "@/5_entities/Article";
 
 import { buildSelector } from "@/6_shared/lib/store/buildSelector";
 
@@ -12,6 +12,6 @@ export const [useArticlesPageLimit, getArticlesPageLimit] = buildSelector((state
 export const [useArticlesPageHasMore, getArticlesPageHasMore] = buildSelector((state: StateSchema) => state.articlesPage?.hasMore);
 export const [useArticlesPageInited, getArticlesPageInited] = buildSelector((state: StateSchema) => state.articlesPage?._inited);
 export const [useArticlesPageSort, getArticlesPageSort] = buildSelector((state: StateSchema) => state.articlesPage?.sort ?? ArticleSortField.CREATED);
-export const [useArticlesPageOrder, getArticlesPageOrder] = buildSelector((state: StateSchema) => state.articlesPage?.order ?? ArticleOrder.ASC);
+export const [useArticlesPageOrder, getArticlesPageOrder] = buildSelector((state: StateSchema) => state.articlesPage?.order ?? "asc");
 export const [useArticlesPageSearch, getArticlesPageSearch] = buildSelector((state: StateSchema) => state.articlesPage?.search ?? "");
 export const [useArticlesPageType, getArticlesPageType] = buildSelector((state: StateSchema) => state.articlesPage?.type ?? ArticleType.ALL);

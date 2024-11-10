@@ -4,11 +4,6 @@ export enum ArticleSortField {
   CREATED = "createdAt",
 }
 
-export enum ArticleOrder {
-  ASC = "asc",
-  DESC = "desc"
-}
-
 export enum ArticleBlockType {
   CODE = "CODE",
   IMAGE = "IMAGE",

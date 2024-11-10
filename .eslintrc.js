@@ -100,8 +100,8 @@ module.exports = {
       "error",
       {
         markupOnly: true,
-        ignoreAttribute: ["data-testid", "to", "justify", "direction", "align",
-          "role", "as", "gap", "target", "border", "data-testid", "feature"],
+        ignoreAttribute: ["data-testid", "to", "justify", "direction", "align", "size", "wrap",
+          "role", "as", "gap", "target", "border", "data-testid", "feature", "color", "variant"],
       },
     ],
     "max-len": "off",
