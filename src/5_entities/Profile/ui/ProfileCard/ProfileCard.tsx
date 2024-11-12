@@ -1,10 +1,5 @@
-import { ToggleFeatures } from "@/6_shared/lib/features";
-
 import { Profile } from "../../model/types/profile";
 
-import { ProfileCardDeprecated,
-  ProfileCardDeprecatedError,
-  ProfileCardDeprecatedLoader } from "./ProfileCardDeprecated/ProfileCardDeprecated";
 import { ProfileCardRedesigned,
   ProfileCardRedesignedError,
   ProfileCardRedesignedSkeleton } from "./ProfileCardRedesigned/ProfileCardRedesigned";

@@ -9,9 +9,9 @@ import { CommentList } from "@/5_entities/Comment";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Loader } from "@/6_shared/ui/deprecated/Loader";
-import { VStack } from "@/6_shared/ui/redesigned/Stack";
-import { Text } from "@/6_shared/ui/redesigned/Text/Text";
+import { Loader } from "@/6_shared/ui/Loader/Loader";
+import { VStack } from "@/6_shared/ui/Stack";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import { useArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";

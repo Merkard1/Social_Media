@@ -3,13 +3,14 @@ import { useTranslation } from "react-i18next";
 
 import { CountrySelect } from "@/5_entities/Country";
 import { CurrencySelect } from "@/5_entities/Currency";
+import { ImageLoader } from "@/5_entities/ImageLoader";
 
-import { Avatar } from "@/6_shared/ui/redesigned/Avatar/Avatar";
-import { Card } from "@/6_shared/ui/redesigned/Card/Card";
-import { Input } from "@/6_shared/ui/redesigned/Input/Input";
-import { Skeleton } from "@/6_shared/ui/redesigned/Skeleton";
-import { HStack, VStack } from "@/6_shared/ui/redesigned/Stack";
-import { Text } from "@/6_shared/ui/redesigned/Text/Text";
+import { Avatar } from "@/6_shared/ui/Avatar/Avatar";
+import { Card } from "@/6_shared/ui/Card/Card";
+import { Input } from "@/6_shared/ui/Input/Input";
+import { Skeleton } from "@/6_shared/ui/Skeleton/Skeleton";
+import { HStack, VStack } from "@/6_shared/ui/Stack";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import { ProfileCardProps } from "../ProfileCard";
 
@@ -51,6 +52,8 @@ export const ProfileCardRedesignedSkeleton = () => (
           <Skeleton width="100%" height={38} />
         </VStack>
       </HStack>
+      {/* TODO change to image loader */}
+      <Skeleton width="100%" height={180} />
     </VStack>
   </Card>
 );
@@ -78,13 +81,13 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
               value={data?.name}
               label={`${t("Name")}:`}
               onChange={(value: string) => onChangeFormField("name", value)}
-              readonly={readOnly}
+              readOnly={readOnly}
             />
             <Input
               value={data?.lastname}
               label={`${t("Lastname")}:`}
               onChange={(value: string) => onChangeFormField("lastname", value)}
-              readonly={readOnly}
+              readOnly={readOnly}
             />
             <Input
               value={data?.age !== undefined ? String(data.age) : ""}
@@ -95,7 +98,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                   onChangeFormField("age", numericValue);
                 }
               }}
-              readonly={readOnly}
+              readOnly={readOnly}
             />
           </VStack>
           <VStack gap="16" max>
@@ -103,9 +106,8 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
               value={data?.username}
               label={`${t("Username")}:`}
               onChange={(value: string) => onChangeFormField("username", value)}
-              readonly={readOnly}
+              readOnly={readOnly}
             />
-            {/* TODO avatar with back  */}
             <CurrencySelect
               value={data?.currency}
               onChange={(value: string) => onChangeFormField("currency", value)}
@@ -118,6 +120,12 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
             />
           </VStack>
         </HStack>
+        {!readOnly
+        && (
+          <HStack justify="center" max>
+            <ImageLoader onImageUpload={() => {}} />
+          </HStack>
+        )}
       </VStack>
     </Card>
   );

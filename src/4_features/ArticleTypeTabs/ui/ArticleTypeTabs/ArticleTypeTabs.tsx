@@ -4,9 +4,7 @@ import { useTranslation } from "react-i18next";
 import { ArticleType } from "@/5_entities/Article";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
-import { TabItem, Tabs as TabsDeprecated } from "@/6_shared/ui/deprecated/Tabs";
-import { Tabs } from "@/6_shared/ui/redesigned/Tabs/Tabs";
+import { TabItem, Tabs } from "@/6_shared/ui/Tabs/Tabs";
 
 interface ArticleTypeTabsProps {
     className?: string;
@@ -46,11 +44,11 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
 
   return (
     <Tabs
-                direction="column"
-                tabs={typeTabs}
-                value={value}
-                onTabClick={onTabClick}
-                className={classNames("", {}, [className])}
-              />
+      direction="column"
+      tabs={typeTabs}
+      value={value}
+      onTabClick={onTabClick}
+      className={classNames("", {}, [className])}
+    />
   );
 });

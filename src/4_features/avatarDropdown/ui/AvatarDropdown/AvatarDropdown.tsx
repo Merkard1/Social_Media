@@ -12,11 +12,8 @@ import {
 } from "@/5_entities/User";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
-import { Avatar as AvatarDeprecated } from "@/6_shared/ui/deprecated/Avatar";
-import { Dropdown as DropdownDeprecated } from "@/6_shared/ui/deprecated/Popups";
-import { Avatar } from "@/6_shared/ui/redesigned/Avatar/Avatar";
-import { Dropdown } from "@/6_shared/ui/redesigned/Popups";
+import { Avatar } from "@/6_shared/ui/Avatar/Avatar";
+import { Dropdown } from "@/6_shared/ui/Popups";
 
 interface AvatarDropdownProps {
     className?: string;
@@ -65,10 +62,10 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
   return (
     <Dropdown
-                direction="bottom left"
-                className={classNames("", {}, [className])}
-                items={items}
-                trigger={<Avatar size={40} src={authData.avatar} />}
-              />
+      direction="bottom left"
+      className={classNames("", {}, [className])}
+      items={items}
+      trigger={<Avatar size={40} src={authData.avatar} />}
+    />
   );
 });

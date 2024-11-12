@@ -11,7 +11,6 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { ToggleFeatures } from "@/6_shared/lib/features";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
 
@@ -19,7 +18,6 @@ import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPag
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { articlesPageReducer } from "../../model/slices/ArticlesPageSlice";
 import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList";
-import ArticlesPageFilters from "../ArticlesPageFilters/ArticlesPageFilters";
 import { FiltersContainer } from "../FiltersContainer/FiltersContainer";
 import { ViewSelectorContainer } from "../ViewSelectorContainer/ViewSelectorContainer";
 
@@ -48,23 +46,23 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
   const content = (
     <StickyContentLayout
-                left={<ViewSelectorContainer />}
-                right={<FiltersContainer />}
-                content={
-                  <Page
-                    data-testid="ArticlesPage"
-                    onScrollEnd={onLoadNextPart}
-                    className={classNames(
-                      cls.ArticlesPageRedesigned,
-                      {},
-                      [className],
-                    )}
-                  >
-                    <ArticleInfiniteList className={cls.list} />
-                    <ArticlePageGreeting />
-                  </Page>
-                }
-              />
+      left={<ViewSelectorContainer />}
+      right={<FiltersContainer />}
+      content={
+        <Page
+          data-testid="ArticlesPage"
+          onScrollEnd={onLoadNextPart}
+          className={classNames(
+            cls.ArticlesPageRedesigned,
+            {},
+            [className],
+          )}
+        >
+          <ArticleInfiniteList className={cls.list} />
+          <ArticlePageGreeting />
+        </Page>
+      }
+    />
   );
 
   return (

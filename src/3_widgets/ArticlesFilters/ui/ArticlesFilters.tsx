@@ -9,10 +9,10 @@ import { ArticleSortField, ArticleType } from "@/5_entities/Article";
 import SearchIcon from "@/6_shared/assets/icons/search.svg";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { SortOrder } from "@/6_shared/types/sort";
-import { Card } from "@/6_shared/ui/redesigned/Card/Card";
-import { Icon } from "@/6_shared/ui/redesigned/Icon/Icon";
-import { Input } from "@/6_shared/ui/redesigned/Input/Input";
-import { VStack } from "@/6_shared/ui/redesigned/Stack";
+import { Card } from "@/6_shared/ui/Card/Card";
+import { Icon } from "@/6_shared/ui/Icon/Icon";
+import { Input } from "@/6_shared/ui/Input/Input";
+import { VStack } from "@/6_shared/ui/Stack";
 
 import cls from "./ArticlesFilters.module.scss";
 

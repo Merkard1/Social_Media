@@ -2,8 +2,8 @@ import { LangSwitcher } from "@/4_features/LangSwitcher";
 import { ThemeSwitcher } from "@/4_features/ThemeSwitcher";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { Button, ButtonSize, ThemeButton } from "@/6_shared/ui/deprecated/Button";
-import { VStack } from "@/6_shared/ui/redesigned/Stack";
+import { Button } from "@/6_shared/ui/Button/Button";
+import { VStack } from "@/6_shared/ui/Stack";
 
 import cls from "./SidebarDeprecated.module.scss";
 
@@ -30,8 +30,9 @@ const SidebarDeprecated = (props : SidebarDeprecatedProps) => {
         data-testid="sidebar-toggle"
         onClick={onToggle}
         className={cls.collapseBtn}
-        theme={ThemeButton.BACKGROUND_INVERTED}
-        size={ButtonSize.L}
+        // TODO mb change variant
+        variant="outline"
+        size="l"
         square
       >
         {collapsed ? ">" : "<"}

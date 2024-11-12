@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { ArticleDetails } from "@/5_entities/Article";
 
-import { Card } from "@/6_shared/ui/redesigned/Card/Card";
+import { Card } from "@/6_shared/ui/Card/Card";
 
 interface DetailsContainterProps {
     className?: string;

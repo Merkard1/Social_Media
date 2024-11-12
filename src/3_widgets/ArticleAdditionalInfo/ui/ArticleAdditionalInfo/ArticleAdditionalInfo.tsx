@@ -4,10 +4,10 @@ import { useTranslation } from "react-i18next";
 import { User } from "@/5_entities/User";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { Avatar } from "@/6_shared/ui/redesigned/Avatar/Avatar";
-import { Button } from "@/6_shared/ui/redesigned/Button/Button";
-import { HStack, VStack } from "@/6_shared/ui/redesigned/Stack";
-import { Text } from "@/6_shared/ui/redesigned/Text/Text";
+import { Avatar } from "@/6_shared/ui/Avatar/Avatar";
+import { Button } from "@/6_shared/ui/Button/Button";
+import { HStack, VStack } from "@/6_shared/ui/Stack";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import cls from "./ArticleAdditionalInfo.module.scss";
 

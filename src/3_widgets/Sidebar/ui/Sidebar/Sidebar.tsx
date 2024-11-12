@@ -1,9 +1,6 @@
 import { memo, useMemo, useState } from "react";
 
-import { ToggleFeatures } from "@/6_shared/lib/features";
-
 import { useSidebarItems } from "../../model/selectors/getSidebarItems/getSidebarItems";
-import SidebarDeprecated from "../SidebarDeprecated/SidebarDeprecated";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 import SidebarRedesign from "../SidebarRedesign/SidebarRedesign";
 

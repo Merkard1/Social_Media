@@ -5,14 +5,14 @@ import { getRouteArticleDetails } from "@/1_app/config/routeConfig/routeConfig";
 
 import EyeIcon from "@/6_shared/assets/icons/eye-20-20.svg";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { AppLink } from "@/6_shared/ui/deprecated/AppLink";
-import { Avatar } from "@/6_shared/ui/deprecated/Avatar";
-import { Button, ThemeButton } from "@/6_shared/ui/deprecated/Button";
-import { Card } from "@/6_shared/ui/deprecated/Card";
-import { Icon } from "@/6_shared/ui/deprecated/Icon";
-import Skeleton from "@/6_shared/ui/deprecated/Skeleton/Skeleton";
-import Text from "@/6_shared/ui/deprecated/Text/Text";
-import { AppImage } from "@/6_shared/ui/redesigned/AppImage/AppImage";
+import { AppImage } from "@/6_shared/ui/AppImage/AppImage";
+import { AppLink } from "@/6_shared/ui/AppLink/AppLink";
+import { Avatar } from "@/6_shared/ui/Avatar/Avatar";
+import { Button } from "@/6_shared/ui/Button/Button";
+import { Card } from "@/6_shared/ui/Card/Card";
+import { Icon } from "@/6_shared/ui/Icon/Icon";
+import { Skeleton } from "@/6_shared/ui/Skeleton/Skeleton";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import {
   ArticleView,
@@ -76,7 +76,7 @@ export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
               target={target}
               to={getRouteArticleDetails(article.id)}
             >
-              <Button theme={ThemeButton.OUTLINE}>
+              <Button variant="outline">
                 {t("Read more...")}
               </Button>
             </AppLink>

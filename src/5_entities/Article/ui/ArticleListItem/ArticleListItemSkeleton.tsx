@@ -1,11 +1,8 @@
 import { memo } from "react";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures, toggleFeatures } from "@/6_shared/lib/features";
-import { Card as CardDeprecated } from "@/6_shared/ui/deprecated/Card";
-import { Skeleton as SkeletonDeprecated } from "@/6_shared/ui/deprecated/Skeleton";
-import { Card as CardRedesigned } from "@/6_shared/ui/redesigned/Card/Card";
-import { Skeleton as SkeletonRedesigned } from "@/6_shared/ui/redesigned/Skeleton";
+import { Card as CardRedesigned } from "@/6_shared/ui/Card/Card";
+import { Skeleton as SkeletonRedesigned } from "@/6_shared/ui/Skeleton/Skeleton";
 
 import { ArticleView } from "../../model/consts/articleConsts";
 
@@ -50,8 +47,8 @@ export const ArticleListItemSkeleton = memo(
           ])}
         >
           <CardRedesigned border="round" className={cls.card}>
-                              {cardContent}
-                            </CardRedesigned>
+            {cardContent}
+          </CardRedesigned>
         </div>
       );
     }
@@ -59,11 +56,11 @@ export const ArticleListItemSkeleton = memo(
     const cardContent = (
       <>
         <Skeleton
-                          width="100%"
-                          height={150}
-                          border="32px"
-                          className={cls.img}
-                        />
+          width="100%"
+          height={150}
+          border="32px"
+          className={cls.img}
+        />
         <div className={cls.infoWrapper}>
           <Skeleton width={130} height={16} />
         </div>
@@ -74,8 +71,8 @@ export const ArticleListItemSkeleton = memo(
     return (
       <div className={classNames(mainClass, {}, [className, cls[view]])}>
         <CardRedesigned border="round" className={cls.card}>
-                          {cardContent}
-                        </CardRedesigned>
+          {cardContent}
+        </CardRedesigned>
       </div>
     );
   },

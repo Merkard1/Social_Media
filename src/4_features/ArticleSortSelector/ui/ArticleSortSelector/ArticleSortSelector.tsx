@@ -4,12 +4,11 @@ import { useTranslation } from "react-i18next";
 import { ArticleSortField } from "@/5_entities/Article";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
 import { SortOrder } from "@/6_shared/types/sort";
-import { Select, SelectOption } from "@/6_shared/ui/deprecated/Select";
-import { ListBox } from "@/6_shared/ui/redesigned/Popups";
-import { VStack } from "@/6_shared/ui/redesigned/Stack";
-import { Text } from "@/6_shared/ui/redesigned/Text/Text";
+import { ListBox } from "@/6_shared/ui/Popups";
+import { SelectOption } from "@/6_shared/ui/Select/Select";
+import { VStack } from "@/6_shared/ui/Stack";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import cls from "./ArticleSortSelector.module.scss";
 
@@ -59,25 +58,25 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
   return (
     <div
-                className={classNames(
-                  cls.ArticleSortSelectorRedesigned,
-                  {},
-                  [className],
-                )}
-              >
-                <VStack gap="8">
-                  <Text text={`${t("Sort with")} :`} />
-                  <ListBox
-                    items={sortFieldOptions}
-                    value={sort}
-                    onChange={onChangeSort}
-                  />
-                  <ListBox
-                    items={orderOptions}
-                    value={order}
-                    onChange={onChangeOrder}
-                  />
-                </VStack>
-              </div>
+      className={classNames(
+        cls.ArticleSortSelectorRedesigned,
+        {},
+        [className],
+      )}
+    >
+      <VStack gap="8">
+        <Text text={`${t("Sort with")} :`} />
+        <ListBox
+          items={sortFieldOptions}
+          value={sort}
+          onChange={onChangeSort}
+        />
+        <ListBox
+          items={orderOptions}
+          value={order}
+          onChange={onChangeOrder}
+        />
+      </VStack>
+    </div>
   );
 });

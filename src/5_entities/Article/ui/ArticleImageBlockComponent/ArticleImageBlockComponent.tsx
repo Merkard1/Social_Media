@@ -2,7 +2,7 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { Text } from "@/6_shared/ui/redesigned/Text/Text";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import { ArticleImageBlock } from "../../model/types/article";
 

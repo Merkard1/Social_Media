@@ -5,17 +5,11 @@ import { useSelector } from "react-redux";
 import { getUserAuthData } from "@/5_entities/User";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {
-  Button as ButtonDeprecated,
-  ThemeButton,
-} from "@/6_shared/ui/deprecated/Button";
-import TextDeprecated from "@/6_shared/ui/deprecated/Text/Text";
-import { Button } from "@/6_shared/ui/redesigned/Button/Button";
-import { Card } from "@/6_shared/ui/redesigned/Card/Card";
-import { HStack } from "@/6_shared/ui/redesigned/Stack";
-import { Text } from "@/6_shared/ui/redesigned/Text/Text";
+import { Button } from "@/6_shared/ui/Button/Button";
+import { Card } from "@/6_shared/ui/Card/Card";
+import { HStack } from "@/6_shared/ui/Stack";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
 import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
@@ -51,43 +45,43 @@ export const EditableProfileCardHeader = memo(
 
     return (
       <Card padding="24" max border="partial">
-                    <HStack
-                      max
-                      justify="between"
-                      className={classNames("", {}, [className])}
-                    >
-                      <Text title={t("Profile")} />
-                      {canEdit && (
-                        <div>
-                          {readonly ? (
-                            <Button
-                              onClick={onEdit}
-                              data-testid="EditableProfileCardHeader.EditButton"
-                            >
-                              {t("Редактировать")}
-                            </Button>
-                          ) : (
-                            <HStack gap="8">
-                              <Button
-                                onClick={onCancelEdit}
-                                data-testid="EditableProfileCardHeader.CancelButton"
-                                color="error"
-                              >
-                                {t("Отменить")}
-                              </Button>
-                              <Button
-                                onClick={onSave}
-                                data-testid="EditableProfileCardHeader.SaveButton"
-                                color="success"
-                              >
-                                {t("Сохранить")}
-                              </Button>
-                            </HStack>
-                          )}
-                        </div>
-                      )}
-                    </HStack>
-                  </Card>
+        <HStack
+          max
+          justify="between"
+          className={classNames("", {}, [className])}
+        >
+          <Text title={t("Profile")} />
+          {canEdit && (
+            <div>
+              {readonly ? (
+                <Button
+                  onClick={onEdit}
+                  data-testid="EditableProfileCardHeader.EditButton"
+                >
+                  {t("Редактировать")}
+                </Button>
+              ) : (
+                <HStack gap="8">
+                  <Button
+                    onClick={onCancelEdit}
+                    data-testid="EditableProfileCardHeader.CancelButton"
+                    color="error"
+                  >
+                    {t("Отменить")}
+                  </Button>
+                  <Button
+                    onClick={onSave}
+                    data-testid="EditableProfileCardHeader.SaveButton"
+                    color="success"
+                  >
+                    {t("Сохранить")}
+                  </Button>
+                </HStack>
+              )}
+            </div>
+          )}
+        </HStack>
+      </Card>
     );
   },
 );

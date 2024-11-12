@@ -7,8 +7,8 @@ import { getRouteArticleEdit, getRouteArticles } from "@/1_app/config/routeConfi
 
 import { useArticleDetailsData } from "@/5_entities/Article/model/selectors/articleDetails";
 
-import { Button, ThemeButton } from "@/6_shared/ui/deprecated/Button";
-import { HStack } from "@/6_shared/ui/redesigned/Stack";
+import { Button } from "@/6_shared/ui/Button/Button";
+import { HStack } from "@/6_shared/ui/Stack";
 
 import { getCanEditArticle } from "../../model/selectors/article";
 
@@ -34,11 +34,11 @@ const ArticleDetailsPageHeader = ({ className } : ArticleDetailsPageHeaderProps)
 
   return (
     <HStack justify="between" max>
-      <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
+      <Button variant="outline" onClick={onBackToList}>
         {t("Back")}
       </Button>
       {canEdit && (
-        <Button theme={ThemeButton.OUTLINE} onClick={onEdit}>
+        <Button variant="outline" onClick={onEdit}>
           {t("Edit")}
         </Button>
       )}

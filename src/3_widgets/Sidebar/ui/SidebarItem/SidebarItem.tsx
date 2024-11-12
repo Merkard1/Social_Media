@@ -5,10 +5,8 @@ import { useSelector } from "react-redux";
 import { getUserAuthData } from "@/5_entities/User";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
-import AppLinkDeprecated, { AppLinkTheme } from "@/6_shared/ui/deprecated/AppLink/AppLink";
-import { AppLink } from "@/6_shared/ui/redesigned/AppLink/AppLink";
-import { Icon } from "@/6_shared/ui/redesigned/Icon/Icon";
+import { AppLink } from "@/6_shared/ui/AppLink/AppLink";
+import { Icon } from "@/6_shared/ui/Icon/Icon";
 
 import { SidebarItemType } from "../../model/types/sidebar";
 
@@ -29,14 +27,14 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
 
   return (
     <AppLink
-                to={item.path}
-                className={classNames(cls.itemRedesigned, {
-                  [cls.collapsedRedesigned]: collapsed,
-                })}
-                activeClassName={cls.active}
-              >
-                <Icon Svg={item.Icon} />
-                <span className={cls.link}>{t(item.text)}</span>
-              </AppLink>
+      to={item.path}
+      className={classNames(cls.itemRedesigned, {
+        [cls.collapsedRedesigned]: collapsed,
+      })}
+      activeClassName={cls.active}
+    >
+      <Icon Svg={item.Icon} />
+      <span className={cls.link}>{t(item.text)}</span>
+    </AppLink>
   );
 });

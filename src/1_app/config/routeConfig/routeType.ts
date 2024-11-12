@@ -11,6 +11,7 @@ export enum AppRoutes {
   MAIN = "main",
   ABOUT = "about",
   PROFILE = "profile",
+  MESSAGES = "messages",
   SETTINGS = "settings",
   ARTICLES = "articles",
   ARTICLE_DETAILS = "article_details",

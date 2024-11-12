@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { Loader } from "@/6_shared/ui/deprecated/Loader";
-import { Modal } from "@/6_shared/ui/redesigned/Modal/Modal";
+import { Loader } from "@/6_shared/ui/Loader/Loader";
+import { Modal } from "@/6_shared/ui/Modal/Modal";
 
 import AcynLoginForm from "../LoginForm/AcyncLoginForm";
 

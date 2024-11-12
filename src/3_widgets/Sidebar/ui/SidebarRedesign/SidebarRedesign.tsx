@@ -3,9 +3,9 @@ import { ThemeSwitcher } from "@/4_features/ThemeSwitcher";
 
 import ArrowIcon from "@/6_shared/assets/icons/arrow-bottom.svg";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { AppLogo } from "@/6_shared/ui/redesigned/AppLogo/AppLogo";
-import { Icon } from "@/6_shared/ui/redesigned/Icon/Icon";
-import { VStack } from "@/6_shared/ui/redesigned/Stack";
+import { AppLogo } from "@/6_shared/ui/AppLogo/AppLogo";
+import { Icon } from "@/6_shared/ui/Icon/Icon";
+import { VStack } from "@/6_shared/ui/Stack";
 
 import cls from "./SidebarRedesign.module.scss";
 

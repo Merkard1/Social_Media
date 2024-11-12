@@ -2,11 +2,9 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
-import TextDeprecated from "@/6_shared/ui/deprecated/Text/Text";
-import { Card } from "@/6_shared/ui/redesigned/Card/Card";
-import { VStack } from "@/6_shared/ui/redesigned/Stack";
-import { Text } from "@/6_shared/ui/redesigned/Text/Text";
+import { Card } from "@/6_shared/ui/Card/Card";
+import { VStack } from "@/6_shared/ui/Stack";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import { Comment } from "../../model/types/comment";
 import { CommentCard } from "../CommentCard/CommentCard";
@@ -43,10 +41,10 @@ export const CommentList = memo((props: CommentListProps) => {
         ))
       ) : (
         <Card max>
-                                <VStack align="center">
-                                  <Text text={t("No comments")} />
-                                </VStack>
-                              </Card>
+          <VStack align="center">
+            <Text text={t("No comments")} />
+          </VStack>
+        </Card>
       )}
     </VStack>
   );

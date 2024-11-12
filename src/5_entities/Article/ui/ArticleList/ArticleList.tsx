@@ -2,9 +2,8 @@ import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
-import Text, { TextSize } from "@/6_shared/ui/deprecated/Text/Text";
-import { HStack } from "@/6_shared/ui/redesigned/Stack";
+import { HStack } from "@/6_shared/ui/Stack";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import { ArticleView } from "../../model/consts/articleConsts";
 import { Article } from "../../model/types/article";
@@ -50,29 +49,29 @@ export const ArticleList = memo((props: ArticleListProps) => {
           cls[view],
         ])}
       >
-        <Text size={TextSize.L} title={t("Статьи не найдены")} />
+        <Text size="l" title={t("Статьи не найдены")} />
       </div>
     );
   }
 
   return (
     <HStack
-                wrap="wrap"
-                gap="16"
-                justify="center"
-                className={classNames(cls.ArticleListRedesigned, {}, [])}
-                data-testid="ArticleList"
-              >
-                {articles.map((item) => (
-                  <ArticleListItem
-                    article={item}
-                    view={view}
-                    target={target}
-                    key={item.id}
-                    className={cls.card}
-                  />
-                ))}
-                {isLoading && getSkeletons(view)}
-              </HStack>
+      wrap="wrap"
+      gap="16"
+      justify="center"
+      className={classNames(cls.ArticleListRedesigned, {}, [])}
+      data-testid="ArticleList"
+    >
+      {articles.map((item) => (
+        <ArticleListItem
+          article={item}
+          view={view}
+          target={target}
+          key={item.id}
+          className={cls.card}
+        />
+      ))}
+      {isLoading && getSkeletons(view)}
+    </HStack>
   );
 });

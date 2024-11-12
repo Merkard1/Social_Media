@@ -2,9 +2,7 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
-import TextDeprecated from "@/6_shared/ui/deprecated/Text/Text";
-import { Text } from "@/6_shared/ui/redesigned/Text/Text";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import { ArticleTextBlock } from "../../model/types/article";
 
@@ -31,10 +29,10 @@ export const ArticleTextBlockComponent = memo(
         )}
         {block.paragraphs.map((paragraph, index) => (
           <Text
-                            key={paragraph}
-                            text={paragraph}
-                            className={cls.paragraph}
-                          />
+            key={paragraph}
+            text={paragraph}
+            className={cls.paragraph}
+          />
         ))}
       </div>
     );

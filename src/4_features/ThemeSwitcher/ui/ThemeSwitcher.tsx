@@ -4,14 +4,9 @@ import { useTheme } from "@/1_app/providers/ThemeProvider";
 
 import { saveJsonSettings } from "@/5_entities/User";
 
-import ThemeIconDeprecated from "@/6_shared/assets/icons/theme-light.svg";
 import ThemeIcon from "@/6_shared/assets/icons/theme.svg";
-import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button, ThemeButton } from "@/6_shared/ui/deprecated/Button";
-import { Icon as IconDeprecated } from "@/6_shared/ui/deprecated/Icon";
-import { Icon } from "@/6_shared/ui/redesigned/Icon/Icon";
+import { Icon } from "@/6_shared/ui/Icon/Icon";
 
 interface ThemeSwitcherProps {
   className?: string;

@@ -8,7 +8,7 @@ import { ArticleAdditionalInfo } from "@/3_widgets/ArticleAdditionalInfo";
 
 import { getArticleDetailsData } from "@/5_entities/Article";
 
-import { Card } from "@/6_shared/ui/redesigned/Card/Card";
+import { Card } from "@/6_shared/ui/Card/Card";
 
 import cls from "./AdditionalInfoContainer.module.scss";
 

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import { ArticleList } from "@/5_entities/Article";
 
-import { Text } from "@/6_shared/ui/redesigned/Text/Text";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import {
   getArticlesPageIsLoading,

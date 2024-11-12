@@ -6,6 +6,7 @@ import { ArticleEditPage } from "@/2_pages/ArticleEditPage";
 import { ArticlesPage } from "@/2_pages/ArticlesPage";
 import { ForbiddenPage } from "@/2_pages/ForbiddenPage";
 import { MainPage } from "@/2_pages/MainPage";
+import { MessagesPage } from "@/2_pages/MessagesPage";
 import { NotFoundPage } from "@/2_pages/NotFoundPage";
 import { ProfilePage } from "@/2_pages/ProfilePage";
 import { SettingsPage } from "@/2_pages/SettingsPage";
@@ -19,6 +20,7 @@ export const getRouteMain = () => "/";
 export const getRouteAbout = () => "/about";
 export const getRouteProfile = (id: string) => `/profile/${id}`;
 export const getRouteSettings = () => "/settings";
+export const getRouteMessages = () => "/messages";
 // Articles
 export const getRouteArticles = () => "/articles";
 export const getRouteArticleDetails = (id: string) => `/articles/${id}`;
@@ -40,6 +42,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.PROFILE]: {
     path: getRouteProfile(":id"),
     element: <ProfilePage />,
+    authOnly: true,
+  },
+  [AppRoutes.MESSAGES]: {
+    path: getRouteMessages(),
+    element: <MessagesPage />,
     authOnly: true,
   },
   [AppRoutes.SETTINGS]: {

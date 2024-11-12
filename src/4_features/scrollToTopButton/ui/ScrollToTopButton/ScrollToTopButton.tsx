@@ -2,7 +2,7 @@ import { memo } from "react";
 
 import CircleIcon from "@/6_shared/assets/icons/circle-up.svg";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { Icon } from "@/6_shared/ui/redesigned/Icon/Icon";
+import { Icon } from "@/6_shared/ui/Icon/Icon";
 
 interface ScrollToTopButtonProps {
     className?: string;

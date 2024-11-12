@@ -3,7 +3,7 @@ import { memo } from "react";
 import { ScrollToTopButton } from "@/4_features/scrollToTopButton";
 
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { VStack } from "@/6_shared/ui/redesigned/Stack";
+import { VStack } from "@/6_shared/ui/Stack";
 
 import cls from "./ScrollToolbar.module.scss";
 

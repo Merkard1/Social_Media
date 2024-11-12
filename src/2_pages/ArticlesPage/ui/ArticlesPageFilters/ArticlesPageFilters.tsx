@@ -13,8 +13,8 @@ import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useDebounce } from "@/6_shared/lib/hooks/useDebounce/useDebounce";
 import { SortOrder } from "@/6_shared/types/sort";
-import { Card } from "@/6_shared/ui/deprecated/Card";
-import { Input } from "@/6_shared/ui/deprecated/Input";
+import { Card } from "@/6_shared/ui/Card/Card";
+import { Input } from "@/6_shared/ui/Input/Input";
 
 import {
   useArticlesPageOrder,

@@ -7,8 +7,8 @@ import { classNames } from "@/6_shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "@/6_shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
-import Text, { TextTheme } from "@/6_shared/ui/deprecated/Text/Text";
-import { VStack } from "@/6_shared/ui/redesigned/Stack";
+import { VStack } from "@/6_shared/ui/Stack";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 import { ValidateProfileError } from "../../model/consts/consts";
 import { useProfileError } from "../../model/selectors/getProfileError/getProfileError";
@@ -72,7 +72,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         {validateErrors?.length && validateErrors.map((err: ValidateProfileError) => (
           <Text
             key={err}
-            theme={TextTheme.ERROR}
+            variant="error"
             text={validateErrorTranslates[err]}
             data-testid="EditableProfileCard.Error"
           />

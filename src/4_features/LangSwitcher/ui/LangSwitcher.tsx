@@ -1,13 +1,7 @@
 import { memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
-import {
-  Button as ButtonDeprecated,
-  ThemeButton,
-} from "@/6_shared/ui/deprecated/Button";
-import { Button } from "@/6_shared/ui/redesigned/Button/Button";
+import { Button } from "@/6_shared/ui/Button/Button";
 
 interface LangSwitcherProps {
   className?: string;
@@ -27,7 +21,7 @@ export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
 
   return (
     <Button onClick={toggle} variant="clear">
-                {short ? displayText.short : displayText.long}
-              </Button>
+      {short ? displayText.short : displayText.long}
+    </Button>
   );
 });

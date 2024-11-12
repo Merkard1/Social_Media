@@ -3,19 +3,11 @@ import { BrowserView, MobileView } from "react-device-detect";
 
 import { NotificationList } from "@/5_entities/Notification";
 
-import NotificationIconDeprecated from "@/6_shared/assets/icons/notification-20-20.svg";
 import NotificationIcon from "@/6_shared/assets/icons/notification.svg";
 import { classNames } from "@/6_shared/lib/classNames/classNames";
-import { ToggleFeatures } from "@/6_shared/lib/features";
-import {
-  Button as ButtonDeprecated,
-  ThemeButton,
-} from "@/6_shared/ui/deprecated/Button";
-import { Icon as IconDeprecated } from "@/6_shared/ui/deprecated/Icon";
-import { Popover as PopoverDeprecated } from "@/6_shared/ui/deprecated/Popups";
-import { Drawer } from "@/6_shared/ui/redesigned/Drawer/Drawer";
-import { Icon } from "@/6_shared/ui/redesigned/Icon/Icon";
-import { Popover } from "@/6_shared/ui/redesigned/Popups";
+import { Drawer } from "@/6_shared/ui/Drawer/Drawer";
+import { Icon } from "@/6_shared/ui/Icon/Icon";
+import { Popover } from "@/6_shared/ui/Popups";
 
 import cls from "./NotificationButton.module.scss";
 
@@ -43,14 +35,14 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     <div>
       <BrowserView>
         <Popover
-                            className={classNames(cls.NotificationButton, {}, [
-                              className,
-                            ])}
-                            direction="bottom left"
-                            trigger={trigger}
-                          >
-                            <NotificationList className={cls.notifications} />
-                          </Popover>
+          className={classNames(cls.NotificationButton, {}, [
+            className,
+          ])}
+          direction="bottom left"
+          trigger={trigger}
+        >
+          <NotificationList className={cls.notifications} />
+        </Popover>
       </BrowserView>
       <MobileView>
         {trigger}

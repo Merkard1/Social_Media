@@ -7,10 +7,10 @@ import { getUserAuthData } from "@/5_entities/User";
 import { updateFeatureFlag, getFeatureFlag } from "@/6_shared/lib/features";
 import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useForceUpdate } from "@/6_shared/lib/render/forceUpdate";
-import { ListBox } from "@/6_shared/ui/redesigned/Popups";
-import { Skeleton } from "@/6_shared/ui/redesigned/Skeleton";
-import { HStack } from "@/6_shared/ui/redesigned/Stack";
-import { Text } from "@/6_shared/ui/redesigned/Text/Text";
+import { ListBox } from "@/6_shared/ui/Popups";
+import { Skeleton } from "@/6_shared/ui/Skeleton/Skeleton";
+import { HStack } from "@/6_shared/ui/Stack";
+import { Text } from "@/6_shared/ui/Text/Text";
 
 interface UiDesignSwitcherProps {
     className?: string;

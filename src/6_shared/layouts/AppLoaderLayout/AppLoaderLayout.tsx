@@ -1,7 +1,7 @@
 import { memo } from "react";
 
-import { Skeleton } from "@/6_shared/ui/redesigned/Skeleton";
-import { HStack, VStack } from "@/6_shared/ui/redesigned/Stack";
+import { Skeleton } from "@/6_shared/ui/Skeleton/Skeleton";
+import { HStack, VStack } from "@/6_shared/ui/Stack";
 
 import { MainLayout } from "../MainLayout/MainLayout";
 
