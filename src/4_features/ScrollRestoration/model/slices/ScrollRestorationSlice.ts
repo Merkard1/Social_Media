@@ -17,23 +17,6 @@ const scrollRestorationSlice = buildSlice({
       state.scroll[payload.path] = payload.position;
     },
   },
-  // extraReducers: (builder) => {
-  //   builder
-  //     .addCase(loginByUsername.pending, (state) => {
-  //       state.error = undefined;
-  //       state.isLoading = true;
-  //     })
-  //     .addCase(loginByUsername.fulfilled, (state) => {
-  //       state.error = undefined;
-  //       state.isLoading = false;
-  //     })
-  //     .addCase(loginByUsername.rejected, (state, action) => {
-  //       state.error = typeof action.payload === "object" && action.payload?.message
-  //         ? action.payload.message
-  //         : "Unknown Error";
-  //       state.isLoading = false;
-  //     });
-  // },
 });
 
 export const {

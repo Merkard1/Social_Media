@@ -1,6 +1,4 @@
-import {
-  memo, MutableRefObject, ReactNode, UIEvent, useRef,
-} from "react";
+import { memo, MutableRefObject, ReactNode, UIEvent, useRef } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
@@ -14,15 +12,17 @@ import { useAppDispatch } from "@/6_shared/lib/hooks/useAppDispatch/useAppDispat
 import { useInfiniteScroll } from "@/6_shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
 import { useInitialEffect } from "@/6_shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useThrottle } from "@/6_shared/lib/hooks/useThrottle/useThrottle";
+import { TestProps } from "@/6_shared/types/tests";
 
 import cls from "./Page.module.scss";
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string;
     children: ReactNode;
-    "data-testid"?: string;
     onScrollEnd?: () => void;
 }
+
+export const PAGE_ID = "PAGE_ID";
 
 const Page = memo((props: PageProps) => {
   const { className, children, onScrollEnd } = props;
@@ -30,7 +30,8 @@ const Page = memo((props: PageProps) => {
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
-  const scrollPosition = useSelector((state: StateSchema) => getScrollByPath(state, pathname));
+  const scrollPosition = useSelector((state: StateSchema) =>
+    getScrollByPath(state, pathname));
 
   useInfiniteScroll({
     triggerRef,
@@ -46,11 +47,13 @@ const Page = memo((props: PageProps) => {
     wrapperRef.current.scrollTop = scrollPosition;
   });
 
-  const onScroll = useThrottle((e: UIEvent<HTMLElement>) => {
-    dispatch(scrollRestorationActions.setScrollPosition({
-      position: e.currentTarget.scrollTop,
-      path: pathname,
-    }));
+  const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
+    dispatch(
+      scrollRestorationActions.setScrollPosition({
+        position: e.currentTarget.scrollTop,
+        path: pathname,
+      }),
+    );
   }, 500);
 
   return (
@@ -65,11 +68,14 @@ const Page = memo((props: PageProps) => {
         {},
         [className],
       )}
-      onScroll={(e) => onScroll(e)}
+      onScroll={onScroll}
+      id={PAGE_ID}
       data-testid={props["data-testid"] ?? "Page"}
     >
       {children}
-      {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />}
+      {onScrollEnd ? (
+        <div className={cls.trigger} ref={triggerRef} />
+      ) : null}
     </main>
   );
 });

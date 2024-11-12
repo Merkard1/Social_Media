@@ -1,5 +1,5 @@
 import { User } from "../../../src/5_entities/User";
-import { USER_LOCALSTORAGE_KEY } from "../../../src/6_shared/const/localstorage";
+import { LOCAL_STORAGE_USER } from "../../../src/6_shared/const/localstorage";
 import { selectByTestId } from "../../helpers/selectByTestId";
 
 export const login = (
@@ -16,7 +16,7 @@ export const login = (
   })
   .then(({ body }) => {
     window.localStorage.setItem(
-      USER_LOCALSTORAGE_KEY,
+      LOCAL_STORAGE_USER,
       JSON.stringify(body),
     );
     return body;

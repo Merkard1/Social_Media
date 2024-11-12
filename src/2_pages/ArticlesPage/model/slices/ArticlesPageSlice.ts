@@ -5,7 +5,7 @@ import { StateSchema } from "@/1_app/providers/StoreProvider";
 
 import { Article, ArticleView, ArticleSortField, ArticleType } from "@/5_entities/Article";
 
-import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "@/6_shared/const/localstorage";
+import { LOCAL_STORAGE_ARTICLES_VIEW } from "@/6_shared/const/localstorage";
 import { buildSlice } from "@/6_shared/lib/store/buildSlice";
 import { SortOrder } from "@/6_shared/types/sort";
 
@@ -40,7 +40,7 @@ const articlesPageSlice = buildSlice({
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload;
-      localStorage.setItem(ARTICLES_VIEW_LOCALSTORAGE_KEY, action.payload);
+      localStorage.setItem(LOCAL_STORAGE_ARTICLES_VIEW, action.payload);
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
@@ -59,7 +59,7 @@ const articlesPageSlice = buildSlice({
     },
 
     initState: (state) => {
-      const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+      const view = localStorage.getItem(LOCAL_STORAGE_ARTICLES_VIEW) as ArticleView;
       state.view = view;
       state.limit = view === ArticleView.BIG ? 4 : 12;
       state._inited = true;

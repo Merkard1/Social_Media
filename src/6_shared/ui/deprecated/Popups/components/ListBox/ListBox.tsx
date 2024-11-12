@@ -63,7 +63,6 @@ export function ListBox(props: ListBoxProps) {
         value={value}
         onChange={onChange}
       >
-        {/* TODO mb error? */}
         <HListBox.Button className={cls.trigger}>
           {value ?? defaultValue}
         </HListBox.Button>

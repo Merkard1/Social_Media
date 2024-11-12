@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { PayloadAction } from "@reduxjs/toolkit";
 
-import { USER_LOCALSTORAGE_KEY } from "@/6_shared/const/localstorage";
+import { LOCAL_STORAGE_LAST_DESIGN_KEY, LOCAL_STORAGE_USER } from "@/6_shared/const/localstorage";
 import { setFeatureFlags } from "@/6_shared/lib/features";
 import { buildSlice } from "@/6_shared/lib/store/buildSlice";
 
@@ -18,14 +18,18 @@ export const userSlice = buildSlice({
   name: "user",
   initialState,
   reducers: {
-    setAuthData: (state, action: PayloadAction<User>) => {
-      state.authData = action.payload;
-      setFeatureFlags(action.payload.features);
-      localStorage.setItem(USER_LOCALSTORAGE_KEY, action.payload.id);
+    setAuthData: (state, { payload }: PayloadAction<User>) => {
+      state.authData = payload;
+      setFeatureFlags(payload.features);
+      localStorage.setItem(LOCAL_STORAGE_USER, payload.id);
+      localStorage.setItem(
+        LOCAL_STORAGE_LAST_DESIGN_KEY,
+        payload.features?.isAppRedesigned ? "new" : "old",
+      );
     },
     logout: (state) => {
       state.authData = undefined;
-      localStorage.removeItem(USER_LOCALSTORAGE_KEY);
+      localStorage.removeItem(LOCAL_STORAGE_USER);
     },
   },
   extraReducers: (builder) => {

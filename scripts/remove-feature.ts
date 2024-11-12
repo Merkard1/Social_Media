@@ -1,11 +1,13 @@
+/* eslint-disable consistent-return */
 import { JsxAttribute, Node, Project, SyntaxKind } from "ts-morph";
 
-const removedFeatureName = process.argv[2]; // example isArticleEnabled
-const featureState = process.argv[3]; // example off\on
+// @ts-ignore
+const removedFeatureName = process.argv[2];
+// @ts-ignore
+const featureState = process.argv[3];
 
 const toggleFunctionName = "toggleFeatures";
 const toggleComponentName = "ToggleFeatures";
-
 if (!removedFeatureName) {
   throw new Error("Укажите название фича-флага");
 }

@@ -4,8 +4,9 @@ import { FeatureFlags } from "../../types/featureFlags";
 
 const defaultFeatures: FeatureFlags = {
   isAppRedesigned:
-        localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) === "new",
+    localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) === "new",
 };
+
 let featureFlags: FeatureFlags = {
   ...defaultFeatures,
 };

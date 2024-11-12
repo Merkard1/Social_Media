@@ -6,7 +6,7 @@ This is a web application built with React and TypeScript using the Feature Slic
 
 ```
 npm install - install dependencies
-npm run start - run server + frontend project in dev mode
+npm run start - run json server + frontend project in dev mode
 ```
 
 ---
@@ -126,37 +126,37 @@ Pre-commit hooks check the project with linters, the config is in /.github.
 Data interaction is done using redux toolkit.
 Whenever possible, reusable entities should be normalized using EntityAdapter.
 
-Server requests are made using [RTK query](/Frontend/src/shared/api/rtkApi.ts)
+Server requests are made using [RTK query](/src/shared/api/rtkApi.ts)
 
 For asynchronous reducer connection (to avoid pulling them into a common bundle), the
-[DynamicModuleLoader](/Frontend/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
+[DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
 is used.
 
 ---
 
 ## Entities
 
-- [Article](/Frontend/src/5_entities/Article)
-- [Comment](/Frontend/src/5_entities/Comment)
-- [Country](/Frontend/src/5_entities/Country)
-- [Currency](/Frontend/src/5_entities/Currency)
-- [Notification](/Frontend/src/5_entities/Notification)
-- [Profile](/Frontend/src/5_entities/Profile)
-- [Rating](/Frontend/src/5_entities/Rating)
-- [User](/Frontend/src/5_entities/User)
+- [Article](/src/5_entities/Article)
+- [Comment](/src/5_entities/Comment)
+- [Country](/src/5_entities/Country)
+- [Currency](/src/5_entities/Currency)
+- [Notification](/src/5_entities/Notification)
+- [Profile](/src/5_entities/Profile)
+- [Rating](/src/5_entities/Rating)
+- [User](/src/5_entities/User)
 
 ## Features
 
-- [addCommentForm](/Frontend/src/4_features/addCommentForm)
-- [articleRating](/Frontend/src/4_features/articleRating)
-- [articleRecommendationsList](/Frontend/src/4_features/articleRecommendationsList)
-- [AuthByUsername](/Frontend/src/4_features/AuthByUsername)
-- [avatarDropdown](/Frontend/src//4_features/avatarDropdown/)
-- [editableProfileCard](/Frontend/src/4_features/editableProfileCard)
-- [LangSwitcher](/Frontend/src/4_features/LangSwitcher)
-- [notificationButton](/Frontend/src/4_features/notificationButton)
-- [ThemeSwitcher](/Frontend/src/4_features/ThemeSwitcher)
-- [ScrollRestoration](/Frontend/src/4_features/ScrollRestoration)
+- [addCommentForm](/src/4_features/addCommentForm)
+- [articleRating](/src/4_features/articleRating)
+- [articleRecommendationsList](/src/4_features/articleRecommendationsList)
+- [AuthByUsername](/src/4_features/AuthByUsername)
+- [avatarDropdown](/src//4_features/avatarDropdown/)
+- [editableProfileCard](/src/4_features/editableProfileCard)
+- [LangSwitcher](/src/4_features/LangSwitcher)
+- [notificationButton](/src/4_features/notificationButton)
+- [ThemeSwitcher](/src/4_features/ThemeSwitcher)
+- [ScrollRestoration](/src/4_features/ScrollRestoration)
 
 
 

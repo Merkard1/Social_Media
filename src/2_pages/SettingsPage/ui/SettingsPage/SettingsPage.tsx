@@ -5,6 +5,7 @@ import { Page } from "@/3_widgets/Page";
 
 import { UiDesignSwitcher } from "@/4_features/uiDesignSwitcher";
 
+import { Card } from "@/6_shared/ui/redesigned/Card/Card";
 import { VStack } from "@/6_shared/ui/redesigned/Stack";
 import { Text } from "@/6_shared/ui/redesigned/Text/Text";
 
@@ -18,10 +19,12 @@ const SettingsPage = memo((props: SettingsPageProps) => {
 
   return (
     <Page>
-      <VStack gap="16">
-        <Text title={t("Settings")} />
-        <UiDesignSwitcher />
-      </VStack>
+      <Card>
+        <VStack gap="16">
+          <Text title={t("Settings")} />
+          <UiDesignSwitcher />
+        </VStack>
+      </Card>
     </Page>
   );
 });
