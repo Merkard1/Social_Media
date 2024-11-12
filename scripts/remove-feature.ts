@@ -1,6 +1,5 @@
 /* eslint-disable consistent-return */
 import { JsxAttribute, Node, Project, SyntaxKind } from "ts-morph";
-
 // @ts-ignore
 const removedFeatureName = process.argv[2];
 // @ts-ignore
@@ -8,6 +7,7 @@ const featureState = process.argv[3];
 
 const toggleFunctionName = "toggleFeatures";
 const toggleComponentName = "ToggleFeatures";
+
 if (!removedFeatureName) {
   throw new Error("Укажите название фича-флага");
 }
