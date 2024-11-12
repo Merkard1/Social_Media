@@ -32,14 +32,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   );
 
   return (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      on={
-        <SidebarRedesign collapsed={collapsed} itemsList={itemsList} onToggle={onToggle} />
-      }
-      off={
-        <SidebarDeprecated collapsed={collapsed} itemsList={itemsList} onToggle={onToggle} />
-      }
-    />
+    <SidebarRedesign collapsed={collapsed} itemsList={itemsList} onToggle={onToggle} />
   );
 });

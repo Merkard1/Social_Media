@@ -42,17 +42,11 @@ export const CommentList = memo((props: CommentListProps) => {
           />
         ))
       ) : (
-        <ToggleFeatures
-          feature="isAppRedesigned"
-          on={
-            <Card max>
-              <VStack align="center">
-                <Text text={t("No comments")} />
-              </VStack>
-            </Card>
-          }
-          off={<TextDeprecated text={t("No comments")} />}
-        />
+        <Card max>
+                                <VStack align="center">
+                                  <Text text={t("No comments")} />
+                                </VStack>
+                              </Card>
       )}
     </VStack>
   );

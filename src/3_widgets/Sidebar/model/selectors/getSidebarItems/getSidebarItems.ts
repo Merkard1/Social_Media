@@ -23,20 +23,12 @@ export const useSidebarItems = () => {
   const sidebarItemsList: SidebarItemType[] = [
     {
       path: getRouteMain(),
-      Icon: toggleFeatures({
-        name: "isAppRedesigned",
-        off: () => MainIconDeprecated,
-        on: () => MainIcon,
-      }),
+      Icon: MainIcon,
       text: t("Main"),
     },
     {
       path: getRouteAbout(),
-      Icon: toggleFeatures({
-        name: "isAppRedesigned",
-        off: () => AboutIconDeprecated,
-        on: () => AboutIcon,
-      }),
+      Icon: AboutIcon,
       text: t("About"),
     },
   ];
@@ -45,21 +37,13 @@ export const useSidebarItems = () => {
     sidebarItemsList.push(
       {
         path: getRouteProfile(userData.id),
-        Icon: toggleFeatures({
-          name: "isAppRedesigned",
-          off: () => ProfileIconDeprecated,
-          on: () => ProfileIcon,
-        }),
+        Icon: ProfileIcon,
         text: t("Profile"),
         authOnly: true,
       },
       {
         path: getRouteArticles(),
-        Icon: toggleFeatures({
-          name: "isAppRedesigned",
-          off: () => ArticleIconDeprecated,
-          on: () => ArticleIcon,
-        }),
+        Icon: ArticleIcon,
         text: t("Articles"),
         authOnly: true,
       },

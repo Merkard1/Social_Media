@@ -97,11 +97,7 @@ const Redesigned = () => {
 };
 
 export const ArticleDetailsSkeleton = () => {
-  const Skeleton = toggleFeatures({
-    name: "isAppRedesigned",
-    on: () => SkeletonRedesigned,
-    off: () => SkeletonDeprecated,
-  });
+  const Skeleton = SkeletonRedesigned;
   return (
     <VStack gap="16" max>
       <Skeleton
@@ -144,11 +140,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     );
   } else {
     content = (
-      <ToggleFeatures
-        feature="isAppRedesigned"
-        on={<Redesigned />}
-        off={<Deprecated />}
-      />
+      <Redesigned />
     );
   }
 

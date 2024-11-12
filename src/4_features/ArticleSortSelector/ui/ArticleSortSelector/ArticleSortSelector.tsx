@@ -58,52 +58,26 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
   );
 
   return (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      on={
-        <div
-          className={classNames(
-            cls.ArticleSortSelectorRedesigned,
-            {},
-            [className],
-          )}
-        >
-          <VStack gap="8">
-            <Text text={`${t("Sort with")} :`} />
-            <ListBox
-              items={sortFieldOptions}
-              value={sort}
-              onChange={onChangeSort}
-            />
-            <ListBox
-              items={orderOptions}
-              value={order}
-              onChange={onChangeOrder}
-            />
-          </VStack>
-        </div>
-      }
-      off={
-        <div
-          className={classNames(cls.ArticleSortSelector, {}, [
-            className,
-          ])}
-        >
-          <Select<ArticleSortField>
-            options={sortFieldOptions}
-            label={t("Sort")}
-            value={sort}
-            onChange={onChangeSort}
-          />
-          <Select
-            options={orderOptions}
-            label={t("with")}
-            value={order}
-            onChange={onChangeOrder}
-            className={cls.order}
-          />
-        </div>
-      }
-    />
+    <div
+                className={classNames(
+                  cls.ArticleSortSelectorRedesigned,
+                  {},
+                  [className],
+                )}
+              >
+                <VStack gap="8">
+                  <Text text={`${t("Sort with")} :`} />
+                  <ListBox
+                    items={sortFieldOptions}
+                    value={sort}
+                    onChange={onChangeSort}
+                  />
+                  <ListBox
+                    items={orderOptions}
+                    value={order}
+                    onChange={onChangeOrder}
+                  />
+                </VStack>
+              </div>
   );
 });

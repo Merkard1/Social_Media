@@ -90,11 +90,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
           className,
           theme,
           "app_drawer",
-          toggleFeatures({
-            name: "isAppRedesigned",
-            on: () => cls.drawerNew,
-            off: () => cls.drawerOld,
-          }),
+          cls.drawerNew,
         ])}
       >
         <Overlay onClick={close} />

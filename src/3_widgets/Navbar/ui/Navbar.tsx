@@ -36,70 +36,27 @@ export const Navbar = ({ className }: NavbarProps) => {
     setIsAuthModal(true);
   }, []);
 
-  const mainClass = toggleFeatures({
-    name: "isAppRedesigned",
-    on: () => cls.NavbarRedesigned,
-    off: () => cls.Navbar,
-  });
+  const mainClass = cls.NavbarRedesigned;
 
   if (authData) {
     return (
-      <ToggleFeatures
-        feature="isAppRedesigned"
-        on={
-          <header className={classNames(mainClass, {}, [className])}>
-            <HStack gap="16" className={cls.actions}>
-              <NotificationButton />
-              <AvatarDropdown />
-            </HStack>
-          </header>
-        }
-        off={
-          <header className={classNames(mainClass, {}, [className])}>
-            <TextDeprecated
-              className={cls.appName}
-              title={t("Social media")}
-              theme={TextTheme.INVERTED}
-            />
-            <AppLinkDeprecated
-              to={getRouteArticleCreate()}
-              theme={AppLinkTheme.SECONDARY}
-              className={cls.createBtn}
-            >
-              {t("Create article")}
-            </AppLinkDeprecated>
-            <HStack gap="16" className={cls.actions}>
-              <NotificationButton />
-              <AvatarDropdown />
-            </HStack>
-          </header>
-        }
-      />
+      <header className={classNames(mainClass, {}, [className])}>
+                    <HStack gap="16" className={cls.actions}>
+                      <NotificationButton />
+                      <AvatarDropdown />
+                    </HStack>
+                  </header>
     );
   }
 
   return (
     <header className={classNames(mainClass, {}, [className])}>
-      <ToggleFeatures
-        feature="isAppRedesigned"
-        on={
-          <Button
-            className={cls.links}
-            onClick={onShowModal}
-          >
-            {t("Login")}
-          </Button>
-        }
-        off={
-          <ButtonDeprecated
-            theme={ThemeButton.CLEAR_INVERTED}
-            className={cls.links}
-            onClick={onShowModal}
-          >
-            {t("Войти")}
-          </ButtonDeprecated>
-        }
-      />
+      <Button
+                      className={cls.links}
+                      onClick={onShowModal}
+                    >
+                      {t("Login")}
+                    </Button>
 
       {isAuthModal && (
         <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />

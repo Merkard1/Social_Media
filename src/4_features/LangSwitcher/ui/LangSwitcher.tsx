@@ -26,22 +26,8 @@ export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
     : { short: "RU", long: "Russian" }), [i18n.language]);
 
   return (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      on={
-        <Button onClick={toggle} variant="clear">
-          {short ? displayText.short : displayText.long}
-        </Button>
-      }
-      off={
-        <ButtonDeprecated
-          className={classNames("", {}, [className])}
-          theme={ThemeButton.CLEAR}
-          onClick={toggle}
-        >
-          {short ? displayText.short : displayText.long}
-        </ButtonDeprecated>
-      }
-    />
+    <Button onClick={toggle} variant="clear">
+                {short ? displayText.short : displayText.long}
+              </Button>
   );
 });

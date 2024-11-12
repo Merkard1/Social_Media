@@ -57,63 +57,33 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <ToggleFeatures
-        feature="isAppRedesigned"
-        on={
-          <Card padding="24" border="partial" max>
-            <HStack
-              data-testid="AddCommentForm"
-              justify="between"
-              max
-              gap="16"
-              className={classNames(
-                cls.AddCommentFormRedesigned,
-                {},
-                [className],
-              )}
-            >
-              <Input
-                className={cls.input}
-                placeholder={t("Enter your comment")}
-                value={text}
-                data-testid="AddCommentForm.Input"
-                onChange={onCommentTextChange}
-              />
-              <Button
-                data-testid="AddCommentForm.Button"
-                onClick={onSendHandler}
-              >
-                {t("Send")}
-              </Button>
-            </HStack>
-          </Card>
-        }
-        off={
-          <HStack
-            data-testid="AddCommentForm"
-            justify="between"
-            max
-            className={classNames(cls.AddCommentForm, {}, [
-              className,
-            ])}
-          >
-            <InputDeprecated
-              className={cls.input}
-              placeholder={t("Введите текст комментария")}
-              value={text}
-              data-testid="AddCommentForm.Input"
-              onChange={onCommentTextChange}
-            />
-            <ButtonDeprecated
-              data-testid="AddCommentForm.Button"
-              theme={ThemeButton.OUTLINE}
-              onClick={onSendHandler}
-            >
-              {t("Send")}
-            </ButtonDeprecated>
-          </HStack>
-        }
-      />
+      <Card padding="24" border="partial" max>
+                      <HStack
+                        data-testid="AddCommentForm"
+                        justify="between"
+                        max
+                        gap="16"
+                        className={classNames(
+                          cls.AddCommentFormRedesigned,
+                          {},
+                          [className],
+                        )}
+                      >
+                        <Input
+                          className={cls.input}
+                          placeholder={t("Enter your comment")}
+                          value={text}
+                          data-testid="AddCommentForm.Input"
+                          onChange={onCommentTextChange}
+                        />
+                        <Button
+                          data-testid="AddCommentForm.Button"
+                          onClick={onSendHandler}
+                        >
+                          {t("Send")}
+                        </Button>
+                      </HStack>
+                    </Card>
     </DynamicModuleLoader>
   );
 });

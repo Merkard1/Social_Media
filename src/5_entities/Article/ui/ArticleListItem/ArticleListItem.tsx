@@ -16,9 +16,5 @@ export interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => (
-  <ToggleFeatures
-    feature="isAppRedesigned"
-    on={<ArticleListItemRedesigned {...props} />}
-    off={<ArticleListItemDeprecated {...props} />}
-  />
+  <ArticleListItemRedesigned {...props} />
 ));
